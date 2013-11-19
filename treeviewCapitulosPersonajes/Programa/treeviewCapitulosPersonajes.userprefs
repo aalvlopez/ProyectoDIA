@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="treeviewCapitulosPersonajes/Capitulo.cs">
+    <Files>
+      <File FileName="treeviewCapitulosPersonajes/Escena.cs" Line="58" Column="41" />
+      <File FileName="treeviewCapitulosPersonajes/Capitulo.cs" Line="66" Column="4" />
+      <File FileName="treeviewCapitulosPersonajes/Formulario.cs" Line="124" Column="21" />
+      <File FileName="treeviewCapitulosPersonajes/IPersistencia.cs" Line="19" Column="1" />
+      <File FileName="treeviewCapitulosPersonajes/ITreeLateral.cs" Line="20" Column="3" />
+      <File FileName="treeviewCapitulosPersonajes/Libro.cs" Line="24" Column="34" />
+      <File FileName="treeviewCapitulosPersonajes/Main.cs" Line="34" Column="53" />
+      <File FileName="treeviewCapitulosPersonajes/Personaje.cs" Line="41" Column="42" />
+      <File FileName="treeviewCapitulosPersonajes/XmlPersistencia.cs" Line="86" Column="8" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="treeviewCapitulosPersonajes" expanded="True">
+            <Node name="Capitulo.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

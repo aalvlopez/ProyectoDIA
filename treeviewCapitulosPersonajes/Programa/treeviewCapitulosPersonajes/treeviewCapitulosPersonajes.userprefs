@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
+    <Files>
+      <File FileName="Capitulo.cs" Line="19" Column="30" />
+      <File FileName="Escena.cs" Line="1" Column="1" />
+      <File FileName="Form.cs" Line="1" Column="1" />
+      <File FileName="LeerInformacion.cs" Line="1" Column="1" />
+      <File FileName="Libro.cs" Line="10" Column="8" />
+      <File FileName="Main.cs" Line="36" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
