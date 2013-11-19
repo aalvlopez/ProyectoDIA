@@ -13,6 +13,7 @@ namespace treeviewCapitulosPersonajes{
 		/// </summary>
     	public static void Main() 
     	{
+			//ejmplo para probar la funcionalidad, Esto es temporal
 			var btGuardar = new Button ();
 			btGuardar.Text = "&Guardar"; 
 			btGuardar.Dock = DockStyle.Top;
@@ -30,8 +31,7 @@ namespace treeviewCapitulosPersonajes{
 			pnlBotones.Size = new Size(btDescartar.Size.Width,350);
 			pnlBotones.ResumeLayout (true);
 			pnlBotones.ResumeLayout (false);
-			IPersistencia objetoPersistencia = new XmlPersistencia("capitulos.xml");
-			Application.Run(new Formulario(objetoPersistencia,pnlBotones));
+			Application.Run(new Formulario("capitulos.xml",pnlBotones));
 
          
     	}

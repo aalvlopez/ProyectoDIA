@@ -62,11 +62,11 @@ namespace treeviewCapitulosPersonajes{
 		/// <param name='panel'>
 		/// Panel al cual le agregaremos por la derecha el TreeView que se creara.
 		/// </param>
-		public Formulario (IPersistencia objectPersistencia, Panel panel)
+		public Formulario (string nomFichero, Panel panel)
 		{
-			this.ObjectPersistencia = objectPersistencia;
+			this.ObjectPersistencia = new XmlPersistencia(nomFichero);
 			this.Ppanel = panel;
-			this.Book = objectPersistencia.Lectura();
+			this.Book = this.ObjectPersistencia.Lectura();
 			this.BuildGui();
 		}
 		/// <summary>
