@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96DCF73B-EEAD-4B0B-91BF-FD82F1787EB1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ProcesadorTextos</RootNamespace>
+    <AssemblyName>ProcesadorTextos</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Gui\MainWindow.cs" />
+    <Compile Include="Gui\Ppal.cs" />
+    <Compile Include="Core\Utilidades.cs" />
+    <Compile Include="Core\HtmlParser.cs" />
+    <Compile Include="Core\XmlParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="nrtftree-library">
+      <HintPath>lib\nrtftree-library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gui\" />
+    <Folder Include="Core\" />
+    <Folder Include="Lib\" />
+    <Folder Include="Doc\" />
+    <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\nrtftree-library.dll" />
+    <None Include="Doc\DC Procesador de textos.png" />
+    <None Include="Doc\Manual de usuario.pdf" />
+    <None Include="Doc\html\annotated.html" />
+    <None Include="Doc\html\bc_s.png" />
+    <None Include="Doc\html\bdwn.png" />
+    <None Include="Doc\html\class_procesador_textos_1_1_html_parser-members.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_html_parser.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_html_parser.png" />
+    <None Include="Doc\html\class_procesador_textos_1_1_main_window-members.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_main_window.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_main_window.png" />
+    <None Include="Doc\html\class_procesador_textos_1_1_ppal-members.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_ppal.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_xml_parser-members.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_xml_parser.html" />
+    <None Include="Doc\html\class_procesador_textos_1_1_xml_parser.png" />
+    <None Include="Doc\html\classes.html" />
+    <None Include="Doc\html\closed.png" />
+    <None Include="Doc\html\dir_43724e81dd40e09f32417973865cdd64.html" />
+    <None Include="Doc\html\dir_a404c407b50258a875677cca767ffb8d.html" />
+    <None Include="Doc\html\dir_afb8033ad6b5856085decaff90674dbb.html" />
+    <None Include="Doc\html\dir_c6310732a22f63c0c2fc5595561e68f1.html" />
+    <None Include="Doc\html\dir_d47853e6fb8fbc7aaad40510cff11bbf.html" />
+    <None Include="Doc\html\doxygen.css" />
+    <None Include="Doc\html\doxygen.png" />
+    <None Include="Doc\html\dynsections.js" />
+    <None Include="Doc\html\ftv2blank.png" />
+    <None Include="Doc\html\ftv2cl.png" />
+    <None Include="Doc\html\ftv2doc.png" />
+    <None Include="Doc\html\ftv2folderclosed.png" />
+    <None Include="Doc\html\ftv2folderopen.png" />
+    <None Include="Doc\html\ftv2lastnode.png" />
+    <None Include="Doc\html\ftv2link.png" />
+    <None Include="Doc\html\ftv2mlastnode.png" />
+    <None Include="Doc\html\ftv2mnode.png" />
+    <None Include="Doc\html\ftv2mo.png" />
+    <None Include="Doc\html\ftv2node.png" />
+    <None Include="Doc\html\ftv2ns.png" />
+    <None Include="Doc\html\ftv2plastnode.png" />
+    <None Include="Doc\html\ftv2pnode.png" />
+    <None Include="Doc\html\ftv2splitbar.png" />
+    <None Include="Doc\html\ftv2vertline.png" />
+    <None Include="Doc\html\functions.html" />
+    <None Include="Doc\html\functions_func.html" />
+    <None Include="Doc\html\hierarchy.html" />
+    <None Include="Doc\html\index.html" />
+    <None Include="Doc\html\jquery.js" />
+    <None Include="Doc\html\namespace_procesador_textos.html" />
+    <None Include="Doc\html\namespaces.html" />
+    <None Include="Doc\html\nav_f.png" />
+    <None Include="Doc\html\nav_g.png" />
+    <None Include="Doc\html\nav_h.png" />
+    <None Include="Doc\html\open.png" />
+    <None Include="Doc\html\sync_off.png" />
+    <None Include="Doc\html\sync_on.png" />
+    <None Include="Doc\html\tab_a.png" />
+    <None Include="Doc\html\tab_b.png" />
+    <None Include="Doc\html\tab_h.png" />
+    <None Include="Doc\html\tab_s.png" />
+    <None Include="Doc\html\tabs.css" />
+    <None Include="Img\font_bold_icon.png" />
+    <None Include="Img\doc_export_icon.png" />
+    <None Include="Img\font_italic_icon.png" />
+    <None Include="Img\font_underline_icon.png" />
+    <None Include="Img\doc_import_icon.png" />
+    <None Include="Doc\DSD Procesador de textos.jpg" />
+  </ItemGroup>
+</Project>
