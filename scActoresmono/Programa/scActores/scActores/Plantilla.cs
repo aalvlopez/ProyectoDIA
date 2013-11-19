@@ -60,7 +60,7 @@ namespace scActores
             return new Plantilla(name, datosPlantilla);
         }
 
-		public Plantilla(string name, IDictionary<string, string> n)
+		private Plantilla(string name, IDictionary<string, string> n)
         {
             NombrePlantilla = name;
             DatosPlantilla = n;

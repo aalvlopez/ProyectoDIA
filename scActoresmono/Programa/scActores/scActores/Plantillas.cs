@@ -159,7 +159,7 @@ namespace scActores
         }
 
 		/// <summary>
-		/// Devueleve una cadena que representa las <see cref="scActores.Plantillas"/>.
+		/// Devuelve una cadena que representa las <see cref="scActores.Plantillas"/>.
 		/// </summary>
 		/// <returns>
 		/// Una <see cref="System.String"/> que representa las <see cref="scActores.Plantillas"/>.
