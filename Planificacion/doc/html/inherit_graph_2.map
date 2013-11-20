@@ -1,0 +1,4 @@
+<map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
+<area shape="rect" id="node1" href="$interface_planificacion_1_1_i_persistence.html" title="Interface para la implementación de la Persistencia. Define dos funciones a implementar para cualquie..." alt="" coords="5,5,179,35"/>
+<area shape="rect" id="node3" href="$class_planificacion_1_1_xml_persistence.html" title="Esta clase representa una implementacion de la interfaz Planificacion.IPersistence. Con esta clase, los Event se guardarán un fichero XML. " alt="" coords="227,5,419,35"/>
+</map>

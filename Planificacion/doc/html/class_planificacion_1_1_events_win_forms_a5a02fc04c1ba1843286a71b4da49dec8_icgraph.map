@@ -1,0 +1,8 @@
+<map id="Planificacion.EventsWinForms.ListEvents" name="Planificacion.EventsWinForms.ListEvents">
+<area shape="rect" id="node3" href="$class_planificacion_1_1_events_win_forms.html#a55c5bc9a37ae1f53df26c59b0429e9b2" title="Método con el que se inicializa la Planificacion.EventsWinForms, mostrandole al usuario una lista con..." alt="" coords="259,127,464,174"/>
+<area shape="rect" id="node9" href="$class_planificacion_1_1_events_win_forms.html#ac539af16a6d50e86cd19950fd290ebc1" title="Método con el que se le muestra al usuario mediante WinForms un formulario con el que podrá modificar..." alt="" coords="789,77,995,123"/>
+<area shape="rect" id="node11" href="$class_planificacion_1_1_events_win_forms.html#ac364c123df4ffb84318fb09822d084a1" title="Método con el que se le muestra al usuario, mediante WinForms, el Planificacion.Event. " alt="" coords="1043,5,1248,51"/>
+<area shape="rect" id="node14" href="$class_planificacion_1_1_events_win_forms.html#a57a20b9e3704aa6c2e30ae2090703d42" title="Método para mostrarle un Form al usuario en el que podrá introducir los datos para crear un nuevo Pla..." alt="" coords="789,253,995,299"/>
+<area shape="rect" id="node5" href="$class_planificacion_1_1_events_win_forms.html#a2e4709f32d2f54b99e99954f437c0bef" title="Crea una nueva instancia de la clase Planificacion.EventsGUI. " alt="" coords="524,127,729,174"/>
+<area shape="rect" id="node7" href="$class_planificacion_1_1_events_win_forms.html#a00c8ad53d676f5a4d62dff7992346e3f" title="Método que se llama con el evento Click del botón del formulario de altas, para dar de alta un nuevo ..." alt="" coords="513,197,740,227"/>
+</map>

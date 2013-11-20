@@ -1,0 +1,4 @@
+<map id="Planificacion.ListEvent.RemoveEventByID" name="Planificacion.ListEvent.RemoveEventByID">
+<area shape="rect" id="node3" href="$class_planificacion_1_1_list_event.html#afdfe88b7f9ea8418510722b14d11edb9" title="Este método recibe un String con el ID del Event para obtener dicho objeto. " alt="" coords="224,5,381,51"/>
+<area shape="rect" id="node5" href="$interface_planificacion_1_1_i_persistence.html#a06c2225436d0ca9efdff0cca7cdabde6" title="Este método guarda todos los Event que se le pasen como parámetro. " alt="" coords="215,74,391,121"/>
+</map>

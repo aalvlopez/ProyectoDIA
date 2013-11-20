@@ -1,0 +1,9 @@
+<map id="Planificacion.EventsWinForms.CheckValues" name="Planificacion.EventsWinForms.CheckValues">
+<area shape="rect" id="node3" href="$class_planificacion_1_1_events_win_forms.html#ac539af16a6d50e86cd19950fd290ebc1" title="Método con el que se le muestra al usuario mediante WinForms un formulario con el que podrá modificar..." alt="" coords="259,70,464,117"/>
+<area shape="rect" id="node16" href="$class_planificacion_1_1_events_win_forms.html#a57a20b9e3704aa6c2e30ae2090703d42" title="Método para mostrarle un Form al usuario en el que podrá introducir los datos para crear un nuevo Pla..." alt="" coords="1549,107,1755,154"/>
+<area shape="rect" id="node5" href="$class_planificacion_1_1_events_win_forms.html#ac364c123df4ffb84318fb09822d084a1" title="Método con el que se le muestra al usuario, mediante WinForms, el Planificacion.Event. " alt="" coords="512,151,717,198"/>
+<area shape="rect" id="node7" href="$class_planificacion_1_1_events_win_forms.html#a5a02fc04c1ba1843286a71b4da49dec8" title="Método en el que se le muestra al usuario, mediante WinForms, una lista con los Planificacion.Event que tiene creados hasta el momento. " alt="" coords="765,151,971,198"/>
+<area shape="rect" id="node9" href="$class_planificacion_1_1_events_win_forms.html#a55c5bc9a37ae1f53df26c59b0429e9b2" title="Método con el que se inicializa la Planificacion.EventsWinForms, mostrandole al usuario una lista con..." alt="" coords="1019,102,1224,149"/>
+<area shape="rect" id="node11" href="$class_planificacion_1_1_events_win_forms.html#a2e4709f32d2f54b99e99954f437c0bef" title="Crea una nueva instancia de la clase Planificacion.EventsGUI. " alt="" coords="1284,102,1489,149"/>
+<area shape="rect" id="node13" href="$class_planificacion_1_1_events_win_forms.html#a00c8ad53d676f5a4d62dff7992346e3f" title="Método que se llama con el evento Click del botón del formulario de altas, para dar de alta un nuevo ..." alt="" coords="1273,49,1500,79"/>
+</map>

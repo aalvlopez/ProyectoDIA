@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Planificacion/App.cs">
+    <Files>
+      <File FileName="Planificacion/UI/EventsWinForms.cs" Line="779" Column="5" />
+      <File FileName="Planificacion/Core/ListEvent.cs" Line="34" Column="66" />
+      <File FileName="Planificacion/Core/Event.cs" Line="1" Column="1" />
+      <File FileName="Planificacion/Persistence/IPersistence.cs" Line="1" Column="1" />
+      <File FileName="Planificacion/Persistence/XmlPersistence.cs" Line="1" Column="1" />
+      <File FileName="Planificacion/App.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Planificacion" expanded="True">
+            <Node name="Core" expanded="True" />
+            <Node name="Persistence" expanded="True" />
+            <Node name="UI" expanded="True" />
+            <Node name="App.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

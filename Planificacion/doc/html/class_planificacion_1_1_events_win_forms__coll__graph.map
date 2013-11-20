@@ -1,0 +1,5 @@
+<map id="Planificacion.EventsWinForms" name="Planificacion.EventsWinForms">
+<area shape="rect" id="node4" href="$interface_planificacion_1_1_i_user_interface.html" title="Interface para la implementación de una GUI. Define 3 métodos que se deberán implementar para cualqui..." alt="" coords="80,101,184,131"/>
+<area shape="rect" id="node6" href="$class_planificacion_1_1_list_event.html" title="Esta clase almacena los Event que el usuario ya hubiera creado y crea en tiempo de ejecución para lue..." alt="" coords="208,101,363,131"/>
+<area shape="rect" id="node8" href="$interface_planificacion_1_1_i_persistence.html" title="Interface para la implementación de la Persistencia. Define dos funciones a implementar para cualquie..." alt="" coords="199,5,372,35"/>
+</map>
