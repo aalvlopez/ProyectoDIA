@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:libro xmlns:tns="http://www.esei.uvigo.es/libro" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.esei.uvigo.es/libro libro.xsd">
+
+	<titulo>La Comunidad del Anillo</titulo>
+	<capitulos>
+		<capitulo>
+			<titulo>Una reunión muy esperada</titulo>
+			<escenas>
+				<escena>
+					<titulo>Principal</titulo>
+					<contenido><![CDATA[
+						Han pasado sesenta años desde que Bilbo Bolsón, el héroe de El Hobbit, había vuelto de su viaje. 
+						En Hobbiton se le conoce gracias a su legendaria riqueza y al hecho de que la edad no parece afectarlo.
+					]]></contenido>
+				</escena>
+			</escenas>
+		</capitulo>
+		<capitulo>
+			<titulo>La sombra del pasado</titulo>
+			<escenas>
+				<escena>
+					<titulo>Principal</titulo>
+					<contenido><![CDATA[
+						Gandalf visita a Frodo algunas veces en los años siguientes. Frodo se acostumbra a ser el amo de Bolsón 
+						Cerrado, y se hace amigo de algunos de los hobbits mas jóvenes, como Peregrin Tuk y Merry Brandigamo. 
+						La mayoría lo consideran raro, tal y como pensaban de su tío Bilbo.
+					]]></contenido>
+				</escena>
+			</escenas>
+		</capitulo>
+	</capitulos>
+	<personajes>
+		<personaje>
+			<nombre>Frodo Bolsón</nombre>
+			<descripcion><![CDATA[
+				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
+				Edad del Sol. 
+			]]></descripcion>
+		</personaje>
+		<personaje>
+			<nombre>Gandalf</nombre>
+			<descripcion><![CDATA[
+				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
+				ayudar a sus habitantes en la lucha contra el señor oscuro Sauron.
+			]]></descripcion>
+		</personaje>
+	</personajes>
+</tns:libro>

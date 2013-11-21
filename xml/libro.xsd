@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.esei.uvigo.es/libro"
+	xmlns:tns="http://www.esei.uvigo.es/libro" 
+	elementFormDefault="unqualified">
+	
+	<element name="libro">
+		<complexType>
+			<sequence>
+				<element name="titulo"
+					type="string"
+				 />
+				 <element name="capitulos"
+				 	type="tns:capitulos"
+				 />
+				 <element name="personajes"
+				 	type="tns:personajes"
+				 />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="capitulos">
+		<sequence>
+			<element name="capitulo"
+				type="tns:capitulo"
+				minOccurs="0"
+				maxOccurs="unbounded"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="capitulo">
+		<sequence>
+			<element name="titulo"
+				type="string"
+			/>
+			<element name="escenas"
+				type="tns:escenas"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="escenas">
+		<sequence>
+			<element name="escena"
+				type="tns:escena"
+				minOccurs="0"
+				maxOccurs="unbounded"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="escena">
+		<sequence>
+			<element name="titulo"
+				type="string"
+			/>
+			<element name="contenido"
+				type="string"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="personajes">
+		<sequence>
+			<element name="personaje"
+				type="tns:personaje"
+				minOccurs="0"
+				maxOccurs="unbounded"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="personaje">
+		<sequence>
+			<element name="nombre"
+				type="string"
+			/>
+			<element name="descripcion"
+				type="string"
+			/>
+		</sequence>
+	</complexType>
+</schema>
