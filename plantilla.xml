@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<libro>
+	<titulo></titulo>
+	<capitulos>
+		<titulo></titulo>
+		<escenas>
+			<titulo></titulo>
+			<contenido></contenido>
+		</escenas>
+	</capitulos>
+	<personajes>
+		<nombre></nombre>
+		<descripcion></descripcion>
+	</personajes>
+</libro>
