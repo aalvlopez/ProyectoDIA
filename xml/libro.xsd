@@ -39,6 +39,10 @@
 				type="tns:escenas"
 			/>
 		</sequence>
+		<attribute name="id"
+			type="ID"
+			use="required"	
+		/>
 	</complexType>
 	
 	<complexType name="escenas">
@@ -81,5 +85,9 @@
 				type="string"
 			/>
 		</sequence>
+		<attribute name="idrefs"
+			type="IDREFS"
+			use="required"	
+		/>
 	</complexType>
 </schema>

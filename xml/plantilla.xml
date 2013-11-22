@@ -5,7 +5,7 @@
 
 	<titulo>La Comunidad del Anillo</titulo>
 	<capitulos>
-		<capitulo>
+		<capitulo id="cap01">
 			<titulo>Una reunión muy esperada</titulo>
 			<escenas>
 				<escena>
@@ -17,7 +17,7 @@
 				</escena>
 			</escenas>
 		</capitulo>
-		<capitulo>
+		<capitulo id="cap02">
 			<titulo>La sombra del pasado</titulo>
 			<escenas>
 				<escena>
@@ -32,14 +32,14 @@
 		</capitulo>
 	</capitulos>
 	<personajes>
-		<personaje>
+		<personaje idrefs="cap01 cap02">
 			<nombre>Frodo Bolsón</nombre>
 			<descripcion><![CDATA[
 				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
 				Edad del Sol. 
 			]]></descripcion>
 		</personaje>
-		<personaje>
+		<personaje idrefs="cap01 cap02">
 			<nombre>Gandalf</nombre>
 			<descripcion><![CDATA[
 				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
