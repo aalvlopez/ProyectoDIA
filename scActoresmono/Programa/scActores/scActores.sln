@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scActores", "scActores\scActores.csproj", "{82BD8BF1-7A97-4870-8A1D-7D0B17317D6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scActores", "scActores.csproj", "{82BD8BF1-7A97-4870-8A1D-7D0B17317D6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,6 @@ Global
 		{82BD8BF1-7A97-4870-8A1D-7D0B17317D6B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = scActores\scActores.csproj
+		StartupItem = scActores.csproj
 	EndGlobalSection
 EndGlobal
