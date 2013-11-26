@@ -16,6 +16,9 @@
 				 <element name="personajes"
 				 	type="tns:personajes"
 				 />
+				 <element name="referencias"
+				 	type="tns:referencias"
+				 />
 			</sequence>
 		</complexType>
 	</element>
@@ -86,8 +89,37 @@
 			/>
 		</sequence>
 		<attribute name="idrefs"
-			type="IDREFS"
-			use="required"	
+			type="IDREFS"	
 		/>
+	</complexType>
+	
+	<complexType name="referencias">
+		<sequence>
+			<element name="referencia"
+				type="tns:referencia"
+				minOccurs="0"
+				maxOccurs="unbounded"
+			/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="referencia">
+		<sequence>
+			<element name="autor"
+				type="string"
+			/>
+			<element name="titulo"
+				type="string"
+			/>
+			<element name="datos"
+				type="string"
+			/>
+			<element name="edicion"
+				type="string"
+			/>
+			<element name="extension"
+				type="string"
+			/>
+		</sequence>
 	</complexType>
 </schema>
