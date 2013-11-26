@@ -16,8 +16,10 @@ namespace scActores
         /// </summary>
         public MainWindow()
         {
-            this.actores = Actores.Crea();
+            
 			this.plantillas = Plantillas.Crea();
+			this.actores = Actores.Crea();
+
 			this.BuildGui();
            
            
@@ -48,7 +50,7 @@ namespace scActores
 
             this.opPlantillaNueva = new MenuItem("&Nueva Plantilla");
             this.opPlantillaNueva.Shortcut = Shortcut.CtrlP;
-            this.opPlantillaNueva.Click += (sender, e) => this.CreaPlantilla();
+           this.opPlantillaNueva.Click += (sender, e) => this.CreaPlantilla();
 
             this.mArchivo.MenuItems.Add(this.opSalir);
             this.mCrear.MenuItems.Add(this.opActor);
@@ -88,7 +90,7 @@ namespace scActores
                     
                     datos.Add(tbDatosPlantilla.Text);
                    
-                    if (this.plantillas.ContainsName(tbNombrePlantilla.Text))
+                    if (this.plantillas.GetListNombrePlantilla().Contains(tbNombrePlantilla.Text))
                     {
                         DialogResult result = MessageBox.Show(errorPlantilla, caption, buttons);
                         if (result == DialogResult.OK)
@@ -100,10 +102,11 @@ namespace scActores
                     
                 }
                 nombrePlantilla = tbNombrePlantilla.Text;
+				this.ActualizaPlantillaAddTree(nombrePlantilla);
+
             }
-            var data = Plantillas.crearDatos(datos);
+            var data = Plantilla.crearDatos(datos);
             this.plantillas.Add(Plantilla.Recupera(nombrePlantilla,data));
-            this.ActualizaPlantillaTree(nombrePlantilla);
             return;
            
         }
@@ -143,6 +146,7 @@ namespace scActores
                         this.cbActor.Items.Clear();
                         this.actores = toret;
                         this.actores.GuardaXml();
+						this.ActualizaDelActorTree(p);
                         return;
                     }
                     else
@@ -192,7 +196,7 @@ namespace scActores
                                             this.tbCapitulos.Text,
                                             this.plantillas.GetDatosPlantilla(p))
 					);
-                    this.ActualizaActorTree(this.tbNombreActor.Text);
+                    this.ActualizaActorAddTree(this.tbNombreActor.Text);
 					this.cbPlantilla.Items.Clear ();
 				} else { 
 
@@ -230,10 +234,11 @@ namespace scActores
 
             
             this.BuildMenu();
-			this.BuildTree();
+
            	this.BuildDialogCreaActor();
             this.BuildDialogBorraActor();
             this.BuildDialogCreaPlantilla();
+			this.BuildTree();
             //this.BuildDialogBorraPlantilla();
 
             this.MinimumSize = new Size(320, 200);
@@ -321,20 +326,23 @@ namespace scActores
 			this.tvActor = new TreeView ();
 			this.tvActor.BeginUpdate ();
 			this.tvActor.Nodes.Add ("Actores");
+			this.tvActor.Nodes.Add("Plantillas");
+			int pos = 0;
 
 			foreach (var r in this.actores) {
-				this.tvActor.Nodes[0].Nodes.Add(r.Nombre);
+				this.tvActor.Nodes[0].Nodes.Add (r.Nombre,r.Nombre);
 			}
 
-			this.tvActor.Nodes.Add("Plantillas");
 
-			foreach (var r in this.plantillas) {
-				this.tvActor.Nodes[1].Nodes.Add(r.NombrePlantilla);
+
+			foreach (var s in this.plantillas) {
+				this.tvActor.Nodes[1].Nodes.Add(s.NombrePlantilla,s.NombrePlantilla);
 			}
 
-			this.tvActor.EndUpdate();
+
 			this.tvActor.Dock = DockStyle.Left;
 			this.pnlPpal.Controls.Add(this.tvActor);
+			this.tvActor.EndUpdate();
 
 
 		}
@@ -345,7 +353,7 @@ namespace scActores
         /// <param name="n">
         /// Nombre del actor
         /// </param>
-        private void ActualizaActorTree(string n)
+        private void ActualizaActorAddTree(string n)
         {
             this.tvActor.Nodes[0].Nodes.Add(n);
         }
@@ -356,10 +364,15 @@ namespace scActores
         /// <param name="p">
         /// Nombre de la plantilla
         /// </param>
-        private void ActualizaPlantillaTree(string p)
+        private void ActualizaPlantillaAddTree(string p)
         {
             this.tvActor.Nodes[1].Nodes.Add(p);
         }
+
+		private void ActualizaDelActorTree (string n)
+		{
+			this.tvActor.Nodes[0].Nodes.RemoveByKey(n);
+		}
 
 
 		/// <summary>

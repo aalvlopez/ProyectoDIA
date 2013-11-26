@@ -60,6 +60,15 @@ namespace scActores
             return new Plantilla(name, datosPlantilla);
         }
 
+		public static IDictionary<string,string> crearDatos (List<string> datos)
+		{
+			var toret = new Dictionary<string,string>();
+			foreach (var r in datos) {
+				toret.Add(r,null);
+			}
+			return toret;
+		}
+
 		private Plantilla(string name, IDictionary<string, string> n)
         {
             NombrePlantilla = name;

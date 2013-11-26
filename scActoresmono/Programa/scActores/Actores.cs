@@ -235,9 +235,10 @@ namespace scActores
 
                 writer.WriteStartElement(Plantilla);//abre plantilla
 
-                writer.WriteStartAttribute(NombrePlantilla);
+                writer.WriteStartElement(NombrePlantilla);
                 writer.WriteString(r.PlantillaName);
-                writer.WriteEndAttribute();
+                writer.WriteEndElement();//cierre nombre plantilla
+
 
                 writer.WriteStartElement(DatosPlantilla);//abre datosPlantilla
 
@@ -270,48 +271,46 @@ namespace scActores
             try
             {
                 docXml.Load(ArchivoXml);
-
-                if (docXml.DocumentElement.Name == ActoresNodo)
+                if (docXml.DocumentElement.Name.Equals(ActoresNodo))
                 {
                     string nombre = "";
                     string plantilla = "";
                     string caps = "";
                     
-
                     foreach (XmlNode nodo in docXml.DocumentElement.ChildNodes)
                     {
-                        if (nodo.Name == ActorNodo)
-                        {
-                            XmlAttribute atr = nodo.Attributes[NombreActor];
-                            nombre = atr.InnerText;
 
-                            atr = nodo.Attributes[Capitulos];
-                            caps = atr.InnerText;
+                        if(nodo.Name.Equals(ActorNodo)){
+
+                            XmlAttribute atr = nodo.Attributes[NombreActor];
+                            nombre = atr.InnerText.Trim();
+
+                            XmlAttribute atr2 = nodo.Attributes[Capitulos];
+                            caps = atr2.InnerText.Trim();
                             
 
                             // Recorrer los nodos interiores: plantilla, datosPlantilla
                             foreach (XmlNode subNodo in nodo.ChildNodes)
                             {
-                                if (subNodo.Name.Equals(Plantilla))
-                                {
-                                    atr = subNodo.Attributes[NombrePlantilla];
-                                    plantilla = atr.InnerText;
-                                }
-                                else
-                                    if ((subNodo.Name.Equals(DatosPlantilla)) && subNodo.HasChildNodes)
+                                
+                                  if(subNodo.Name.Equals(Plantilla))
+									{
+										plantilla = subNodo.InnerText.Trim();
+									}
+                                
+                                    else if (subNodo.Name.Equals(DatosPlantilla) && subNodo.HasChildNodes)
                                     {
                                         foreach (XmlNode node in subNodo.ChildNodes)
                                         {
                                             //elem representa una caracteristica de la plantilla
                                             //node.InnerText aqui es lo guardado para esa caracteristica
+											
                                             string elem = node.Name;
-                                            datos.Add(elem,node.InnerText);
+                                            datos.Add(elem,node.InnerText.Trim());
                                         }
                                     }
                             }
 
-                            plantilla = plantilla.Trim();
-                            caps = caps.Trim();
                             if (nombre.Length > 0
                               && plantilla.Length > 0
                               && caps.Length > 0)
@@ -320,8 +319,8 @@ namespace scActores
                             }
                         }
                     }
-                }
-            }
+				}
+			}
             catch (XmlException)
             {
                 toret.Clear();

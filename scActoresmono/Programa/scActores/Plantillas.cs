@@ -191,7 +191,6 @@ namespace scActores
             var toret = new List<Plantilla>();
             var datos = new Dictionary<string, string>();
             var docXml = new XmlDocument();
-            var atra = "";
            
 
             try
@@ -202,7 +201,7 @@ namespace scActores
 
 
 
-                if (docXml.DocumentElement.Name == PlantillasActores)
+                if (docXml.DocumentElement.Name.Equals(PlantillasActores))
                 {
                     string nombrePlantilla = "";
                     string nombreNodo = "";
@@ -212,7 +211,7 @@ namespace scActores
 
                     foreach (XmlNode nodo in docXml.DocumentElement.ChildNodes)
                     {
-                        if (nodo.Name == PlantillaActor)
+                        if (nodo.Name.Equals(PlantillaActor))
                         {
                             XmlAttribute atr = nodo.Attributes[NombrePlantilla];
 
@@ -277,9 +276,9 @@ namespace scActores
       	/// Devuelve los nombres de las plantillas
       	/// </summary>
       	/// <returns>
-      	/// Un array con los nombres de las <see cref="scActores.Plantillas"/>
+      	/// Una lista con los nombres de las <see cref="scActores.Plantillas"/>
       	/// </returns>
-        public string[] GetNombrePlantilla()
+        public List<string> GetListNombrePlantilla()
         {
             var toret = new List<string>();
 
@@ -288,10 +287,21 @@ namespace scActores
                 toret.Add(r.NombrePlantilla);
             }
 
-            return toret.ToArray();
+            return toret;
 
             
         }
+
+		/// <summary>
+      	/// Devuelve los nombres de las plantillas
+      	/// </summary>
+      	/// <returns>
+      	/// Un array con los nombres de las <see cref="scActores.Plantillas"/>
+      	/// </returns>
+		public string[] GetNombrePlantilla ()
+		{
+			return GetListNombrePlantilla().ToArray();
+		}
 
 		/// <summary>
 		/// Devuelve los datos de la plantilla
@@ -346,6 +356,12 @@ namespace scActores
                	writer.WriteStartAttribute(NombrePlantilla);
                 writer.WriteString(r.NombrePlantilla);
                 writer.WriteEndAttribute();
+				foreach( var plantilla in r.DatosPlantilla)
+				{
+					writer.WriteStartElement(plantilla.Key);
+					writer.WriteString(plantilla.Value);
+					writer.WriteEndElement();
+				}
 
                 writer.WriteEndElement();//cierra datosPlantilla
                 writer.WriteEndElement();//cierra plantilla
