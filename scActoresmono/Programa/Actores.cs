@@ -315,7 +315,7 @@ namespace scActores
                               && plantilla.Length > 0
                               && caps.Length > 0)
                             {
-                                toret.Add(Actor.Crea(nombre, plantilla, caps,datos));
+								toret.Add(Actor.Crea(plantilla, nombre, caps,datos));
                             }
                         }
                     }

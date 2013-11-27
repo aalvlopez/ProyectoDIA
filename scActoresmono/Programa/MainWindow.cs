@@ -327,7 +327,6 @@ namespace scActores
 			this.tvActor.BeginUpdate ();
 			this.tvActor.Nodes.Add ("Actores");
 			this.tvActor.Nodes.Add("Plantillas");
-			int pos = 0;
 
 			foreach (var r in this.actores) {
 				this.tvActor.Nodes[0].Nodes.Add (r.Nombre,r.Nombre);
