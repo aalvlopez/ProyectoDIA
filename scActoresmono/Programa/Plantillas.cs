@@ -278,7 +278,7 @@ namespace scActores
       	/// <returns>
       	/// Una lista con los nombres de las <see cref="scActores.Plantillas"/>
       	/// </returns>
-        public List<string> GetListNombrePlantilla()
+        public List<string> GetNombrePlantilla()
         {
             var toret = new List<string>();
 
@@ -292,16 +292,6 @@ namespace scActores
             
         }
 
-		/// <summary>
-      	/// Devuelve los nombres de las plantillas
-      	/// </summary>
-      	/// <returns>
-      	/// Un array con los nombres de las <see cref="scActores.Plantillas"/>
-      	/// </returns>
-		public string[] GetNombrePlantilla ()
-		{
-			return GetListNombrePlantilla().ToArray();
-		}
 
 		/// <summary>
 		/// Devuelve los datos de la plantilla

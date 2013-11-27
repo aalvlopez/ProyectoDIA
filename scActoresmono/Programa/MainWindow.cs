@@ -90,7 +90,7 @@ namespace scActores
                     
                     datos.Add(tbDatosPlantilla.Text);
                    
-                    if (this.plantillas.GetListNombrePlantilla().Contains(tbNombrePlantilla.Text))
+                    if (this.plantillas.GetNombrePlantilla().Contains(tbNombrePlantilla.Text))
                     {
                         DialogResult result = MessageBox.Show(errorPlantilla, caption, buttons);
                         if (result == DialogResult.OK)
@@ -179,7 +179,7 @@ namespace scActores
            
             
 		
-			this.cbPlantilla.Items.AddRange (this.plantillas.GetNombrePlantilla ());
+			this.cbPlantilla.Items.AddRange (this.plantillas.GetNombrePlantilla ().ToArray());
                 
             
 
