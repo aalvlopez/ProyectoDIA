@@ -18,6 +18,9 @@ namespace Scrivener
 		/// </summary>
 		public Capitulo ()
 		{
+			this.Escenas=new LinkedList<Escena>();
+			this.Titulo="";
+			this.Anotacion="";
 		}
 
 		public Capitulo (String titulo, String anotacion, LinkedList<Escena> escenas)

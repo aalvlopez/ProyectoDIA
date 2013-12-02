@@ -10,32 +10,23 @@ namespace Scrivener
 	class MainClass
 	{
 		public static void Main (string[] args)
-		{
-			//LoadXML load = new LoadXML();
+		{		
+			LoadXML load = new LoadXML("plantilla.xml");
+			
+			Libro leido = load.Leer();
+			Console.WriteLine(leido.Capitulos.Count);
+			foreach(var i in leido.Capitulos){
+				Console.WriteLine(i.Titulo);
+				Console.WriteLine("---Escenas---");
+				foreach(var j in i.Escenas){
+					Console.WriteLine(j.Titulo);
+				}
+			}
 			
 			//var w = new UserInterface();
 			
 			//UserInterface.Run( w );
-			
-			var btGuardar = new Button ();
-			btGuardar.Text = "&Guardar"; 
-			btGuardar.Dock = DockStyle.Top;
-			btGuardar.Size= new Size(400 , 20);
-			var btDescartar = new Button ();
-			btDescartar.Text = "&Descartar";
-			btDescartar.Dock = DockStyle.Top;
-			btDescartar.Size= new Size(400 , 20);
-			var pnlBotones = new Panel ();
-			pnlBotones.SuspendLayout (); 
-			pnlBotones.Dock = DockStyle.Right;
 
-			pnlBotones.Controls.Add (btGuardar);
-			pnlBotones.Controls.Add (btDescartar);
-			pnlBotones.Size = new Size(btDescartar.Size.Width,350);
-			pnlBotones.ResumeLayout (true);
-			pnlBotones.ResumeLayout (false);
-			IPersistencia objetoPersistencia = new LoadXML("capitulos.xml");
-			Application.Run(new UserInterface(objetoPersistencia,pnlBotones));
 		}
 	}
 }

@@ -44,8 +44,7 @@
     <Compile Include="Datos\Escena.cs" />
     <Compile Include="Datos\Capitulo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="UserInterface.cs" />
-    <Compile Include="IPersistencia.cs" />
+    <Compile Include="saveXML.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

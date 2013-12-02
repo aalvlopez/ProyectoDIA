@@ -7,7 +7,7 @@ namespace Scrivener
 	/// <summary>
 	/// Cargar archivo XML
 	/// </summary>
-	public class LoadXML:IPersistencia
+	public class LoadXML
 	{
 		public LoadXML (string documento)
 		{
@@ -29,54 +29,67 @@ namespace Scrivener
 			foreach(XmlNode nodo1 in docXml.DocumentElement.ChildNodes) {
 				switch (nodo1.Name)
 				{
-				case "Titulo": 
+				case "titulo": 
 					libro.Titulo = nodo1.InnerText;
 					break;
-				case "Anotacion": 
+				case "anotacion": 
 					libro.Anotacion = nodo1.InnerText;
 					break;
-				case "Capitulos": 
-					Capitulo capitulo = new Capitulo();	
-					foreach(XmlNode nodo2 in nodo1.ChildNodes) 
-					{				
-						switch (nodo2.Name)
+				case "capitulos": 
+					
+					foreach(XmlNode nodo4 in nodo1.ChildNodes) 
+					{	
+						Capitulo capitulo = new Capitulo();
+						foreach(XmlNode nodo2 in nodo4.ChildNodes) 
 						{
-						case "Titulo":
-							capitulo.Titulo = nodo2.InnerText;
-							break;
-						case "Anotacion": 
-							capitulo.Anotacion = nodo1.InnerText;
-							break;
-						case "Escenas":
-							Escena escena = new Escena();							
-							foreach(XmlNode nodo3 in nodo2.ChildNodes)
+								
+							switch (nodo2.Name)
 							{
-								switch (nodo3.Name)
+							case "titulo":
+								capitulo.Titulo = nodo2.InnerText;
+								break;
+							case "anotacion": 
+								capitulo.Anotacion = nodo2.InnerText;
+								break;
+							case "escenas":
+															
+								foreach(XmlNode nodo5 in nodo2.ChildNodes)
 								{
-								case "Titulo":
-									escena.Titulo = nodo3.InnerText;
-									break;
-								case "Anotacion": 
-									escena.Anotacion = nodo3.InnerText;
-									break;
-								case "Escenas":
-									escena.Contenido = nodo3.InnerText;
-									break;
+									Escena escena = new Escena();
+									foreach(XmlNode nodo3 in nodo5.ChildNodes)
+									{
+										switch (nodo3.Name)
+										{
+										case "titulo":
+											escena.Titulo = nodo3.InnerText;
+											break;
+										case "anotacion": 
+											escena.Anotacion = nodo3.InnerText;
+											break;
+										case "contenido":
+											escena.Contenido = nodo3.InnerText;
+											break;
+										}
+									}	
+									capitulo.Escenas.AddLast(escena);
+									
 								}
-							}						
-							capitulo.escenas.AddLast(escena);	
-							break;
+								break;
+							}
+							
 						}
+						libro.Capitulos.AddLast(capitulo);
+						
 						
 					}
-					libro.capitulos.AddLast(capitulo);
 					break;
 				}
 			}
 			return libro;
 		}
 		
-		private string Documento {
+		private string Documento 
+		{
 			get;
 			set;
 		}
