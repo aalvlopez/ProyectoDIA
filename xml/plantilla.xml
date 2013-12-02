@@ -4,12 +4,15 @@
 	xsi:schemaLocation="http://www.esei.uvigo.es/libro libro.xsd">
 
 	<titulo>La Comunidad del Anillo</titulo>
+	<anotacion>Lorem Ipsum</anotacion>
 	<capitulos>
 		<capitulo id="cap01">
 			<titulo>Una reunión muy esperada</titulo>
+			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
 				<escena>
 					<titulo>Principal</titulo>
+					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
 						Han pasado sesenta años desde que Bilbo Bolsón, el héroe de El Hobbit, había vuelto de su viaje. 
 						En Hobbiton se le conoce gracias a su legendaria riqueza y al hecho de que la edad no parece afectarlo.
@@ -19,9 +22,11 @@
 		</capitulo>
 		<capitulo id="cap02">
 			<titulo>La sombra del pasado</titulo>
+			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
 				<escena>
 					<titulo>Principal</titulo>
+					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
 						Gandalf visita a Frodo algunas veces en los años siguientes. Frodo se acostumbra a ser el amo de Bolsón 
 						Cerrado, y se hace amigo de algunos de los hobbits mas jóvenes, como Peregrin Tuk y Merry Brandigamo. 
