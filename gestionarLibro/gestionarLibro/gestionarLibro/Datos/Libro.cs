@@ -6,7 +6,7 @@ namespace Scrivener
 	/// <summary>
 	/// Un libro.
 	/// </summary>
-	public class Libro
+	public class Libro: 
 	{
 		/// <summary>
 		/// Lista de capitulos de los que se compone.
@@ -28,6 +28,13 @@ namespace Scrivener
 			Titulo = titulo;
 			Anotacion = anotacion;
 			this.Capitulos = capitulos;
+		}
+		
+		public Capitulo CrearCapitulo(String titulo, String anotacion)
+		{
+			Capitulo capitulo = new Capitulo();
+			//capitulo.setTitulo( titulo );
+			///capitulo.setAnotacion ( anotacion );
 		}
 		
 		/// <summary>

@@ -45,6 +45,8 @@
     <Compile Include="Datos\Capitulo.cs" />
     <Compile Include="App.cs" />
     <Compile Include="saveXML.cs" />
+    <Compile Include="GestionarLibro_1.cs" />
+    <Compile Include="IGestionarLibro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
