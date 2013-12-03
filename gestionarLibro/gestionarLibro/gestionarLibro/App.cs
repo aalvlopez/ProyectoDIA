@@ -11,21 +11,20 @@ namespace Scrivener
 	{
 		public static void Main (string[] args)
 		{		
-			LoadXML load = new LoadXML("plantilla.xml");
+			XMLPersistencia persistencia = new XMLPersistencia("plantilla.xml");
 			
-			Libro leido = load.Leer();
+			Libro leido = persistencia.Leer();
 			Console.WriteLine(leido.Capitulos.Count);
 			foreach(var i in leido.Capitulos){
 				Console.WriteLine(i.Titulo);
 				Console.WriteLine("---Escenas---");
 				foreach(var j in i.Escenas){
-					Console.WriteLine(j.Titulo);
+					Console.WriteLine(j.Contenido);
 				}
 			}
 			
 			Console.WriteLine("Guardando de nuevo el libro");
-			SaveXML save = new SaveXML("plantilla_nueva.xml");
-			save.Guardar(leido);	
+			persistencia.Guardar(leido);	
 
 		}
 	}
