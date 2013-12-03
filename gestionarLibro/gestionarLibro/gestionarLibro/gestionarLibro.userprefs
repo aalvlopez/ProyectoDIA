@@ -6,12 +6,12 @@
       <File FileName="..\..\..\treeviewCapitulosPersonajes\Programa\treeviewCapitulosPersonajes\LeerInformacion.cs" Line="1" Column="1" />
       <File FileName="Datos\Libro.cs" Line="10" Column="2" />
       <File FileName="App.cs" Line="1" Column="1" />
-      <File FileName="LoadXML.cs" Line="41" Column="7" />
-      <File FileName="saveXML.cs" Line="22" Column="34" />
-      <File FileName="Datos\Capitulo.cs" Line="29" Column="26" />
+      <File FileName="LoadXML.cs" Line="1" Column="1" />
+      <File FileName="saveXML.cs" Line="1" Column="1" />
+      <File FileName="Datos\Capitulo.cs" Line="1" Column="1" />
       <File FileName="Datos\Escena.cs" Line="1" Column="1" />
-      <File FileName="IGestionarLibro.cs" Line="8" Column="35" />
-      <File FileName="GestionarLibro_1.cs" Line="12" Column="4" />
+      <File FileName="IGestionarLibro.cs" Line="1" Column="1" />
+      <File FileName="GestionarLibro_1.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

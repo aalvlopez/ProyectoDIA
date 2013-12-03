@@ -9,16 +9,19 @@
 			<sequence>
 				<element name="titulo"
 					type="string"
-				 />
-				 <element name="capitulos"
-				 	type="tns:capitulos"
-				 />
-				 <element name="personajes"
+				/>
+				<element name="anotacion"
+					type="string"
+				/>
+				<element name="capitulos"
+					type="tns:capitulos"
+				/>
+				<element name="personajes"
 				 	type="tns:personajes"
-				 />
-				 <element name="referencias"
+				/>
+				<element name="referencias"
 				 	type="tns:referencias"
-				 />
+				/>
 			</sequence>
 		</complexType>
 	</element>
@@ -36,6 +39,9 @@
 	<complexType name="capitulo">
 		<sequence>
 			<element name="titulo"
+				type="string"
+			/>
+			<element name="anotacion"
 				type="string"
 			/>
 			<element name="escenas"
@@ -63,10 +69,17 @@
 			<element name="titulo"
 				type="string"
 			/>
+			<element name="anotacion"
+				type="string"
+			/>
 			<element name="contenido"
 				type="string"
 			/>
 		</sequence>
+		<attribute name="id"
+			type="ID"
+			use="required"	
+		/>
 	</complexType>
 	
 	<complexType name="personajes">

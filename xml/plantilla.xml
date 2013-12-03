@@ -10,7 +10,7 @@
 			<titulo>Una reunión muy esperada</titulo>
 			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
-				<escena>
+				<escena id="esc01">
 					<titulo>Principal</titulo>
 					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
@@ -24,7 +24,7 @@
 			<titulo>La sombra del pasado</titulo>
 			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
-				<escena>
+				<escena id="esc02">
 					<titulo>Principal</titulo>
 					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
