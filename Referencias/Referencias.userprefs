@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Referencias/MainPanel.cs">
+    <Files>
+      <File FileName="Referencias/Main.cs" Line="1" Column="1" />
+      <File FileName="Referencias/Referencia.cs" Line="1" Column="14" />
+      <File FileName="Referencias/MainPanel.cs" Line="4" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

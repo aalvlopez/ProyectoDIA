@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referencias", "Referencias.csproj", "{5E3252CA-7DCD-4C2F-88DD-AC8B260187BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E3252CA-7DCD-4C2F-88DD-AC8B260187BB}.Debug|x86.ActiveCfg = Debug|x86
+		{5E3252CA-7DCD-4C2F-88DD-AC8B260187BB}.Debug|x86.Build.0 = Debug|x86
+		{5E3252CA-7DCD-4C2F-88DD-AC8B260187BB}.Release|x86.ActiveCfg = Release|x86
+		{5E3252CA-7DCD-4C2F-88DD-AC8B260187BB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Referencias.csproj
+	EndGlobalSection
+EndGlobal
