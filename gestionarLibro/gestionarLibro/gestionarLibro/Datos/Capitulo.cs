@@ -21,13 +21,21 @@ namespace Scrivener
 			this.Escenas=new LinkedList<Escena>();
 			this.Titulo="";
 			this.Anotacion="";
+			this.Id="";
 		}
 
-		public Capitulo (String titulo, String anotacion, LinkedList<Escena> escenas)
+		public Capitulo (String id, String titulo, String anotacion, LinkedList<Escena> escenas)
 		{
+			this.Id = Id;
 			Titulo = titulo;
 			Anotacion = anotacion;
 			this.Escenas = escenas;
+		}
+		
+		public String Id
+		{
+			get;
+			set;
 		}
 		
 		/// <summary>

@@ -40,11 +40,14 @@ namespace Scrivener
 					foreach(XmlNode nodo4 in nodo1.ChildNodes) 
 					{	
 						Capitulo capitulo = new Capitulo();
+						XmlAttributeCollection id = nodo4.Attributes;
+						capitulo.Id = id.GetNamedItem("id").Value;
+						
 						foreach(XmlNode nodo2 in nodo4.ChildNodes) 
 						{
 								
 							switch (nodo2.Name)
-							{
+							{								
 							case "titulo":
 								capitulo.Titulo = nodo2.InnerText;
 								break;

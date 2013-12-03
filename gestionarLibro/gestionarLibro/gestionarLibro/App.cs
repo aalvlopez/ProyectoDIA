@@ -23,9 +23,9 @@ namespace Scrivener
 				}
 			}
 			
-			//var w = new UserInterface();
-			
-			//UserInterface.Run( w );
+			Console.WriteLine("Guardando de nuevo el libro");
+			SaveXML save = new SaveXML("plantilla_nueva.xml");
+			save.Guardar(leido);	
 
 		}
 	}
