@@ -5,19 +5,37 @@ using System.Text;
 namespace Scrivener
 {
 	/// <summary>
-	/// Cargar archivo XML
+	/// Carga y guarda los archivos XML
 	/// </summary>
 	public class XMLPersistencia
 	{
+		/// <summary>
+		/// Crea una nueva instancia de la clase <see cref="Scrivener.XMLPersistencia"/>.
+		/// </summary>
+		/// <param name='documento'>
+		/// Nombre del documento por defecto que se va a cargar/guardar.
+		/// </param>
 		public XMLPersistencia (string documento)
 		{
 			this.Documento = documento;
 		}
 		
 		/// <summary>
-		/// Implementa el metodo principal de <see cref="Scrivener.XMLPersistencia"/>
-		/// con el que se carga en memoria un fichero "datos_scrivener.xml"
-		/// que contiene los datos sobre los capitulos del libro.
+		/// Modifica el nombre del documento
+		/// </summary>
+		/// <param name='documento'>
+		/// Nombre del documento por defecto que se va a cargar/guardar.
+		/// </param>
+		public void documento (string documento)
+		{
+			this.Documento = documento;
+		}
+		
+		/// <summary>
+		/// Implementa el metodo cargar de <see cref="Scrivener.XMLPersistencia"/>
+		/// con el que se carga en memoria un fichero .xml que coincida con
+		/// el nombre del atributo documento. Este libro contiene todos
+		/// los datos de <see cref="Scrivener.Libro"/>
 		/// </summary>
 		public Libro Leer ()
 		{
@@ -91,6 +109,12 @@ namespace Scrivener
 			return libro;
 		}
 		
+		/// <summary>
+		/// Guarda el libro pasado por parametro.
+		/// </summary>
+		/// <param name='libro'>
+		/// Un <see cref="Scrivener.Libro"/>
+		/// </param>
 		public void Guardar (Libro libro)
 		{
 			XmlDocument docXml = new XmlDocument();
@@ -125,7 +149,6 @@ namespace Scrivener
 			
 			XmlNode nodocs = docXml.CreateNode( XmlNodeType.Element, "capitulos", "");
 			
-			Console.WriteLine("epilepsia");
 			foreach(var i in libro.Capitulos)
 			{
 				XmlNode nodoc = docXml.CreateNode( XmlNodeType.Element, "capitulo", "");
@@ -163,7 +186,6 @@ namespace Scrivener
 					XmlCDataSection CData;
    					CData = docXml.CreateCDataSection(j.Contenido);
 					
-//					econt.InnerText = "<![CDATA[" + j.Contenido + "]]>";
 					econt.AppendChild( CData );			
 					nodoe.AppendChild( econt );
 					
@@ -180,6 +202,12 @@ namespace Scrivener
 			
 		}
 		
+		/// <summary>
+		/// Gets y sets del atributo documento.
+		/// </summary>
+		/// <value>
+		/// El documento (nombre del .xml donde se guarda/crea).
+		/// </value>
 		private string Documento 
 		{
 			get;

@@ -43,9 +43,9 @@
     <Compile Include="Datos\Escena.cs" />
     <Compile Include="Datos\Capitulo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="GestionarLibro_1.cs" />
     <Compile Include="IGestionarLibro.cs" />
     <Compile Include="XMLPersistencia.cs" />
+    <Compile Include="GestionarLibro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
