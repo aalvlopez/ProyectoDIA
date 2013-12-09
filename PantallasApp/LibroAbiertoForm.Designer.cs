@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Drawing;
@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class LibroAbiertoForm
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -27,6 +27,7 @@ namespace WindowsFormsApplication1
             }
             base.Dispose(disposing);
         }
+
 
         #region Código generado por el Diseñador de Windows Forms
 
@@ -93,7 +94,6 @@ namespace WindowsFormsApplication1
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // panel1
             // 
@@ -104,7 +104,6 @@ namespace WindowsFormsApplication1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(529, 432);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // menuStrip1
             // 
@@ -134,7 +133,9 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.crearToolStripMenuItem.Text = "Nuevo";
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new Form3());
+				this.Hide();
+				Program.nuevoLib.PantallaAnt=this;
+				Program.nuevoLib.Show ();
 			};
             // 
             // abrirToolStripMenuItem1
@@ -153,8 +154,11 @@ namespace WindowsFormsApplication1
             this.editarToolStripMenuItem1.Text = "Editar";
 			this.editarToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
 				MessageBox.Show("Editar libro...");
+				this.Hide();
+				Program.nuevoLib.Refresh();
+				Program.nuevoLib.PantallaAnt=this;
+				Program.nuevoLib.Show();
 			};
-
             // 
             // referenciasToolStripMenuItem
             // 
@@ -234,7 +238,7 @@ namespace WindowsFormsApplication1
             this.button3.Text = "Nuevo Personaje";
             this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new Form7());
+				Application.Run(new AnadirModificarPersonajesForm());
 			};
             // 
             // button2
@@ -246,7 +250,7 @@ namespace WindowsFormsApplication1
             this.button2.Text = "Nueva Escena";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new Form5());
+				Application.Run(new EscenasForm());
 			};
             // 
             // button1
@@ -257,9 +261,8 @@ namespace WindowsFormsApplication1
             this.button1.TabIndex = 0;
             this.button1.Text = "Nuevo Capítulo";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
 			this.button1.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new Form4());
+				Application.Run(new NuevoCapituloForm());
 			};
             // 
             // Form1

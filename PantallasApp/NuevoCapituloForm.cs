@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form5 : Form
+    public partial class NuevoCapituloForm : Form
     {
-        public Form5()
+		Form PantallaAnt {
+			get;
+			set;
+		}
+        public NuevoCapituloForm()
         {
+			this.PantallaAnt = null;
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+			this.Hide();
         }
     }
 }

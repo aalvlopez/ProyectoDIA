@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace WindowsFormsApplication1
 {
-    partial class Form3
+    partial class NuevoLibroForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@ namespace WindowsFormsApplication1
         }
 
         #region Windows Form Designer generated code
+
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -60,7 +62,7 @@ namespace WindowsFormsApplication1
             this.textBox1.Size = new System.Drawing.Size(207, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Título";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -73,7 +75,9 @@ namespace WindowsFormsApplication1
             this.button1.Click += delegate(object sender, System.EventArgs e) {
 				MessageBox.Show("Libro Guardado... ");
 				this.textBox1.Dispose ();
-				Application.Run(new Form1());
+				this.Hide();
+				Program.libA.Show();
+
 			};
             // 
             // button2
@@ -86,7 +90,8 @@ namespace WindowsFormsApplication1
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
 				MessageBox.Show("Cancelado... ");
-				Application.Run(new Form1());
+				this.Hide();
+				this.PantallaAnt.Show();
 			};
             // 
             // Form3

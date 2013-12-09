@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form6 : Form
+
+    public partial class NuevoLibroForm : Form
     {
-        public Form6()
+		public Form PantallaAnt {
+			get;
+			set;
+		}
+        public NuevoLibroForm()
         {
+			this.PantallaAnt = null;
             InitializeComponent();
-        }
+			this.Hide();
+		}
+
+		void textBox1_TextChanged (object sender, EventArgs e)
+		{
+			throw new NotImplementedException ();
+		}
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form4 : Form
+    public partial class AnadirModificarPersonajesForm : Form
     {
-        public Form4()
+		Form PantallaAnt {
+			get;
+			set;
+		}
+        public AnadirModificarPersonajesForm()
         {
+			this.PantallaAnt = null;
             InitializeComponent();
+			this.Hide();
         }
     }
 }

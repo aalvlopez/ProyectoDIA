@@ -11,19 +11,37 @@ namespace WindowsFormsApplication1
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        
-        static void Main()
+		/// 
+		public static AnadirModificarPersonajesForm anPers;
+		public static EscenasForm esc;
+		public static LibroAbiertoForm libA;
+		public static LibroSinAbrirForm libS;
+		public static ModificarCapituloForm modCap;
+		public static NuevoCapituloForm nuevoCap;
+		public static NuevoLibroForm nuevoLib;
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           
-//            Application.Run(new Form1()); // Libro Abierto
-//            Application.Run(new Form2()); // Libro sin Abrir
-            Application.Run(new Form3()); // Nuevo Libro
-//            Application.Run(new Form4()); // Nuevo Capitulo
-//            Application.Run(new Form5()); // Escenas
-//            Application.Run(new Form6()); // Modificar Capitulo
-//            Application.Run(new Form7()); // Añadir/Modificar Personajes
+
+			Program.anPers = new AnadirModificarPersonajesForm();
+			Program.esc = new EscenasForm();
+			Program.libA = new LibroAbiertoForm();
+			Program.libS = new LibroSinAbrirForm();
+			Program.modCap = new ModificarCapituloForm();
+			Program.nuevoCap = new NuevoCapituloForm();
+			Program.nuevoLib = new NuevoLibroForm();
+
+//            Application.Run(Program.libA); // Libro Abierto
+//            Application.Run(Program.nuevoLib); // Nuevo Libro
+//            Application.Run(Program.nuevoCap); // Nuevo Capitulo
+//            Application.Run(Program.esc); // Escenas
+//            Application.Run(Program.modCap); // Modificar Capitulo
+//            Application.Run(Program.anPers); // Añadir/Modificar Personajes
+//
+//
+			Application.Run(Program.libS); // Libro sin Abrir
+            
         }
     }
 }

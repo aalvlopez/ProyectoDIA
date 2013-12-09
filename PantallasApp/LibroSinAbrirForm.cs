@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form2 : Form
+    public partial class LibroSinAbrirForm : Form
     {
-        public Form2()
-        {
+		Form PantallaAnt {
+			get;
+			set;
+		}
+        public LibroSinAbrirForm()
+		{
+			this.PantallaAnt = null;
             InitializeComponent();
-        }
-
-        private void referenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+			this.Hide();
+		}
     }
 }

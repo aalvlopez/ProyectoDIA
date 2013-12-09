@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApplication1
+namespace WindowsFormsApplication1
 {
-    partial class Form7
+    partial class AnadirModificarPersonajesForm
     {
         /// <summary>
         /// Required designer variable.

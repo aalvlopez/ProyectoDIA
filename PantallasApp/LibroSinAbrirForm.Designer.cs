@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Drawing;
@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace WindowsFormsApplication1
 {
-    partial class Form2
+    partial class LibroSinAbrirForm
     {
         /// <summary>
         /// Required designer variable.
@@ -123,7 +123,9 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.crearToolStripMenuItem.Text = "Nuevo";
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Application.Run (new Form3());
+				this.Hide();
+				Program.nuevoLib.PantallaAnt=this;
+				Program.nuevoLib.Show();
 			};
             // 
             // abrirToolStripMenuItem1
@@ -138,6 +140,7 @@ namespace WindowsFormsApplication1
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
             this.editarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
+
             // 
             // referenciasToolStripMenuItem
             // 

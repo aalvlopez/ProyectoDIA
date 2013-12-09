@@ -1,9 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Form3.Designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibroSinAbrirForm.Designer.cs">
     <Files>
-      <File FileName="Program.cs" Line="20" Column="50" />
-      <File FileName="Form3.Designer.cs" Line="76" Column="27" />
+      <File FileName="Program.cs" Line="19" Column="13" />
+      <File FileName="LibroSinAbrirForm.Designer.cs" Line="127" Column="45" />
+      <File FileName="LibroSinAbrirForm.cs" Line="16" Column="10" />
+      <File FileName="NuevoLibroForm.cs" Line="20" Column="48" />
+      <File FileName="NuevoLibroForm.Designer.cs" Line="77" Column="18" />
+      <File FileName="LibroAbiertoForm.Designer.cs" Line="142" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
