@@ -15,7 +15,6 @@ namespace WindowsFormsApplication1
 		public static AnadirModificarPersonajesForm anPers;
 		public static EscenasForm esc;
 		public static LibroAbiertoForm libA;
-		public static LibroSinAbrirForm libS;
 		public static ModificarCapituloForm modCap;
 		public static NuevoCapituloForm nuevoCap;
 		public static NuevoLibroForm nuevoLib;
@@ -27,7 +26,6 @@ namespace WindowsFormsApplication1
 			Program.anPers = new AnadirModificarPersonajesForm();
 			Program.esc = new EscenasForm();
 			Program.libA = new LibroAbiertoForm();
-			Program.libS = new LibroSinAbrirForm();
 			Program.modCap = new ModificarCapituloForm();
 			Program.nuevoCap = new NuevoCapituloForm();
 			Program.nuevoLib = new NuevoLibroForm();
@@ -39,8 +37,12 @@ namespace WindowsFormsApplication1
 //            Application.Run(Program.modCap); // Modificar Capitulo
 //            Application.Run(Program.anPers); // Añadir/Modificar Personajes
 //
-//
-			Application.Run(Program.libS); // Libro sin Abrir
+
+			Program.libA.editarToolStripMenuItem2.Enabled=false;
+			Program.libA.button1.Enabled=false;
+			Program.libA.button2.Enabled=false;
+			Program.libA.button3.Enabled=false;
+			Application.Run(Program.libA); // Libro sin Abrir
             
         }
     }
