@@ -19,18 +19,13 @@ namespace WindowsFormsApplication1
 		public static NuevoCapituloForm nuevoCap;
 		public static NuevoLibroForm nuevoLib;
 		public static Libro Book;
-
-		public static String ArchivoXML = "plantilla.xml";
-
-
-
 		public static void Main()
         {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-			XMLPersistencia persistencia = new XMLPersistencia(ArchivoXML);
+			XMLPersistencia persistencia = new XMLPersistencia("plantilla.xml");
 			Program.Book = persistencia.Leer();
 
 			Program.anPers = new AnadirModificarPersonajesForm();
