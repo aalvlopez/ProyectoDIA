@@ -16,9 +16,13 @@ namespace WindowsFormsApplication1
 			get;
 			set;
 		}
+
+		public string id;
+
         public NuevoCapituloForm()
         {
 			this.PantallaAnt = null;
+			this.id="";
             InitializeComponent();
 			this.Hide();
         }

@@ -73,6 +73,9 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += delegate(object sender, System.EventArgs e) {
+				var x = new GestionarLibro();
+				Libro nuevoLibro = x.CrearLibro(textBox1.Text);
+				Program.persistencia.documento(textBox1.Text + ".xml");
 				MessageBox.Show("Libro Guardado... ");
 				this.textBox1.Dispose ();
 				this.Hide();

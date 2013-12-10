@@ -76,6 +76,15 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click+=delegate(object sender, EventArgs e) {
+				if (this.id == "")
+				{
+					Program.Book.CrearCapitulo(textBox1.Text,textBox2.Text);
+				}
+				else
+				{
+					Capitulo cap = Program.Book.BuscarCapituloId(this.id);
+					cap.ModificarCapitulo(textBox1.Text,textBox2.Text);
+				}
 				this.Hide();
 				this.PantallaAnt.Show();
 			};
