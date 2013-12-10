@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class EscenasForm : Form
     {
-		Form PantallaAnt {
+		public Form PantallaAnt {
 			get;
 			set;
 		}
@@ -23,14 +23,5 @@ namespace WindowsFormsApplication1
 			this.Hide();
         }
     
-		void textBox2_TextChanged (object sender, System.EventArgs e)
-		{
-			throw new System.NotImplementedException ();
-		}
-
-		void button1_Click (object sender, System.EventArgs e)
-		{
-			throw new System.NotImplementedException ();
-		}
 	}
 }

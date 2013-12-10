@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class NuevoCapituloForm : Form
     {
-		Form PantallaAnt {
+		public Form PantallaAnt {
 			get;
 			set;
 		}

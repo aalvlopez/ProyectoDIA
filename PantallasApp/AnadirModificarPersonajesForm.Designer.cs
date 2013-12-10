@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Windows;
+using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
     partial class AnadirModificarPersonajesForm
@@ -54,6 +61,19 @@ namespace WindowsFormsApplication1
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(164, 284);
             this.treeView1.TabIndex = 0;
+			
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(192, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(389, 266);
+            this.panel2.TabIndex = 7;
             // 
             // textBox1
             // 
@@ -62,6 +82,7 @@ namespace WindowsFormsApplication1
             this.textBox1.Size = new System.Drawing.Size(151, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Nombre";
+
             // 
             // comboBox1
             // 
@@ -89,6 +110,10 @@ namespace WindowsFormsApplication1
             this.button1.TabIndex = 5;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += delegate (object sender , EventArgs e){
+				this.Hide();
+				this.PantallaAnt.Show();
+			};
             // 
             // button2
             // 
@@ -98,18 +123,10 @@ namespace WindowsFormsApplication1
             this.button2.TabIndex = 6;
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(192, 25);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(389, 266);
-            this.panel2.TabIndex = 7;
+			this.button2.Click += delegate(object sender, EventArgs e) {
+				this.Hide();
+				this.PantallaAnt.Show();
+			};
             // 
             // Form7
             // 

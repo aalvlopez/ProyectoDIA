@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Windows;
+using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
     partial class EscenasForm
@@ -166,8 +173,7 @@ namespace WindowsFormsApplication1
             this.textBox2.Size = new System.Drawing.Size(619, 438);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Texto";
-			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
+			// 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(28, 471);
@@ -176,7 +182,10 @@ namespace WindowsFormsApplication1
             this.button1.TabIndex = 4;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += delegate(object sender, EventArgs e) {
+				this.Hide();
+				this.PantallaAnt.Show();
+			};
             // 
             // button2
             // 
@@ -186,6 +195,10 @@ namespace WindowsFormsApplication1
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += delegate(object sender, EventArgs e) {
+				this.Hide();
+				this.PantallaAnt.Show();
+			};
             // 
             // button3
             // 
@@ -195,6 +208,11 @@ namespace WindowsFormsApplication1
             this.button3.TabIndex = 6;
             this.button3.Text = "Siguiente";
             this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += delegate(object sender, EventArgs e) {
+				this.Hide();
+				this.textBox2.Text="Texto";
+				this.Show();
+			};
             // 
             // button4
             // 
@@ -204,6 +222,11 @@ namespace WindowsFormsApplication1
             this.button4.TabIndex = 7;
             this.button4.Text = "Anterior";
             this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click+=delegate(object sender, EventArgs e){
+				this.Hide();
+				this.textBox2.Text="texto escena Anterior";
+				this.Show();
+			};
             // 
             // datosToolStripMenuItem
             // 

@@ -134,6 +134,7 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Text = "Nuevo";
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
 				this.Hide();
+				Program.nuevoLib = new NuevoLibroForm();
 				Program.nuevoLib.PantallaAnt=this;
 				Program.nuevoLib.Show ();
 			};
@@ -153,9 +154,8 @@ namespace WindowsFormsApplication1
             this.editarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
 			this.editarToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
-				MessageBox.Show("Editar libro...");
 				this.Hide();
-				Program.nuevoLib.Refresh();
+				Program.nuevoLib = new NuevoLibroForm();
 				Program.nuevoLib.PantallaAnt=this;
 				Program.nuevoLib.Show();
 			};
@@ -238,7 +238,9 @@ namespace WindowsFormsApplication1
             this.button3.Text = "Nuevo Personaje";
             this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new AnadirModificarPersonajesForm());
+				this.Hide();
+				Program.anPers.PantallaAnt=this;
+				Program.anPers.Show();
 			};
             // 
             // button2
@@ -250,7 +252,9 @@ namespace WindowsFormsApplication1
             this.button2.Text = "Nueva Escena";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new EscenasForm());
+				this.Hide();
+				Program.esc.PantallaAnt=this;
+				Program.esc.Show();
 			};
             // 
             // button1
@@ -262,7 +266,9 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Nuevo Capítulo";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += delegate(object sender, EventArgs e) {
-				Application.Run(new NuevoCapituloForm());
+				this.Hide();
+				Program.nuevoCap.PantallaAnt=this;
+				Program.nuevoCap.Show();
 			};
             // 
             // Form1
