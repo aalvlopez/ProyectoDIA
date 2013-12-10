@@ -1,6 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Datos\Escena.cs">
+    <Files>
+      <File FileName="App.cs" Line="62" Column="111" />
+      <File FileName="GestionarLibro.cs" Line="11" Column="15" />
+      <File FileName="IGestionarLibro.cs" Line="15" Column="15" />
+      <File FileName="Datos\Libro.cs" Line="117" Column="3" />
+      <File FileName="Datos\Capitulo.cs" Line="135" Column="43" />
+      <File FileName="Datos\Escena.cs" Line="95" Column="20" />
+      <File FileName="XMLPersistencia.cs" Line="209" Column="58" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="gestionarLibro" expanded="True">
+            <Node name="Datos" expanded="True">
+              <Node name="Escena.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

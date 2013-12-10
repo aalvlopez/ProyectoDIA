@@ -39,13 +39,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="LoadXML.cs" />
     <Compile Include="Datos\Libro.cs" />
     <Compile Include="Datos\Escena.cs" />
     <Compile Include="Datos\Capitulo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="UserInterface.cs" />
-    <Compile Include="IPersistencia.cs" />
+    <Compile Include="IGestionarLibro.cs" />
+    <Compile Include="XMLPersistencia.cs" />
+    <Compile Include="GestionarLibro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

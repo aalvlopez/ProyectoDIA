@@ -2,14 +2,42 @@
 <tns:libro xmlns:tns="http://www.esei.uvigo.es/libro" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.esei.uvigo.es/libro libro.xsd">
+	
+	<personaje id="pj1">
+		<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
+		<cap>esc1</cap>
+		<plantilla id="basica">
+			<datosPlantilla>
+				<dato id="descripcion"><![CDATA[
+				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
+				Edad del Sol. 
+				]]></dato>
+			</datosPlantilla>
+		</plantilla>
+	</personaje>
+	<personaje id="pj2">
+		<nombrePersonaje>Gandalf</nombrePersonaje>
+		<cap>esc2</cap>
+		<plantilla id="basica">
+			<datosPlantilla>
+				<dato id="descripcion"><![CDATA[
+				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
+				ayudar a sus habitantes en la lucha contra el señor oscuro Sauron.
+				]]></dato>
+			</datosPlantilla>
+		</plantilla>
+	</personaje>
 
 	<titulo>La Comunidad del Anillo</titulo>
+	<anotacion>Lorem Ipsum</anotacion>
 	<capitulos>
 		<capitulo id="cap01">
 			<titulo>Una reunión muy esperada</titulo>
+			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
-				<escena>
+				<escena id="esc1">
 					<titulo>Principal</titulo>
+					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
 						Han pasado sesenta años desde que Bilbo Bolsón, el héroe de El Hobbit, había vuelto de su viaje. 
 						En Hobbiton se le conoce gracias a su legendaria riqueza y al hecho de que la edad no parece afectarlo.
@@ -19,9 +47,11 @@
 		</capitulo>
 		<capitulo id="cap02">
 			<titulo>La sombra del pasado</titulo>
+			<anotacion>Lorem Ipsum</anotacion>
 			<escenas>
-				<escena>
+				<escena id="esc2">
 					<titulo>Principal</titulo>
+					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
 						Gandalf visita a Frodo algunas veces en los años siguientes. Frodo se acostumbra a ser el amo de Bolsón 
 						Cerrado, y se hace amigo de algunos de los hobbits mas jóvenes, como Peregrin Tuk y Merry Brandigamo. 
@@ -31,22 +61,6 @@
 			</escenas>
 		</capitulo>
 	</capitulos>
-	<personajes>
-		<personaje idrefs="cap01 cap02">
-			<nombre>Frodo Bolsón</nombre>
-			<descripcion><![CDATA[
-				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
-				Edad del Sol. 
-			]]></descripcion>
-		</personaje>
-		<personaje idrefs="cap01 cap02">
-			<nombre>Gandalf</nombre>
-			<descripcion><![CDATA[
-				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
-				ayudar a sus habitantes en la lucha contra el señor oscuro Sauron.
-			]]></descripcion>
-		</personaje>
-	</personajes>
 	<referencias>
 		<referencia>
 			<autor>Jose</autor>

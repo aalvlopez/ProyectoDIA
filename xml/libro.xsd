@@ -7,14 +7,21 @@
 	<element name="libro">
 		<complexType>
 			<sequence>
+				<element name="personaje"
+					 type="tns:personaje"
+					 minOccurs="0" 
+					 maxOccurs="unbounded"
+				/>
 				<element name="titulo"
 					type="string"
-				 />
+				/>
+				 <element name="anotacion"
+					type="string"
+					minOccurs="0"
+					maxOccurs="1"
+				/>
 				 <element name="capitulos"
 				 	type="tns:capitulos"
-				 />
-				 <element name="personajes"
-				 	type="tns:personajes"
 				 />
 				 <element name="referencias"
 				 	type="tns:referencias"
@@ -22,7 +29,59 @@
 			</sequence>
 		</complexType>
 	</element>
+
+	<complexType name="personajes">
+		<sequence>
+			<element name="personaje-ref" maxOccurs="unbounded">
+				<complexType>
+					<attribute name="id" type="IDREF" use="required"/>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="personaje">
+		<sequence>
+			<element name="nombrePersonaje" 
+				 type="string"
+			/>
+			<element name="plantilla" 
+				type="tns:plantilla"
+			/>
+		</sequence>
+		<attribute name="id" type="ID" use="required"/>
+	</complexType>
 	
+	<complexType name="plantilla">
+		<sequence>
+			<element name="datosPlantilla"
+				type="tns:datosPlantilla"
+				minOccurs="1"
+				maxOccurs="unbounded"
+			/>
+		</sequence>
+                <attribute name="id" type="string" use="required"/>
+	</complexType>
+        
+        <complexType name="datosPlantilla">
+            <sequence>
+                <element name="dato"
+                    type="tns:dato"
+                    minOccurs="1"
+                    maxOccurs="unbounded"
+                />
+            </sequence>
+        </complexType>
+	
+	<complexType name="dato">
+		<simpleContent>
+			<extension base="string">
+                            <attribute name="id" type="string"/>
+			</extension>
+		</simpleContent>
+		
+	</complexType>
+			
 	<complexType name="capitulos">
 		<sequence>
 			<element name="capitulo"
@@ -32,12 +91,18 @@
 			/>
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="capitulo">
 		<sequence>
 			<element name="titulo"
 				type="string"
 			/>
+                        <element name="anotacion"
+                                type="string"
+                        />
+                        <element name="personajes"
+                                type="tns:personajes"
+                        />
 			<element name="escenas"
 				type="tns:escenas"
 			/>
@@ -63,35 +128,15 @@
 			<element name="titulo"
 				type="string"
 			/>
+                        <element name="anotacion"
+                                type="string"
+                        />
 			<element name="contenido"
 				type="string"
 			/>
 		</sequence>
 	</complexType>
 	
-	<complexType name="personajes">
-		<sequence>
-			<element name="personaje"
-				type="tns:personaje"
-				minOccurs="0"
-				maxOccurs="unbounded"
-			/>
-		</sequence>
-	</complexType>
-	
-	<complexType name="personaje">
-		<sequence>
-			<element name="nombre"
-				type="string"
-			/>
-			<element name="descripcion"
-				type="string"
-			/>
-		</sequence>
-		<attribute name="idrefs"
-			type="IDREFS"	
-		/>
-	</complexType>
 	
 	<complexType name="referencias">
 		<sequence>

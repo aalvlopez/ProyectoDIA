@@ -1,0 +1,38 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Datos/Libro.cs">
+    <Files>
+      <File FileName="XMLPersistencia.cs" Line="5" Column="35" />
+      <File FileName="Datos/Libro.cs" Line="1" Column="1" />
+    </Files>
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pantallas/ReferencesForm.cs">
+    <Files>
+      <File FileName="Pantallas/ReferencesForm.cs" Line="26" Column="40" />
+      <File FileName="Datos/Libro.cs" Line="52" Column="4" />
+      <File FileName="XMLPersistencia.cs" Line="42" Column="18" />
+      <File FileName="treeviewCapPer.cs" Line="19" Column="8" />
+      <File FileName="Pantallas/LibroAbiertoForm.cs" Line="1" Column="1" />
+      <File FileName="Pantallas/LibroAbiertoForm.Designer.cs" Line="178" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="WindowsFormsApplication1" expanded="True">
+            <Node name="Datos" expanded="True" />
+            <Node name="Pantallas" expanded="True">
+              <Node name="LibroAbiertoForm.cs" expanded="True" />
+              <Node name="ReferencesForm.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+>>>>>>> d0bada5c63a60efbaf43dd8b4f0ad433869dcc9c
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
