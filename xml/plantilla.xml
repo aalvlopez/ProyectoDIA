@@ -5,6 +5,7 @@
 	
 	<personaje id="pj1">
 		<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
+		<cap>esc1</cap>
 		<plantilla id="basica">
 			<datosPlantilla>
 				<dato id="descripcion"><![CDATA[
@@ -16,6 +17,7 @@
 	</personaje>
 	<personaje id="pj2">
 		<nombrePersonaje>Gandalf</nombrePersonaje>
+		<cap>esc2</cap>
 		<plantilla id="basica">
 			<datosPlantilla>
 				<dato id="descripcion"><![CDATA[
@@ -32,11 +34,8 @@
 		<capitulo id="cap01">
 			<titulo>Una reunión muy esperada</titulo>
 			<anotacion>Lorem Ipsum</anotacion>
-			<personajes>
-				<personaje-ref id="pj1"/>
-			</personajes>
 			<escenas>
-				<escena>
+				<escena id="esc1">
 					<titulo>Principal</titulo>
 					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[
@@ -49,12 +48,8 @@
 		<capitulo id="cap02">
 			<titulo>La sombra del pasado</titulo>
 			<anotacion>Lorem Ipsum</anotacion>
-			<personajes>
-				<personaje-ref id="pj1"/>
-				<personaje-ref id="pj2"/>
-			</personajes>
 			<escenas>
-				<escena>
+				<escena id="esc2">
 					<titulo>Principal</titulo>
 					<anotacion>Lorem Ipsum</anotacion>
 					<contenido><![CDATA[

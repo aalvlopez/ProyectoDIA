@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
 				MessageBox.Show("Libro Guardado... ");
 				this.textBox1.Dispose ();
 				this.Hide();
-				Program.libA.editarToolStripMenuItem2.Enabled=false;
+				//Program.libA.editarToolStripMenuItem2.Enabled=false;
 				Program.libA.button1.Enabled=true;
 				Program.libA.button2.Enabled=true;
 				Program.libA.button3.Enabled=true;

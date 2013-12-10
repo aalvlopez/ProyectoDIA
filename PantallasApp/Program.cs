@@ -18,6 +18,8 @@ namespace WindowsFormsApplication1
 		public static ModificarCapituloForm modCap;
 		public static NuevoCapituloForm nuevoCap;
 		public static NuevoLibroForm nuevoLib;
+		public static ReferencesForm references;
+
 		public static Libro Book;
 		public static XMLPersistencia persistencia;
 		public static void Main()
@@ -35,8 +37,9 @@ namespace WindowsFormsApplication1
 			Program.modCap = new ModificarCapituloForm();
 			Program.nuevoCap = new NuevoCapituloForm();
 			Program.nuevoLib = new NuevoLibroForm();
+			Program.references = new ReferencesForm();
 
-			Program.libA.editarToolStripMenuItem2.Enabled=false;
+			//Program.libA.nuevaToolStripMenuItem.Enabled=false;
 			Program.libA.button1.Enabled=false;
 			Program.libA.button2.Enabled=false;
 			Program.libA.button3.Enabled=false;
