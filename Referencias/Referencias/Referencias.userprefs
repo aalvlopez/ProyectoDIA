@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../VisualViajes/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Referencia.cs">
     <Files>
-      <File FileName="MainPanel.cs" Line="99" Column="35" />
-      <File FileName="Referencia.cs" Line="80" Column="4" />
-      <File FileName="../../VisualViajes/MainWindow.cs" Line="238" Column="25" />
+      <File FileName="Referencia.cs" Line="15" Column="24" />
+      <File FileName="ReferencePanel.cs" Line="139" Column="4" />
+      <File FileName="Libro.cs" Line="8" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Referencias" expanded="True">
-            <Node name="MainPanel.cs" selected="True" />
+            <Node name="References" selected="True" />
           </Node>
         </State>
       </Pad>

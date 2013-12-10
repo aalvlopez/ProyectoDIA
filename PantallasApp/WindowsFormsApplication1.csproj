@@ -126,6 +126,8 @@
     <Compile Include="Datos\Libro.cs" />
     <Compile Include="GestionarLibro.cs" />
     <Compile Include="XMLPersistencia.cs" />
+    <Compile Include="Datos\Referencia.cs" />
+    <Compile Include="Pantallas\ReferencesForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

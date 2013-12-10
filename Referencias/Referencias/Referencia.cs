@@ -37,6 +37,7 @@ namespace Referencias
 				textWritter.Flush(); 
 				textWritter.Close();
 			}
+
 		}
 		/// <summary>
 		/// Vuelca contenido de la lista en el archivo XML.
@@ -52,18 +53,11 @@ namespace Referencias
 				
 				foreach(Referencia r in list){
 					textWritter.WriteStartElement("Referencia");
-				
-					textWritter.WriteElementString("Autoria",r.Autoria);			
-					
-					textWritter.WriteElementString("Titulo", r.Titulo);		
-					
-					textWritter.WriteElementString("Edicion",r.Edicion);	
-					
+					textWritter.WriteElementString("Autoria",r.Autoria);
+					textWritter.WriteElementString("Titulo", r.Titulo);
+					textWritter.WriteElementString("Edicion",r.Edicion);
 					textWritter.WriteElementString("Extension",r.Edicion);
-					
 					textWritter.WriteElementString("Datos",r.Datos);
-			
-					
 					textWritter.WriteEndElement();
 				}
 				
@@ -73,6 +67,7 @@ namespace Referencias
 				textWritter.Close();
 					
 		}
+
 		/// <summary>
 		/// Carga el contenido del XML en una lista.
 		/// </summary>

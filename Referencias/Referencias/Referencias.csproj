@@ -41,6 +41,7 @@
     <Compile Include="Referencia.cs" />
     <Compile Include="Launcher.cs" />
     <Compile Include="ReferencePanel.cs" />
+    <Compile Include="Libro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

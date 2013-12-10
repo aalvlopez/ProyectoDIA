@@ -1,9 +1,7 @@
 using System;
 using System.IO;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Xml;
 using System.Text;
 using System.Collections.Generic;
 
@@ -33,8 +31,10 @@ namespace Referencias
 		/// Initializes a new instance of the <see cref="Referencias.ReferencesMainPanel"/> class.
 		/// </summary>
 		public ReferencesMainPanel(){
-			listado = Referencia.LoadXml();
-			
+			//listado = Referencia.LoadXml();
+
+			listado = Libro.ListReferencias();
+
 			this.SuspendLayout();
 			this.MinimumSize = new Size(640, 430);
 			this.mainPanel = new Panel();
@@ -131,11 +131,11 @@ namespace Referencias
 			var column5 = new DataGridViewTextBoxColumn();
 			
 			column0.SortMode = DataGridViewColumnSortMode.NotSortable;
-			column1.SortMode = DataGridViewColumnSortMode.Automatic;
-			column2.SortMode = DataGridViewColumnSortMode.Automatic;
-			column3.SortMode = DataGridViewColumnSortMode.Automatic;
-			column4.SortMode = DataGridViewColumnSortMode.Automatic;
-			column5.SortMode = DataGridViewColumnSortMode.Automatic;
+			column1.SortMode = DataGridViewColumnSortMode.NotSortable;
+			column2.SortMode = DataGridViewColumnSortMode.NotSortable;
+			column3.SortMode = DataGridViewColumnSortMode.NotSortable;
+			column4.SortMode = DataGridViewColumnSortMode.NotSortable;
+			column5.SortMode = DataGridViewColumnSortMode.NotSortable;
 			
 			column0.HeaderText = "-";
 			column1.HeaderText = "Autoria";	
@@ -372,7 +372,8 @@ namespace Referencias
 				this.gridView.Rows.RemoveAt(this.gridView.Rows.Count - 1);
 			
 			this.sbStatus.Text= "Total de Referencias = " + n;
-		}			
+		}	
+
 		/// <summary>
 		/// Save this instance.
 		/// </summary>
@@ -387,9 +388,7 @@ namespace Referencias
 		private void Salir(){
 			this.Save();
 			this.Dispose( true );
-		}				
-
-		
+		}						
 	}
 }
 

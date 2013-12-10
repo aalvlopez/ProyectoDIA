@@ -49,6 +49,7 @@ namespace WindowsFormsApplication1
 		public Libro ()
 		{
 			this.Capitulos = new LinkedList<Capitulo>();
+			Referencias = new List<Referencia>();
 			this.Anotacion = "";
 			this.Titulo="";
 		}
@@ -129,8 +130,11 @@ namespace WindowsFormsApplication1
 				}
 			return null;
 		}
-		
-	
+
+		public static List<Referencia> Referencias{
+			get;
+			set;
+		}	
 	}
 }
 
