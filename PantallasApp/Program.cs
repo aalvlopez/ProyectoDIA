@@ -18,10 +18,15 @@ namespace WindowsFormsApplication1
 		public static ModificarCapituloForm modCap;
 		public static NuevoCapituloForm nuevoCap;
 		public static NuevoLibroForm nuevoLib;
-        public static void Main()
+		public static Libro Book;
+		public static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+			XMLPersistencia persistencia = new XMLPersistencia("plantilla.xml");
+			Program.Book = persistencia.Leer();
 
 			Program.anPers = new AnadirModificarPersonajesForm();
 			Program.esc = new EscenasForm();
@@ -29,14 +34,6 @@ namespace WindowsFormsApplication1
 			Program.modCap = new ModificarCapituloForm();
 			Program.nuevoCap = new NuevoCapituloForm();
 			Program.nuevoLib = new NuevoLibroForm();
-
-//            Application.Run(Program.libA); // Libro Abierto
-//            Application.Run(Program.nuevoLib); // Nuevo Libro
-//            Application.Run(Program.nuevoCap); // Nuevo Capitulo
-//            Application.Run(Program.esc); // Escenas
-//            Application.Run(Program.modCap); // Modificar Capitulo
-//            Application.Run(Program.anPers); // Añadir/Modificar Personajes
-//
 
 			Program.libA.editarToolStripMenuItem2.Enabled=false;
 			Program.libA.button1.Enabled=false;

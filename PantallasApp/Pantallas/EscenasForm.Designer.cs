@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+			this.treeView1 = TreeViewCapPer.BuildTree(Program.Book);
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

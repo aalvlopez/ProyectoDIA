@@ -120,6 +120,12 @@
       <DependentUpon>NuevoLibroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="treeviewCapPer.cs" />
+    <Compile Include="Datos\Capitulo.cs" />
+    <Compile Include="Datos\Escena.cs" />
+    <Compile Include="Datos\Libro.cs" />
+    <Compile Include="GestionarLibro.cs" />
+    <Compile Include="XMLPersistencia.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -131,5 +137,6 @@
   -->
   <ItemGroup>
     <Folder Include="Pantallas\" />
+    <Folder Include="Datos\" />
   </ItemGroup>
 </Project>
