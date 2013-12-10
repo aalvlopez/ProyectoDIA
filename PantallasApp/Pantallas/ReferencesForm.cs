@@ -12,50 +12,48 @@ namespace WindowsFormsApplication1
 	/// </summary>
 	public class ReferencesForm : Form			
 	{
-		private List<Referencia> listado;
-		
-		private Panel mainPanel;
-		private Form insertForm;
+		private static List<Referencia> listado;
 
-		private TextBox txtAutoria;
-		private TextBox txtTitulo;
-		private TextBox txtDatos;
-		private TextBox txtEdicion;
-		private TextBox txtExtension;		
+		private static Panel mainPanel;
+		private static Form insertForm;
 
-		private DataGridView gridView;
+		private static TextBox txtAutoria;
+		private static TextBox txtTitulo;
+		private static TextBox txtDatos;
+		private static TextBox txtEdicion;
+		private static TextBox txtExtension;		
+
+		private static DataGridView gridView;
 		
-		private StatusBar sbStatus;
+		private static StatusBar sbStatus;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Referencias.ReferencesForm"/> class.
 		/// </summary>
 		public ReferencesForm(){
-			this.listado = Libro.Referencias;
+			listado = Libro.Referencias;
 
-			this.SuspendLayout();
-			this.MinimumSize = new Size(640, 430);
-			this.mainPanel = new Panel();
-			this.mainPanel.MinimumSize = new Size(640, 360);
+			SuspendLayout();
+			MinimumSize = new Size(640, 430);
+			mainPanel = new Panel();
+			mainPanel.MinimumSize = new Size(640, 360);
 			
-			this.Controls.Add( mainPanel );		
+			Controls.Add( mainPanel );		
 			
-			this.BuildMenu();
-			this.CreateGridView();
-			this.BuildInsertUpdateDialog();
-			this.BuildStatus();
-			this.UpdateGridData();
-			this.Resize += (obj, e) => this.ResizeWindow();				
+			BuildMenu();
+			CreateGridView();
+			BuildInsertUpdateDialog();
+			BuildStatus();
+			UpdateGridData();
+			Resize += (obj, e) => ResizeWindow();				
 			
-			this.ResizeWindow();
+			ResizeWindow();
 
 			mainPanel.ResumeLayout( false );
-			this.ResumeLayout( true );
-			this.Closed += (sender, e) => this.Salir();
+			ResumeLayout( true );
+			Closed += (sender, e) => Salir();
 			
-			this.Text = "Gestor de Referencias";
-			
-			
+			Text = "Gestor de Referencias";			
 		}
 
 		/// <summary>
@@ -69,23 +67,23 @@ namespace WindowsFormsApplication1
 			
 			MenuItem opSalir = new MenuItem( "&Salir" );
 			opSalir.Shortcut = Shortcut.CtrlQ;
-			opSalir.Click += (sender, e) => this.Salir();
+			opSalir.Click += (sender, e) => Salir();
 			
 			MenuItem opSave = new MenuItem( "&Salvar" );
 			opSave.Shortcut = Shortcut.CtrlS;
-			opSave.Click += (sender, e) => this.Save();
+			opSave.Click += (sender, e) => Save();
 
 			MenuItem opInsertar = new MenuItem( "&Insertar" );
 			opInsertar.Shortcut = Shortcut.CtrlI;
-			opInsertar.Click += (sender, e) => this.InsertReferencia();
+			opInsertar.Click += (sender, e) => InsertReferencia();
 			
 			MenuItem opEliminar = new MenuItem("&Eliminar");
 			opEliminar.Shortcut = Shortcut.CtrlR;
-			opEliminar.Click += (sender, e) => this.DeleteReferencia();
+			opEliminar.Click += (sender, e) => DeleteReferencia();
 			
 			MenuItem opEditar = new MenuItem("&Editar");
 			opEditar.Shortcut = Shortcut.CtrlE;
-			opEditar.Click += (sender, e) => this.UpdateReferencia();
+			opEditar.Click += (sender, e) => UpdateReferencia();
 			
 			mArchivo.MenuItems.Add( opSave );
 			mArchivo.MenuItems.Add( opSalir );			
@@ -96,7 +94,7 @@ namespace WindowsFormsApplication1
 			 
 			Actions.MenuItems.Add( mArchivo );
 			Actions.MenuItems.Add( mEditar );
-			this.Menu = Actions;			
+			Menu = Actions;			
 		}
 		/// <summary>
 		/// Crea un objeto DataGridView para la muestra y gestión de los datos almacenados
@@ -105,21 +103,21 @@ namespace WindowsFormsApplication1
 			
 			mainPanel.SuspendLayout();						
 			
-			this.gridView = new DataGridView();
-			this.gridView.Anchor = AnchorStyles.Top;
-			this.gridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-			this.gridView.Dock = DockStyle.Fill;
+			gridView = new DataGridView();
+			gridView.Anchor = AnchorStyles.Top;
+			gridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			gridView.Dock = DockStyle.Fill;
 			
-			this.gridView.AllowUserToResizeRows = false;
-			this.gridView.AllowUserToResizeColumns = true;
-			this.gridView.RowHeadersVisible = false;
-			this.gridView.AutoGenerateColumns = false;
-			this.gridView.MultiSelect = false;			
-			this.gridView.AllowUserToAddRows = false;
-			this.gridView.ReadOnly = true;
-			this.gridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;			
-			this.gridView.ScrollBars = ScrollBars.Vertical;
-			this.gridView.MinimumSize = new Size(960, 360);				
+			gridView.AllowUserToResizeRows = false;
+			gridView.AllowUserToResizeColumns = true;
+			gridView.RowHeadersVisible = false;
+			gridView.AutoGenerateColumns = false;
+			gridView.MultiSelect = false;			
+			gridView.AllowUserToAddRows = false;
+			gridView.ReadOnly = true;
+			gridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;			
+			gridView.ScrollBars = ScrollBars.Vertical;
+			gridView.MinimumSize = new Size(960, 360);				
 			
 			var column0 = new DataGridViewTextBoxColumn();
 			var column1 = new DataGridViewTextBoxColumn();
@@ -154,18 +152,18 @@ namespace WindowsFormsApplication1
 		/// Construye el panel de diálogo empleado en la inserción y el borrado
 		/// </summary>
 		private void BuildInsertUpdateDialog(){
-			this.insertForm = new Form();
-			this.insertForm.SuspendLayout();
+			insertForm = new Form();
+			insertForm.SuspendLayout();
 
 			var pnlInserta = new TableLayoutPanel();
 			pnlInserta.Dock = DockStyle.Fill;
 			pnlInserta.SuspendLayout();
-			this.insertForm.Controls.Add( pnlInserta );
+			insertForm.Controls.Add( pnlInserta );
 
 			//Autoria
 			var pnlAutoria = new Panel();
-			this.txtAutoria = new TextBox();
-			this.txtAutoria.Dock = DockStyle.Fill;
+			txtAutoria = new TextBox();
+			txtAutoria.Dock = DockStyle.Fill;
 			var labelAutoria = new Label();
 			labelAutoria.Text = "Autoria:";
 			labelAutoria.Dock = DockStyle.Left;
@@ -177,8 +175,8 @@ namespace WindowsFormsApplication1
 
 			//Titulo
 			var pnlTitulo = new Panel();
-			this.txtTitulo = new TextBox();
-			this.txtTitulo.Dock = DockStyle.Fill;
+			txtTitulo = new TextBox();
+			txtTitulo.Dock = DockStyle.Fill;
 			var labelTitulo = new Label();
 			labelTitulo.Text = "Titulo:";
 			labelTitulo.Dock = DockStyle.Left;
@@ -190,8 +188,8 @@ namespace WindowsFormsApplication1
 
 			//Datos
 			var pnlDatos = new Panel();
-			this.txtDatos = new TextBox();
-			this.txtDatos.Dock = DockStyle.Fill;
+			txtDatos = new TextBox();
+			txtDatos.Dock = DockStyle.Fill;
 			var labelDatos = new Label();
 			labelDatos.Text = "Datos:";
 			labelDatos.Dock = DockStyle.Left;
@@ -203,8 +201,8 @@ namespace WindowsFormsApplication1
 
 			//Edicion
 			var pnlEdicion = new Panel();
-			this.txtEdicion = new TextBox();
-			this.txtEdicion.Dock = DockStyle.Fill;
+			txtEdicion = new TextBox();
+			txtEdicion.Dock = DockStyle.Fill;
 			var labelEdicion = new Label();
 			labelEdicion.Text = "Edición:";
 			labelEdicion.Dock = DockStyle.Left;
@@ -216,8 +214,8 @@ namespace WindowsFormsApplication1
 
 			//Extension
 			var pnlExtension = new Panel();
-			this.txtExtension = new TextBox();
-			this.txtExtension.Dock = DockStyle.Fill;
+			txtExtension = new TextBox();
+			txtExtension.Dock = DockStyle.Fill;
 			var labelExtension = new Label();
 			labelExtension.Text = "Extensión:";
 			labelExtension.Dock = DockStyle.Left;
@@ -242,43 +240,42 @@ namespace WindowsFormsApplication1
 			pnlBotones.Dock = DockStyle.Top;
 			pnlInserta.Controls.Add( pnlBotones );
 
-			this.insertForm.AcceptButton = btGuarda;
-			this.insertForm.CancelButton = btCierra;
+			insertForm.AcceptButton = btGuarda;
+			insertForm.CancelButton = btCierra;
 			pnlInserta.ResumeLayout( true );
-			this.insertForm.ResumeLayout( false );			
-			this.insertForm.Size = new Size( 400, 
+			insertForm.ResumeLayout( false );			
+			insertForm.Size = new Size( 400, 
 			                pnlAutoria.Height + pnlTitulo.Height
 			                + pnlDatos.Height + pnlEdicion.Height
 			                + pnlExtension.Height + pnlBotones.Height );
-			this.insertForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-			this.insertForm.MinimizeBox = false;
-			this.insertForm.MaximizeBox = false;
-			this.insertForm.StartPosition = FormStartPosition.CenterParent;
-		}
-		
+			insertForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+			insertForm.MinimizeBox = false;
+			insertForm.MaximizeBox = false;
+			insertForm.StartPosition = FormStartPosition.CenterParent;
+		}		
 		/// <summary>
 		/// Crea la barra de estado informando del total de referencias
 		/// </summary>
 		private void BuildStatus()
 		{
-			this.sbStatus = new StatusBar();
-			this.sbStatus.Dock = DockStyle.Bottom;
-			this.Controls.Add( this.sbStatus );
+			sbStatus = new StatusBar();
+			sbStatus.Dock = DockStyle.Bottom;
+			Controls.Add( sbStatus );
 		}
 
 		/// <summary>
 		/// Inserts the referencia.
 		/// </summary>
-		private void InsertReferencia(){
-			this.insertForm.Text = "Crear Nueva Referencia";
+		public static void InsertReferencia(){
+			insertForm.Text = "Crear Nueva Referencia";
 			
-			this.txtAutoria.Text = "";
-			this.txtEdicion.Text = "";
-			this.txtDatos.Text = "";
-			this.txtExtension.Text = "";
-			this.txtTitulo.Text = "";
+			txtAutoria.Text = "";
+			txtEdicion.Text = "";
+			txtDatos.Text = "";
+			txtExtension.Text = "";
+			txtTitulo.Text = "";
 			
-			if ( this.insertForm.ShowDialog() == DialogResult.OK ) {
+			if ( insertForm.ShowDialog() == DialogResult.OK ) {
 				Referencia r = new Referencia(txtAutoria.Text,txtTitulo.Text,txtDatos.Text,txtEdicion.Text,txtExtension.Text)	;
 				listado.Add(r);
 			}
@@ -289,8 +286,8 @@ namespace WindowsFormsApplication1
 		/// Elimina la referencia actualmente seleccionada en el GridView
 		/// </summary>
 		private void DeleteReferencia(){
-			if (this.gridView.Rows.Count > 0){				
-				int n = this.gridView.CurrentCell.RowIndex;												
+			if (gridView.Rows.Count > 0){				
+				int n = gridView.CurrentCell.RowIndex;												
 				
 				//Confirmación de borrado
 				if (MessageBox.Show("Realmente quiere borrar esta entrada?","Confirmar Borrado", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -305,20 +302,20 @@ namespace WindowsFormsApplication1
 		/// Actualiza la referencia actualmente seleccionada en el GridView
 		/// </summary>
 		private void UpdateReferencia(){
-			if (this.gridView.Rows.Count > 0){
-				this.insertForm.Text = "Editar Referencia";
+			if (gridView.Rows.Count > 0){
+				insertForm.Text = "Editar Referencia";
 				
-				int n = this.gridView.CurrentCell.RowIndex;				
+				int n = gridView.CurrentCell.RowIndex;				
 								
 				Referencia r = listado[n];
 				
-				this.txtAutoria.Text = r.Autoria;
-				this.txtEdicion.Text = r.Edicion;
-				this.txtDatos.Text = r.Datos;
-				this.txtExtension.Text = r.Extension;
-				this.txtTitulo.Text = r.Titulo;
+				txtAutoria.Text = r.Autoria;
+				txtEdicion.Text = r.Edicion;
+				txtDatos.Text = r.Datos;
+				txtExtension.Text = r.Extension;
+				txtTitulo.Text = r.Titulo;
 				
-				if ( this.insertForm.ShowDialog() == DialogResult.OK ) {
+				if ( insertForm.ShowDialog() == DialogResult.OK ) {
 					r.Autoria = txtAutoria.Text;
 					r.Titulo = txtTitulo.Text;
 					r.Datos = txtDatos.Text;
@@ -334,30 +331,29 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		private void ResizeWindow(){
 			// Tomar las nuevas medidas
-			int width = this.ClientRectangle.Width;			
+			int width = ClientRectangle.Width;			
 			
 			// Redimensionar la tabla
-			this.gridView.Width = width;
-			this.mainPanel.Width = width;
-			this.gridView.Columns[ 0 ].Width = 	(int) Math.Floor( width *.05 );	
-			this.gridView.Columns[ 1 ].Width =	(int) Math.Floor( width *.20 );	
-			this.gridView.Columns[ 2 ].Width =	(int) Math.Floor( width *.35 );	
-			this.gridView.Columns[ 3 ].Width =	(int) Math.Floor( width *.20 ); 
-			this.gridView.Columns[ 4 ].Width =	(int) Math.Floor( width *.10 ); 
-			this.gridView.Columns[ 5 ].Width =	(int) Math.Floor( width *.10 ); 
+			gridView.Width = width;
+			mainPanel.Width = width;
+			gridView.Columns[ 0 ].Width = 	(int) Math.Floor( width *.05 );	
+			gridView.Columns[ 1 ].Width =	(int) Math.Floor( width *.20 );	
+			gridView.Columns[ 2 ].Width =	(int) Math.Floor( width *.35 );	
+			gridView.Columns[ 3 ].Width =	(int) Math.Floor( width *.20 ); 
+			gridView.Columns[ 4 ].Width =	(int) Math.Floor( width *.10 ); 
+			gridView.Columns[ 5 ].Width =	(int) Math.Floor( width *.10 ); 
 		}
-		
 		
 		/// <summary>
 		/// Actualiza los datos del GridView en uso
 		/// </summary>
-		private void UpdateGridData(){
+		private static void UpdateGridData(){
 			int n=0;	
-			foreach (Referencia r in this.listado) {
-				if( n >= this.gridView.Rows.Count )
-					this.gridView.Rows.Add();
+			foreach (Referencia r in listado) {
+				if( n >= gridView.Rows.Count )
+					gridView.Rows.Add();
 				
-				DataGridViewRow row = this.gridView.Rows[ n++ ];	
+				DataGridViewRow row = gridView.Rows[ n++ ];	
 				row.Cells[0].Value = n;								
 				row.Cells[1].Value = r.Autoria;
 				row.Cells[2].Value = r.Titulo;
@@ -366,10 +362,10 @@ namespace WindowsFormsApplication1
 				row.Cells[5].Value = r.Extension;					
 			}
 			//Limpieza de filas sobrantes
-			while( n < this.gridView.Rows.Count)
-				this.gridView.Rows.RemoveAt(this.gridView.Rows.Count - 1);
+			while( n < gridView.Rows.Count)
+				gridView.Rows.RemoveAt(gridView.Rows.Count - 1);
 			
-			this.sbStatus.Text= "Total de Referencias = " + n;
+			sbStatus.Text= "Total de Referencias = " + n;
 		}	
 
 		/// <summary>
@@ -384,8 +380,8 @@ namespace WindowsFormsApplication1
 		/// Cierre de App
 		/// </summary>
 		private void Salir(){
-			this.Save();
-			this.Dispose( true );
+			Save();
+			Dispose( true );
 		}						
 	}
 }

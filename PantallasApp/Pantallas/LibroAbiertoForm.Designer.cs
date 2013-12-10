@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
             this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.referenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            //this.editarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -164,7 +164,7 @@ namespace WindowsFormsApplication1
             // 
             this.referenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaToolStripMenuItem,
-            this.editarToolStripMenuItem2});
+            /*this.editarToolStripMenuItem2*/});
             this.referenciasToolStripMenuItem.Name = "referenciasToolStripMenuItem";
             this.referenciasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.referenciasToolStripMenuItem.Text = "Referencias";
@@ -173,19 +173,19 @@ namespace WindowsFormsApplication1
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
             this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.nuevaToolStripMenuItem.Text = "Nueva...";
+            this.nuevaToolStripMenuItem.Text = "Gestionar Referencias";
 			this.nuevaToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				MessageBox.Show("Nueva referencia...");
+				Program.references.Show();
 			};
             // 
             // editarToolStripMenuItem2
             // 
-            this.editarToolStripMenuItem2.Name = "editarToolStripMenuItem2";
+           /* this.editarToolStripMenuItem2.Name = "editarToolStripMenuItem2";
             this.editarToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.editarToolStripMenuItem2.Text = "Editar";
 			this.editarToolStripMenuItem2.Click += delegate(object sender, EventArgs e) {
 				MessageBox.Show("Editar referencia...");
-			};
+			};*/
             // 
             // eventosToolStripMenuItem
             // 
@@ -306,8 +306,8 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem referenciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
+        public System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
+        //public System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
