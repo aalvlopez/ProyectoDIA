@@ -74,15 +74,6 @@
     <Compile Include="Pantallas\AnadirModificarPersonajesForm.Designer.cs">
       <DependentUpon>AnadirModificarPersonajesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\EscenasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="Pantallas\Form5.resx">
-      <DependentUpon>EscenasForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Pantallas\EscenasForm.Designer.cs">
-      <DependentUpon>EscenasForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pantallas\LibroAbiertoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +119,8 @@
     <Compile Include="XMLPersistencia.cs" />
     <Compile Include="Datos\Referencia.cs" />
     <Compile Include="Pantallas\ReferencesForm.cs" />
+    <Compile Include="Pantallas\ProcesadorTextos.cs" />
+    <Compile Include="Pantallas\EscenasForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

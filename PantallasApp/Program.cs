@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
 		public static NuevoCapituloForm nuevoCap;
 		public static NuevoLibroForm nuevoLib;
 		public static ReferencesForm references;
+		public static ProcesadorTextos procesador;
 
 		public static Libro Book;
 		public static XMLPersistencia persistencia;
@@ -38,6 +39,7 @@ namespace WindowsFormsApplication1
 			Program.nuevoCap = new NuevoCapituloForm();
 			Program.nuevoLib = new NuevoLibroForm();
 			Program.references = new ReferencesForm();
+			Program.procesador = new ProcesadorTextos();
 
 			//Program.libA.nuevaToolStripMenuItem.Enabled=false;
 			Program.libA.button1.Enabled=false;
