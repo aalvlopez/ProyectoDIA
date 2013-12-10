@@ -131,7 +131,7 @@ namespace WindowsFormsApplication1
 			return null;
 		}
 
-		public static List<Referencia> Referencias{
+		public List<Referencia> Referencias{
 			get;
 			set;
 		}	

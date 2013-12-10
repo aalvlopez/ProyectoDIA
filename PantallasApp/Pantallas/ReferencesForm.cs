@@ -30,8 +30,8 @@ namespace WindowsFormsApplication1
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Referencias.ReferencesForm"/> class.
 		/// </summary>
-		public ReferencesForm(){
-			listado = Libro.Referencias;
+		public ReferencesForm(Libro b){
+			listado = b.Referencias;
 
 			SuspendLayout();
 			MinimumSize = new Size(640, 430);

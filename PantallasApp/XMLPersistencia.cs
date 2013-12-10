@@ -102,6 +102,19 @@ namespace WindowsFormsApplication1
 						libro.Capitulos.AddLast(capitulo);
 					}
 					break;
+					
+				case "referencias":
+					foreach(XmlNode singleRef in nodo1.ChildNodes){
+						Referencia r = new Referencia(singleRef.SelectSingleNode("autor").InnerText,
+					                              singleRef.SelectSingleNode("titulo").InnerText,
+					                              singleRef.SelectSingleNode("datos").InnerText,
+					                              singleRef.SelectSingleNode("edicion").InnerText,
+					                              singleRef.SelectSingleNode("extension").InnerText
+					                              );
+						libro.Referencias.Add(r);				
+					}
+				break;
+					
 				}
 			}
 			return libro;
@@ -189,15 +202,47 @@ namespace WindowsFormsApplication1
 					
 					nodoc.AppendChild( nodoes );
 				}
-				nodocs.AppendChild( nodoc );				
+				nodocs.AppendChild( nodoc );
+				
+				
+				
+				
+				
+				
 				
 			}
 			nodol.AppendChild( nodocs );
-			
 			docXml.AppendChild( nodol );
 			
-			docXml.Save(this.Documento);
+			//bof - Sección Referencias
+			XmlNode nodoRefs = docXml.CreateNode( XmlNodeType.Element, "referencias", "");
+			foreach(Referencia r in libro.Referencias){
+					XmlNode singleRef = docXml.CreateNode( XmlNodeType.Element, "referencia", "");
+					
+					XmlNode nodeAutor = docXml.CreateNode( XmlNodeType.Element, "autor", "");
+					XmlNode nodeTitulo = docXml.CreateNode( XmlNodeType.Element, "titulo", "");
+					XmlNode nodeDatos = docXml.CreateNode( XmlNodeType.Element, "datos", "");
+					XmlNode nodeEdicion = docXml.CreateNode( XmlNodeType.Element, "edicion", "");
+					XmlNode nodeExtension = docXml.CreateNode( XmlNodeType.Element, "extension", "");
+					
+					nodeAutor.InnerText = r.Autoria;
+					nodeTitulo.InnerText = r.Titulo;
+					nodeDatos.InnerText = r.Datos;
+					nodeEdicion.InnerText = r.Edicion;
+					nodeExtension.InnerText = r.Extension;
+					
+					singleRef.AppendChild(nodeAutor);
+					singleRef.AppendChild(nodeTitulo);
+					singleRef.AppendChild(nodeDatos);
+					singleRef.AppendChild(nodeEdicion);
+					singleRef.AppendChild(nodeExtension);
+					
+					nodoRefs.AppendChild(singleRef);
+			}
+			nodol.AppendChild(nodoRefs);
+			//eof - Sección Referencias
 			
+			docXml.Save(this.Documento);			
 		}
 		
 		/// <summary>

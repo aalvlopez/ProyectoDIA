@@ -14,8 +14,6 @@ namespace WindowsFormsApplication1
 		public String Edicion{ get; set;}
 		public String Extension{ get; set;}
 		
-		//public const String ArchivoXml = "referencias.xml";
-
 		public Referencia(String a, String t, String d, String e, String ex){
 			this.Autoria=a;
 			this.Titulo=t;

@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
 			Program.modCap = new ModificarCapituloForm();
 			Program.nuevoCap = new NuevoCapituloForm();
 			Program.nuevoLib = new NuevoLibroForm();
-			Program.references = new ReferencesForm();
+			Program.references = new ReferencesForm(Book);
 			Program.procesador = new ProcesadorTextos();
 
 			//Program.libA.nuevaToolStripMenuItem.Enabled=false;
