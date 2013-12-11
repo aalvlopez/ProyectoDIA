@@ -62,7 +62,6 @@ namespace WindowsFormsApplication1
             this.textBox1.Size = new System.Drawing.Size(207, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Título";
-			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -74,17 +73,17 @@ namespace WindowsFormsApplication1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += delegate(object sender, System.EventArgs e) {
 				var x = new GestionarLibro();
-				Libro nuevoLibro = x.CrearLibro(textBox1.Text);
+				Program.Book= x.CrearLibro(textBox1.Text);
 				Program.persistencia.documento(textBox1.Text + ".xml");
+				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
+				Program.libA.Refresh();
 				MessageBox.Show("Libro Guardado... ");
 				this.textBox1.Dispose ();
-				this.Hide();
-				//Program.libA.editarToolStripMenuItem2.Enabled=false;
+				this.Close ();
 				Program.libA.button1.Enabled=true;
 				Program.libA.button2.Enabled=true;
 				Program.libA.button3.Enabled=true;
-				this.PantallaAnt.Show();
-
+				Program.libA.referenciasToolStripMenuItem.Enabled=true;
 			};
             // 
             // button2
@@ -97,8 +96,7 @@ namespace WindowsFormsApplication1
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
 				MessageBox.Show("Cancelado... ");
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close();
 			};
             // 
             // Form3

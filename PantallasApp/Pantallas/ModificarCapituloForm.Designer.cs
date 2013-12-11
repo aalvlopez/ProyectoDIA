@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Windows;
+using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
     partial class ModificarCapituloForm
@@ -66,6 +73,9 @@ namespace WindowsFormsApplication1
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click+=delegate(object sender, EventArgs e) {
+				this.Close ();
+			};
             // 
             // button1
             // 
@@ -75,6 +85,9 @@ namespace WindowsFormsApplication1
             this.button1.TabIndex = 1;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click+=delegate(object sender, EventArgs e) {
+				this.Close ();
+			};
             // 
             // textBox1
             // 

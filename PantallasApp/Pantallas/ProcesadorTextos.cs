@@ -9,11 +9,13 @@ namespace WindowsFormsApplication1
 	/// </summary>
 	public class ProcesadorTextos : Form
 	{
+		private string texto;
 
-		public ProcesadorTextos()
+		public ProcesadorTextos(string texto)
 		{
+			this.texto = texto;
 			ConstruirGui ();
-			this.Hide();
+			this.Show ();
 		}
 
 		public Form PantallaAnt {
@@ -146,6 +148,7 @@ namespace WindowsFormsApplication1
 			richTextBox.Dock = DockStyle.Fill;
 			richTextBox.ScrollBars = RichTextBoxScrollBars.Vertical;
 			richTextBox.Font = new Font ("Arial", 12, FontStyle.Regular);
+			richTextBox.Text=this.texto;
 
 			tableLayoutPanel = new TableLayoutPanel ();
 			tableLayoutPanel.Padding = new Padding (5);
@@ -173,8 +176,8 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void Salir()
 		{
-			this.Hide ();
-			this.PantallaAnt.Show ();
+			Program.esc.Show();
+			this.Close ();
 		}
 
 		/// <summary>
@@ -233,8 +236,9 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void Guardar()
 		{
-			this.Hide ();
-			this.PantallaAnt.Show ();
+			Program.esc.texto=richTextBox.Text;
+			Program.esc.Show();
+			this.Close ();
 		}
 
 		/// <summary>

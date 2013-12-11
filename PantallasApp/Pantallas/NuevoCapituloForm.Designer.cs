@@ -56,15 +56,14 @@ namespace WindowsFormsApplication1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(146, 171);
+			this.button2.Location = new System.Drawing.Point(146, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click+=delegate(object sender, EventArgs e) {
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close();
 			};
             // 
             // button1
@@ -76,17 +75,9 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click+=delegate(object sender, EventArgs e) {
-				if (this.id == "")
-				{
-					Program.Book.CrearCapitulo(textBox1.Text,textBox2.Text);
-				}
-				else
-				{
-					Capitulo cap = Program.Book.BuscarCapituloId(this.id);
-					cap.ModificarCapitulo(textBox1.Text,textBox2.Text);
-				}
-				this.Hide();
-				this.PantallaAnt.Show();
+				Program.Book.CrearCapitulo(textBox1.Text,textBox2.Text);
+				TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+				this.Close();	
 			};
             // 
             // textBox1

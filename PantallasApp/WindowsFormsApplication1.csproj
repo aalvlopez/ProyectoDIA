@@ -121,6 +121,10 @@
     <Compile Include="Pantallas\ReferencesForm.cs" />
     <Compile Include="Pantallas\ProcesadorTextos.cs" />
     <Compile Include="Pantallas\EscenasForm.cs" />
+    <Compile Include="Datos\Actor.cs" />
+    <Compile Include="Datos\Actores.cs" />
+    <Compile Include="Datos\Plantilla.cs" />
+    <Compile Include="Datos\Plantillas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

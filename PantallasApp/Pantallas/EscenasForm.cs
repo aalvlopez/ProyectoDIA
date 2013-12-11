@@ -9,14 +9,16 @@ namespace WindowsFormsApplication1
 		public EscenasForm ()
 		{
 			ConstruirGui ();
+			this.Show();
 		}
 
 		public Form PantallaAnt {
 			get;
 			set;
 		}
-
+		public string texto;
 		public void ConstruirGui() {
+			this.texto="";
 			textBox = new TextBox ();
 			textBox.Text = "Titulo";
 			textBox.Size = new Size (150,30);
@@ -29,8 +31,7 @@ namespace WindowsFormsApplication1
 			btnCancel.Text = "Cancelar";
 			btnCancel.Size = new Size (150,30);
 			btnCancel.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close();
 			};
 
 
@@ -38,17 +39,15 @@ namespace WindowsFormsApplication1
 			btnSave.Text = "Guardar";
 			btnSave.Size = new Size (150,30);
 			btnSave.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close ();
 			};
 
 			btnEdit = new Button ();
 			btnEdit.Text = "Editar escena";
 			btnEdit.Size = new Size (150,30);
 			btnEdit.Click += delegate(object sender, EventArgs e) {
-				this.Hide ();
-				Program.procesador.PantallaAnt = this;
-				Program.procesador.Show ();
+				Program.procesador= new ProcesadorTextos(this.texto);
+
 			};
 
 			tableLayoutPanel = new TableLayoutPanel ();

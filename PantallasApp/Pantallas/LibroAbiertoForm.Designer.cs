@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+			this.treeView1 = new TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -133,10 +133,7 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.crearToolStripMenuItem.Text = "Nuevo";
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
 				Program.nuevoLib = new NuevoLibroForm();
-				Program.nuevoLib.PantallaAnt=this;
-				Program.nuevoLib.Show ();
 			};
             // 
             // abrirToolStripMenuItem1
@@ -154,10 +151,7 @@ namespace WindowsFormsApplication1
             this.editarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
 			this.editarToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
 				Program.nuevoLib = new NuevoLibroForm();
-				Program.nuevoLib.PantallaAnt=this;
-				Program.nuevoLib.Show();
 			};
             // 
             // referenciasToolStripMenuItem
@@ -175,7 +169,7 @@ namespace WindowsFormsApplication1
             this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.nuevaToolStripMenuItem.Text = "Gestionar Referencias";
 			this.nuevaToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Program.references.Show();
+				Program.references=new ReferencesForm(Program.Book);
 			};
             // 
             // editarToolStripMenuItem2
@@ -236,11 +230,9 @@ namespace WindowsFormsApplication1
             this.button3.Size = new System.Drawing.Size(214, 29);
             this.button3.TabIndex = 2;
             this.button3.Text = "Nuevo Personaje";
-            this.button3.UseVisualStyleBackColor = true;
+			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				Program.anPers.PantallaAnt=this;
-				Program.anPers.Show();
+				Program.anPers=new AnadirModificarPersonajesForm();
 			};
             // 
             // button2
@@ -252,9 +244,7 @@ namespace WindowsFormsApplication1
             this.button2.Text = "Nueva Escena";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				Program.esc.PantallaAnt=this;
-				Program.esc.Show();
+				Program.esc=new EscenasForm();
 			};
             // 
             // button1
@@ -266,9 +256,7 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Nuevo Capítulo";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				Program.nuevoCap.PantallaAnt=this;
-				Program.nuevoCap.Show();
+				Program.nuevoCap=new NuevoCapituloForm();
 			};
             // 
             // Form1
@@ -305,13 +293,13 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem referenciasToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem referenciasToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
         //public System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TreeView treeView1;
+        public System.Windows.Forms.TreeView treeView1;
     }
 }
 

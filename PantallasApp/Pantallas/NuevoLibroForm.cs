@@ -21,12 +21,7 @@ namespace WindowsFormsApplication1
         {
 			this.PantallaAnt = null;
             InitializeComponent();
-			this.Hide();
-		}
-
-		void textBox1_TextChanged (object sender, EventArgs e)
-		{
-			throw new NotImplementedException ();
+			this.Show();
 		}
     }
 }

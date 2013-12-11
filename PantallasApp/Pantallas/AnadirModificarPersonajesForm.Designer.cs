@@ -111,8 +111,7 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += delegate (object sender , EventArgs e){
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close();
 			};
             // 
             // button2
@@ -124,8 +123,7 @@ namespace WindowsFormsApplication1
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
-				this.Hide();
-				this.PantallaAnt.Show();
+				this.Close();
 			};
             // 
             // Form7

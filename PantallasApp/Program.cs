@@ -32,19 +32,11 @@ namespace WindowsFormsApplication1
 			persistencia = new XMLPersistencia("plantilla.xml");
 			Program.Book = persistencia.Leer();
 
-			Program.anPers = new AnadirModificarPersonajesForm();
-			Program.esc = new EscenasForm();
 			Program.libA = new LibroAbiertoForm();
-			Program.modCap = new ModificarCapituloForm();
-			Program.nuevoCap = new NuevoCapituloForm();
-			Program.nuevoLib = new NuevoLibroForm();
-			Program.references = new ReferencesForm(Book);
-			Program.procesador = new ProcesadorTextos();
-
-			//Program.libA.nuevaToolStripMenuItem.Enabled=false;
 			Program.libA.button1.Enabled=false;
 			Program.libA.button2.Enabled=false;
 			Program.libA.button3.Enabled=false;
+			Program.libA.referenciasToolStripMenuItem.Enabled=false;
 			Application.Run(Program.libA); // Libro sin Abrir
             
         }

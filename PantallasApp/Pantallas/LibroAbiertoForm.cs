@@ -20,7 +20,6 @@ namespace WindowsFormsApplication1
         {
 			this.PantallaAnt = null;
             InitializeComponent();
-			this.Hide();
 		}
     }
 }

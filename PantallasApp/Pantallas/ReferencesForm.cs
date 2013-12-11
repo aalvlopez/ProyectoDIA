@@ -53,7 +53,8 @@ namespace WindowsFormsApplication1
 			ResumeLayout( true );
 			Closed += (sender, e) => Salir();
 			
-			Text = "Gestor de Referencias";			
+			Text = "Gestor de Referencias";	
+			this.Show();
 		}
 
 		/// <summary>
@@ -71,7 +72,6 @@ namespace WindowsFormsApplication1
 			
 			MenuItem opSave = new MenuItem( "&Salvar" );
 			opSave.Shortcut = Shortcut.CtrlS;
-			opSave.Click += (sender, e) => Save();
 
 			MenuItem opInsertar = new MenuItem( "&Insertar" );
 			opInsertar.Shortcut = Shortcut.CtrlI;
@@ -369,19 +369,9 @@ namespace WindowsFormsApplication1
 		}	
 
 		/// <summary>
-		/// Save this instance.
-		/// </summary>
-		private void Save(){
-			//Referencia.SaveToXml(listado);	
-		}
-		
-		
-		/// <summary>
 		/// Cierre de App
 		/// </summary>
 		private void Salir(){
-			Save();
-			Dispose( true );
 		}						
 	}
 }
