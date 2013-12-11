@@ -40,13 +40,30 @@ namespace WindowsFormsApplication1
 		public Libro Leer ()
 		{
 			Libro libro = new Libro();
-			
+			string nombrePersonaje = "";
+			string capPersonaje = "";
+			string descPersonaje = "";
 			XmlDocument docXml = new XmlDocument();
  			docXml.Load (this.Documento);
-			
+			//carga contenido personajes libro
+			XmlNodeList personajes = docXml.GetElementsByTagName("personaje");
+			foreach (XmlNode personaje in personajes) {
+				XmlNode nombre = personaje.ChildNodes["nombrePersonaje"];
+				XmlNode cap = personaje.ChildNodes ["cap"];
+				XmlNode desc = personaje.ChildNodes["descripcion"];
+				nombrePersonaje = nombre.InnerText.Trim();
+				capPersonaje = cap.InnerText.Trim();
+				descPersonaje = desc.InnerText.Trim();
+				libro.Actores.Add(Actor.Crea(nombrePersonaje, 
+										capPersonaje,
+										descPersonaje)
+								);
+			}
+			//fin carga personajes libro
 			foreach(XmlNode nodo1 in docXml.DocumentElement.ChildNodes) {
 				switch (nodo1.Name)
 				{
+                                    
 				case "titulo": 
 					libro.Titulo = nodo1.InnerText;
 					break;
@@ -149,7 +166,31 @@ namespace WindowsFormsApplication1
 			 xmln = docXml.CreateAttribute( "xsi:schemaLocation" );
 			xmln.InnerText = "http://www.esei.uvigo.es/libro libro.xsd" ;
 			nodol.Attributes.Append( xmln );
-			
+			//codigo insertado para procesar guardado de personajes
+			XmlNode personajes = docXml.CreateNode (XmlNodeType.Element, "personajes", "");
+			XmlNode personaje;
+			XmlNode nombre;
+			XmlNode cap;
+			XmlNode descripcion;
+			foreach (var actor in libro.Actores) {
+				personaje = docXml.CreateNode (XmlNodeType.Element, "personaje", "");
+				nombre = docXml.CreateNode (XmlNodeType.Element, "nombrePersonaje", "");
+				cap = docXml.CreateNode (XmlNodeType.Element, "cap", "");
+				descripcion = docXml.CreateNode (XmlNodeType.Element, "descripcion", "");
+				nombre.InnerText = actor.Nombre;
+				cap.InnerText = actor.Caps;
+				descripcion.InnerText = actor.Descripcion;
+				personaje.AppendChild(nombre);
+				personaje.AppendChild(cap);
+				personaje.AppendChild(descripcion);
+				personajes.AppendChild(personaje);
+			}
+			nodol.AppendChild(personajes);
+			//fin insertado personajes
+
+
+
+
 			XmlNode ltit = docXml.CreateNode( XmlNodeType.Element, "titulo", "");
 			ltit.InnerText = libro.Titulo;
 			nodol.AppendChild( ltit );

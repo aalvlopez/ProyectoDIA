@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace scActores
+namespace WindowsFormsApplication1
 {
 	/// <summary>
 	/// Representa un actor.
@@ -10,31 +10,14 @@ namespace scActores
     public class Actor
     {
 
-        /// <summary>
-        /// devuelve o modifica el nombre de la plantilla
-        /// </summary>
-        public string PlantillaName
-        {
-            get;set;
-
-        }
+        
 
         /// <summary>
         /// devuelve o modidifica los capitulos 
         /// </summary>
-        public string Caps
+        public string Cap
         {
-            get { return this.caps; }
-            set {
-                if (!this.caps.Contains(value) && this.caps!= null && this.caps.Length >0)
-                {
-                    this.caps += ",";
-                    this.caps += value;
-                }
-                else if(this.caps.Length==0){
-                        this.caps = value;
-                    }
-           }
+            get;set;
         }
 
         /// <summary>
@@ -49,7 +32,7 @@ namespace scActores
         /// <summary>
         /// devuelve o modifica los datos de la plantilla
         /// </summary>
-        public IDictionary<string, string> DatosPlantilla { 
+		public string Descripcion { 
             get; set; 
         }
 
@@ -57,9 +40,7 @@ namespace scActores
       
 
        
-        //p es nombre plantilla para el actor, viene vacia del getPlantilla
-        //constructor para plantillas existentes
-        
+       
         
         /// <summary>
         /// Crea un nuevo actor
@@ -79,20 +60,19 @@ namespace scActores
         /// <returns>
         /// Un nuevo <seealso cref="scActores.Actor"/>
         /// </returns>
-        public static Actor Crea(string p, string name, string caps, IDictionary<string, string> datosPlantilla)
+		public static Actor Crea(string name, string cap, string descripcion)
         {
-            return new Actor(p, name, caps, datosPlantilla);
+			return new Actor(name, cap, descripcion);
         }
 
-		  private Actor(string p, string name, string caps, IDictionary<string, string> datosPlantilla)
+		private Actor(string name, string cap
+		, string descripcion)
         {
-            this.PlantillaName = p;
             this.Nombre = name;
-            this.Caps = caps;
-            this.DatosPlantilla = datosPlantilla;
+            this.Cap = cap;
+			this.Descripcion = descripcion;
         }
 
-        private string caps = "";
         
     }
 }

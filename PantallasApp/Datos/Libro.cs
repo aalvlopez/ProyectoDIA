@@ -43,11 +43,10 @@ namespace WindowsFormsApplication1
 			get;
 			set;
 		}
-		
-		public List<Referencia> Referencias{
-			get;
-			set;
-		}
+                public Actores Actores
+                {
+                    get;set;
+                }
 		/// <summary>
 		/// Crea un nuevo <see cref="Scrivener.Libro"/> vacio.
 		/// </summary>
@@ -57,6 +56,7 @@ namespace WindowsFormsApplication1
 			Referencias = new List<Referencia>();
 			this.Anotacion = "";
 			this.Titulo="";
+                        this.Actores = new Actores();
 		}
 		
 		/// <summary>
@@ -68,10 +68,9 @@ namespace WindowsFormsApplication1
 		public Libro ( String titulo)
 		{
 			this.Capitulos = new LinkedList<Capitulo>();
-			
-			Referencias = new List<Referencia>();
 			this.Anotacion = "";
 			this.Titulo=titulo;
+                        this.Actores = new Actores();
 		}
 		
 		/// <summary>
@@ -86,12 +85,13 @@ namespace WindowsFormsApplication1
 		/// <param name='capitulos'>
 		/// Capitulos.
 		/// </param>
-//		public Libro ( String titulo, String anotacion, LinkedList<Capitulo> capitulos)
-//		{
-//			Titulo = titulo;
-//			Anotacion = anotacion;
-//			this.Capitulos = capitulos;
-//		}
+		public Libro ( String titulo, String anotacion, LinkedList<Capitulo> capitulos,Actores actores)
+		{
+			Titulo = titulo;
+			Anotacion = anotacion;
+			this.Capitulos = capitulos;
+             this.Actores = actores;
+		}
 		
 		/// <summary>
 		/// Crear un nuevo capitulo.
@@ -137,7 +137,11 @@ namespace WindowsFormsApplication1
 				}
 			return null;
 		}
-	
+
+		public List<Referencia> Referencias{
+			get;
+			set;
+		}	
 	}
 }
 
