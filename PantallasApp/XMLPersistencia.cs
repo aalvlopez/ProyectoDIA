@@ -48,12 +48,9 @@ namespace WindowsFormsApplication1
 			//carga contenido personajes libro
 			XmlNodeList personajes = docXml.GetElementsByTagName("personaje");
 			foreach (XmlNode personaje in personajes) {
-				XmlNode nombre = personaje.ChildNodes["nombrePersonaje"];
-				XmlNode cap = personaje.ChildNodes ["cap"];
-				XmlNode desc = personaje.ChildNodes["descripcion"];
-				nombrePersonaje = nombre.InnerText.Trim();
-				capPersonaje = cap.InnerText.Trim();
-				descPersonaje = desc.InnerText.Trim();
+				nombrePersonaje  = personaje.ChildNodes[0].InnerText.Trim();
+				capPersonaje  = personaje.ChildNodes [1].InnerText.Trim();
+				descPersonaje  = personaje.ChildNodes[2].InnerText.Trim();
 				libro.Actores.Add(Actor.Crea(nombrePersonaje, 
 										capPersonaje,
 										descPersonaje)
@@ -178,7 +175,7 @@ namespace WindowsFormsApplication1
 				cap = docXml.CreateNode (XmlNodeType.Element, "cap", "");
 				descripcion = docXml.CreateNode (XmlNodeType.Element, "descripcion", "");
 				nombre.InnerText = actor.Nombre;
-				cap.InnerText = actor.Caps;
+				cap.InnerText = actor.Cap;
 				descripcion.InnerText = actor.Descripcion;
 				personaje.AppendChild(nombre);
 				personaje.AppendChild(cap);
