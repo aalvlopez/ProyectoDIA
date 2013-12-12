@@ -125,6 +125,12 @@
     <Compile Include="Datos\Actores.cs" />
     <Compile Include="Datos\Plantilla.cs" />
     <Compile Include="Datos\Plantillas.cs" />
+    <Compile Include="Core\Event.cs" />
+    <Compile Include="Core\ListEvent.cs" />
+    <Compile Include="UI\EventsWinForms.cs" />
+    <Compile Include="UI\IUserInterface.cs" />
+    <Compile Include="Persistence\IPersistence.cs" />
+    <Compile Include="Persistence\XmlPersistence.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -137,5 +143,8 @@
   <ItemGroup>
     <Folder Include="Pantallas\" />
     <Folder Include="Datos\" />
+    <Folder Include="Core\" />
+    <Folder Include="UI\" />
+    <Folder Include="Persistence\" />
   </ItemGroup>
 </Project>

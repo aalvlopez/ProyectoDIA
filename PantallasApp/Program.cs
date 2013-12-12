@@ -20,22 +20,28 @@ namespace WindowsFormsApplication1
 		public static NuevoLibroForm nuevoLib;
 		public static ReferencesForm references;
 		public static ProcesadorTextos procesador;
+		public static EventsWinForms eventosForm; 
 
 		public static Libro Book;
 		public static XMLPersistencia persistencia;
+		public static ListEvent listEvents ;
 		public static void Main()
         {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-			persistencia = new XMLPersistencia("plantilla.xml");
-			Program.Book = persistencia.Leer();
+			XmlPersistence xmlPersistence = new XmlPersistence("events.xml");
+			Program.listEvents = new ListEvent(xmlPersistence);
+
+
+//			persistencia = new XMLPersistencia("plantilla.xml");
+//			Program.Book = persistencia.Leer();
 
 			Program.libA = new LibroAbiertoForm();
-			Program.libA.button1.Enabled=false;
-			Program.libA.button2.Enabled=false;
-			Program.libA.button3.Enabled=false;
+			Program.libA.button1.Enabled=true;
+			Program.libA.button2.Enabled=true;
+			Program.libA.button3.Enabled=true;
 			Program.libA.referenciasToolStripMenuItem.Enabled=false;
 			Application.Run(Program.libA); // Libro sin Abrir
             

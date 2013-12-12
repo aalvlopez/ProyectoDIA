@@ -34,7 +34,6 @@ namespace WindowsFormsApplication1{
 		private static void EscribirTree (Libro book, TreeView treeView1)
 		{
 			TreeNode node;
-
 			node = treeView1.Nodes.Add (book.Titulo);
 			node = treeView1.Nodes.Add ("Capitulos");
 			TreeNode node2;
@@ -44,13 +43,6 @@ namespace WindowsFormsApplication1{
 					node2.Nodes.Add(escena.Id ,escena.Titulo);
 				}
 			}
-//	        node = this.TreeView1.Nodes.Add ("Personajes");   
-//			foreach (Personaje personaje in this.Book.ListPersonajes) {
-//				node2 = node.Nodes.Add(personaje.Id, personaje.Nombre);
-//			}
-		}
-		private static void PulsarNodo()
-		{
 
 		}
 

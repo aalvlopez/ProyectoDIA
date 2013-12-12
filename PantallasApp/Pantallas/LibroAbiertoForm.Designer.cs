@@ -195,7 +195,7 @@ namespace WindowsFormsApplication1
             this.verToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.verToolStripMenuItem.Text = "Ver";
 			this.verToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				MessageBox.Show("Eventos...");
+				Program.eventosForm = new EventsWinForms(Program.listEvents);
 			};
             // 
             // panel2
@@ -212,6 +212,17 @@ namespace WindowsFormsApplication1
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(171, 395);
             this.treeView1.TabIndex = 0;
+			
+			treeView1.NodeMouseDoubleClick+=delegate(object sender, TreeNodeMouseClickEventArgs e) {
+				if(e.Node.Level == 1){
+					Program.modCap = new ModificarCapituloForm(Program.Book.BuscarCapituloId(e.Node.Name));
+				}else{
+					if(e.Node.Level == 2){
+						Program.esc = new EscenasForm(Program.Book.BuscarEscenaId(e.Node.Name));
+					}
+				}
+			};
+
             // 
             // panel3
             // 

@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(207, 108);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Anotaciones";
+            this.textBox2.Text = this.cap.Anotacion;
             // 
             // button2
             // 
@@ -86,6 +86,8 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click+=delegate(object sender, EventArgs e) {
+				this.cap.ModificarCapitulo(this.textBox1.Text, this.textBox2.Text);
+				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
 				this.Close ();
 			};
             // 
@@ -95,7 +97,7 @@ namespace WindowsFormsApplication1
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(207, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Título";
+            this.textBox1.Text = this.cap.Titulo;
             // 
             // listBox1
             // 

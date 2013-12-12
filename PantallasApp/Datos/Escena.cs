@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
 		/// <param name='contenido'>
 		/// Contenido.
 		/// </param>
-		public Escena (String titulo, String anotacion, String contenido)
+		public Escena (String titulo, String anotacion, String contenido, String idCapitulo)
 		{
 			DateTime start = new DateTime(1995, 1, 1);
 		    Random gen = new Random();
@@ -44,6 +44,7 @@ namespace WindowsFormsApplication1
 			Titulo = titulo;
 			Anotacion = anotacion;
 			Contenido = contenido;
+			IdCapitulo = idCapitulo;
 		}
 		
 		/// <summary>
@@ -64,7 +65,9 @@ namespace WindowsFormsApplication1
 			this.Anotacion = anotacion;
 			this.Contenido = contenido;
 		}
-		
+		public void CambiarCap ()
+		{
+		}
 		/// <summary>
 		/// Gets y sets del identificador(ID).
 		/// </summary>
@@ -107,6 +110,12 @@ namespace WindowsFormsApplication1
 		/// El contenido
 		/// </value>
 		public String Contenido 
+		{
+			get;
+			set;
+		}
+
+		public String IdCapitulo
 		{
 			get;
 			set;

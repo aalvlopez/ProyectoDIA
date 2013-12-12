@@ -12,13 +12,10 @@ namespace WindowsFormsApplication1
 {
     public partial class ModificarCapituloForm : Form
     {
-		Form PantallaAnt {
-			get;
-			set;
-		}
-        public ModificarCapituloForm()
-        {
-			this.PantallaAnt = null;
+		public Capitulo cap;
+        public ModificarCapituloForm(Capitulo cap)
+		{
+			this.cap = cap;
             InitializeComponent();
 			this.Show ();
         }

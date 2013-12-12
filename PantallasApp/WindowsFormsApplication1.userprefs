@@ -1,14 +1,37 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pantallas/ProcesadorTextos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pantallas/EscenasForm.cs">
     <Files>
       <File FileName="Program.cs" Line="33" Column="39" />
       <File FileName="Datos/Libro.cs" Line="107" Column="60" />
       <File FileName="Pantallas/NuevoCapituloForm.cs" Line="18" Column="4" />
       <File FileName="Pantallas/NuevoCapituloForm.Designer.cs" Line="79" Column="69" />
-      <File FileName="Pantallas/EscenasForm.cs" Line="49" Column="56" />
-      <File FileName="Pantallas/ProcesadorTextos.cs" Line="239" Column="39" />
+      <File FileName="Pantallas/EscenasForm.cs" Line="32" Column="18" />
+      <File FileName="Pantallas/ProcesadorTextos.cs" Line="252" Column="5" />
+      <File FileName="Program.cs" Line="33" Column="1" />
+      <File FileName="Datos/Libro.cs" Line="107" Column="60" />
+      <File FileName="Pantallas/NuevoCapituloForm.cs" Line="18" Column="4" />
+      <File FileName="Pantallas/NuevoCapituloForm.Designer.cs" Line="79" Column="69" />
+      <File FileName="Pantallas/EscenasForm.cs" Line="32" Column="4" />
+      <File FileName="Pantallas/ProcesadorTextos.cs" Line="252" Column="5" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="WindowsFormsApplication1" expanded="True">
+            <Node name="Pantallas" expanded="True">
+              <Node name="EscenasForm.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

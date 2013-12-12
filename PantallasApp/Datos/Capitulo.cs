@@ -71,8 +71,8 @@ namespace WindowsFormsApplication1
 		/// <param name='contenidoe'>
 		/// Contenido.
 		/// </param>
-		public void CrearEscena(string tituloe, string anotacione ,string contenidoe){
-			Escenas.AddLast(new Escena(tituloe, anotacione , contenidoe));
+		public void CrearEscena(string tituloe, string anotacione ,string contenidoe, string idCapitulo){
+			Escenas.AddLast(new Escena(tituloe, anotacione , contenidoe, idCapitulo));
 		}
 		
 		public Escena BuscarEscena(String titulo)
@@ -95,6 +95,10 @@ namespace WindowsFormsApplication1
 				}
 		    return null;
 		}
+		public override string ToString ()
+		{
+			return string.Format (this.Titulo);
+		} 
 		/// <summary>
 		/// Gets y sets del identificador (ID).
 		/// </summary>

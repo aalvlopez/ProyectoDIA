@@ -36,11 +36,6 @@ namespace WindowsFormsApplication1
             get; set; 
         }
 
-      
-      
-
-       
-       
         
         /// <summary>
         /// Crea un nuevo actor

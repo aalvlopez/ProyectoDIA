@@ -137,7 +137,18 @@ namespace WindowsFormsApplication1
 				}
 			return null;
 		}
-
+		public Escena BuscarEscenaId(String id)
+		{
+				foreach(var i in this.Capitulos)
+				{
+					Escena aux = i.BuscarEscenaId(id);
+					if(aux!=null){
+						return aux;
+					}
+						
+				}
+			return null;
+		}
 		public List<Referencia> Referencias{
 			get;
 			set;
