@@ -44,6 +44,7 @@ namespace WindowsFormsApplication1
 			string capPersonaje = "";
 			string descPersonaje = "";
 			string idPersonaje = "";
+			string escPersonaje = "";
 			XmlDocument docXml = new XmlDocument();
  			docXml.Load (this.Documento);
 			//carga contenido personajes libro
@@ -51,11 +52,12 @@ namespace WindowsFormsApplication1
 			foreach (XmlNode personaje in personajes) {
 				idPersonaje = personaje.Attributes["id"].Value;
 				nombrePersonaje  = personaje.ChildNodes[0].InnerText.Trim();
-				capPersonaje  = personaje.ChildNodes [1].InnerText.Trim();
-				descPersonaje  = personaje.ChildNodes[2].InnerText.Trim();
+				capPersonaje  = personaje.ChildNodes[1].InnerText.Trim();
+				escPersonaje = personaje.ChildNodes[2].InnerText.Trim();
+				descPersonaje  = personaje.ChildNodes[3].InnerText.Trim();
 				libro.Actores.Add(new Actor(nombrePersonaje, 
 										capPersonaje,
-										descPersonaje,idPersonaje)
+										descPersonaje,idPersonaje,escPersonaje)
 								);
 			}
 			//fin carga personajes libro
@@ -170,6 +172,7 @@ namespace WindowsFormsApplication1
 			XmlNode personaje;
 			XmlNode nombre;
 			XmlNode cap;
+			XmlNode esc;
 			XmlNode descripcion;
 			XmlCDataSection dataDesc;
 			XmlAttribute idPersonaje;
@@ -180,6 +183,7 @@ namespace WindowsFormsApplication1
 				personaje.Attributes.Append(idPersonaje);
 				nombre = docXml.CreateNode (XmlNodeType.Element, "nombrePersonaje", "");
 				cap = docXml.CreateNode (XmlNodeType.Element, "cap", "");
+				esc = docXml.CreateNode (XmlNodeType.Element, "escena", "");
 				descripcion = docXml.CreateNode (XmlNodeType.Element, "descripcion", "");
 				dataDesc = docXml.CreateCDataSection(actor.Descripcion);
 				nombre.InnerText = actor.Nombre;
@@ -187,6 +191,7 @@ namespace WindowsFormsApplication1
 				descripcion.AppendChild(dataDesc);
 				personaje.AppendChild(nombre);
 				personaje.AppendChild(cap);
+				personaje.AppendChild(esc);
 				personaje.AppendChild(descripcion);
 				personajes.AppendChild(personaje);
 			}

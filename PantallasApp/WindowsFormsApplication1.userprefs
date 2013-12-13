@@ -2,18 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="XMLPersistencia.cs">
     <Files>
-      <File FileName="Program.cs" Line="42" Column="3" />
-      <File FileName="Pantallas/EscenasForm.cs" Line="85" Column="87" />
-      <File FileName="Pantallas/LibroAbiertoForm.Designer.cs" Line="1" Column="1" />
-      <File FileName="treeviewCapPer.cs" Line="31" Column="3" />
-      <File FileName="Datos/Escena.cs" Line="44" Column="20" />
-      <File FileName="Datos/Actor.cs" Line="81" Column="3" />
-      <File FileName="Datos/Actores.cs" Line="1" Column="1" />
-      <File FileName="Datos/Libro.cs" Line="145" Column="19" />
-      <File FileName="Datos/Capitulo.cs" Line="93" Column="26" />
-      <File FileName="Datos/Referencia.cs" Line="1" Column="1" />
-      <File FileName="GestionarLibro.cs" Line="1" Column="1" />
-      <File FileName="XMLPersistencia.cs" Line="44" Column="29" />
+      <File FileName="Program.cs" Line="46" Column="31" />
+      <File FileName="XMLPersistencia.cs" Line="51" Column="67" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +11,11 @@
           <Node name="WindowsFormsApplication1" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="Datos" expanded="True" />
-            <Node name="Pantallas" expanded="True" />
+            <Node name="Pantallas" expanded="True">
+              <Node name="LibroAbiertoForm.cs" expanded="True" />
+              <Node name="NuevoCapituloForm.cs" expanded="True" />
+              <Node name="NuevoLibroForm.cs" expanded="True" />
+            </Node>
             <Node name="XMLPersistencia.cs" selected="True" />
           </Node>
         </State>

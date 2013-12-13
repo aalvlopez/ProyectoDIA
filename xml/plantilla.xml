@@ -6,7 +6,8 @@
 	<personajes>
 		<personaje id="pj1">
 			<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
-			<cap>esc1</cap>
+			<cap>cap1</cap>
+			<escena>esc1</escena>
 			<descripcion><![CDATA[
 				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
 				Edad del Sol. 
@@ -14,7 +15,8 @@
 		</personaje>
 		<personaje id="pj2">
 			<nombrePersonaje>Gandalf</nombrePersonaje>
-			<cap>esc2</cap>
+			<cap>cap2</cap>
+			<escena>esc2</escena>
 			<descripcion><![CDATA[
 				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
 				ayudar a sus habitantes en la lucha contra el señor oscuro Sauron.

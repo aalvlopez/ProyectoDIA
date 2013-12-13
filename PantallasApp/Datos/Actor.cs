@@ -18,6 +18,13 @@ namespace WindowsFormsApplication1
 			set;
 		}
 
+		/// <summary>
+		/// Gets y sets de la primera escena del personaje
+		/// </summary>
+		public String Esc{
+			get;set;
+		}
+
         /// <summary>
         /// devuelve o modidifica los capitulos 
         /// </summary>
@@ -43,12 +50,13 @@ namespace WindowsFormsApplication1
         }
 
         public Actor (string name, string cap
-		, string descripcion,string id)
+		, string descripcion,string id,string esc)
 		{
 			this.Id = id;
 			this.Nombre = name;
 			this.Descripcion = descripcion;
 			this.Cap = cap;
+			this.Esc = esc;
 		}
         /// <summary>
         /// Crea un nuevo actor
@@ -65,7 +73,7 @@ namespace WindowsFormsApplication1
         /// <returns>
         /// Un nuevo <seealso cref="scActores.Actor"/>
         /// </returns>
-		public Actor (string name, string cap, string descripcion)
+		public Actor (string name, string cap, string descripcion,string esc)
         {
 		
 			DateTime start = new DateTime(1995, 1, 1);
@@ -76,6 +84,7 @@ namespace WindowsFormsApplication1
             this.Nombre = name;
             this.Cap = cap;
 			this.Descripcion = descripcion;
+			this.Esc = esc;
         }
 
 
