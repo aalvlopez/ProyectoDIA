@@ -3,30 +3,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.esei.uvigo.es/libro libro.xsd">
 	
-	<personaje id="pj1">
-		<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
-		<cap>esc1</cap>
-		<plantilla id="basica">
-			<datosPlantilla>
-				<dato id="descripcion"><![CDATA[
+	<personajes>
+		<personaje>
+			<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
+			<cap>esc1</cap>
+			<descripcion><![CDATA[
 				Es un hobbit, hijo de Drogo Bolsón y Prímula Brandigamo y nacido el 22 de septiembre del año 2968 de la Tercera 
 				Edad del Sol. 
-				]]></dato>
-			</datosPlantilla>
-		</plantilla>
-	</personaje>
-	<personaje id="pj2">
-		<nombrePersonaje>Gandalf</nombrePersonaje>
-		<cap>esc2</cap>
-		<plantilla id="basica">
-			<datosPlantilla>
-				<dato id="descripcion"><![CDATA[
+			]]></descripcion>
+
+		</personaje>
+		<personaje>
+			<nombrePersonaje>Gandalf</nombrePersonaje>
+			<cap>esc2</cap>
+			<descripcion><![CDATA[
 				Es un istar (mago), uno de los espíritus maia enviados a la Tierra Media durante la Tercera Edad del Sol para 
 				ayudar a sus habitantes en la lucha contra el señor oscuro Sauron.
-				]]></dato>
-			</datosPlantilla>
-		</plantilla>
-	</personaje>
+			]]></descripcion>
+		</personaje>
+	</personajes>
 
 	<titulo>La Comunidad del Anillo</titulo>
 	<anotacion>Lorem Ipsum</anotacion>
