@@ -142,7 +142,18 @@ namespace WindowsFormsApplication1
             this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.abrirToolStripMenuItem1.Text = "Abrir..";
 			this.abrirToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
-				MessageBox.Show("Abrir libro...");
+				openFileDialog = new OpenFileDialog();
+				openFileDialog.Filter = "XML Files (*.xml)|*.xml";
+				openFileDialog.FilterIndex = 0 ;
+				openFileDialog.RestoreDirectory = true;
+				openFileDialog.FileName = null;
+				openFileDialog.Title = "Cargar libro";
+
+				if (openFileDialog.ShowDialog () == DialogResult.OK) {
+					String fileName = openFileDialog.FileName;
+
+					// A partir de aquí se debería cargar el xml en memoria...
+				}
 			};
             // 
             // editarToolStripMenuItem1
@@ -311,6 +322,7 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

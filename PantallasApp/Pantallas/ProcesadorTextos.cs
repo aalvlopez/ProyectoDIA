@@ -9,11 +9,8 @@ namespace WindowsFormsApplication1
 	/// </summary>
 	public class ProcesadorTextos : Form
 	{
-		private string texto;
-
-		public ProcesadorTextos(string texto)
+		public ProcesadorTextos()
 		{
-			this.texto = texto;
 			ConstruirGui ();
 			this.Show ();
 		}
@@ -148,7 +145,6 @@ namespace WindowsFormsApplication1
 			richTextBox.Dock = DockStyle.Fill;
 			richTextBox.ScrollBars = RichTextBoxScrollBars.Vertical;
 			richTextBox.Font = new Font ("Arial", 12, FontStyle.Regular);
-			richTextBox.Text=this.texto;
 
 			tableLayoutPanel = new TableLayoutPanel ();
 			tableLayoutPanel.Padding = new Padding (5);
@@ -242,7 +238,7 @@ namespace WindowsFormsApplication1
 		}
 
 		/// <summary>
-		/// Establece el tipo de fuente en el TextBox
+		/// Establece el tipo de fuente en el TextBox.
 		/// </summary>
 		public void AplicarEstilo() 
 		{
@@ -300,7 +296,10 @@ namespace WindowsFormsApplication1
 			}
 		}
 
-		private void ConstruirGui()
+		/// <summary>
+		/// Construye la interfaz de usuario.
+		/// </summary>
+		public void ConstruirGui()
 		{
 			this.Text = "Procesador de textos";
 
@@ -308,8 +307,16 @@ namespace WindowsFormsApplication1
 			ConstruirPanel ();
 		}
 
-		public void setTexto( String rtf) {
+		/// <summary>
+		/// Permite cargar texto en el TextBox.
+		/// </summary>
+		/// <param name="rtf">Texto en formato rtf</param>
+		public void setRtf(String rtf) {
 			richTextBox.Rtf = rtf;
+		}
+
+		public void setTexto(String texto) {
+			richTextBox.Text = texto;
 		}
 
 		private TableLayoutPanel tableLayoutPanel;
@@ -329,6 +336,5 @@ namespace WindowsFormsApplication1
 		private MenuItem operacionCopiar;
 		private MenuItem operacionPegar;
 		private MenuItem operacionDeshacer;
-
 	}
 }

@@ -104,7 +104,8 @@ namespace WindowsFormsApplication1
 			btnEdit.Text = "Editar escena";
 			btnEdit.Size = new Size (150, 30);
 			btnEdit.Click += delegate(object sender, EventArgs e) {
-				Program.procesador = new ProcesadorTextos (this.texto);
+				Program.procesador = new ProcesadorTextos ();
+				Program.procesador.setTexto(this.texto);
 			};
 
 			tableLayoutPanel = new TableLayoutPanel ();
