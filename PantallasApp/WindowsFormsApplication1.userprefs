@@ -2,18 +2,18 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="XMLPersistencia.cs">
     <Files>
-      <File FileName="Program.cs" Line="32" Column="66" />
+      <File FileName="Program.cs" Line="42" Column="3" />
       <File FileName="Pantallas/EscenasForm.cs" Line="85" Column="87" />
       <File FileName="Pantallas/LibroAbiertoForm.Designer.cs" Line="1" Column="1" />
       <File FileName="treeviewCapPer.cs" Line="31" Column="3" />
       <File FileName="Datos/Escena.cs" Line="44" Column="20" />
-      <File FileName="Datos/Actor.cs" Line="45" Column="33" />
+      <File FileName="Datos/Actor.cs" Line="81" Column="3" />
       <File FileName="Datos/Actores.cs" Line="1" Column="1" />
       <File FileName="Datos/Libro.cs" Line="145" Column="19" />
       <File FileName="Datos/Capitulo.cs" Line="93" Column="26" />
       <File FileName="Datos/Referencia.cs" Line="1" Column="1" />
       <File FileName="GestionarLibro.cs" Line="1" Column="1" />
-      <File FileName="XMLPersistencia.cs" Line="53" Column="5" />
+      <File FileName="XMLPersistencia.cs" Line="44" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

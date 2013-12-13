@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
 				nombrePersonaje  = personaje.ChildNodes[0].InnerText.Trim();
 				capPersonaje  = personaje.ChildNodes [1].InnerText.Trim();
 				descPersonaje  = personaje.ChildNodes[2].InnerText.Trim();
-				libro.Actores.Add(Actor.Crea(nombrePersonaje, 
+				libro.Actores.Add(new Actor(nombrePersonaje, 
 										capPersonaje,
 										descPersonaje,idPersonaje)
 								);

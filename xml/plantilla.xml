@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.esei.uvigo.es/libro libro.xsd">
 	
 	<personajes>
-		<personaje>
+		<personaje id="pj1">
 			<nombrePersonaje>Frodo Bolsón</nombrePersonaje>
 			<cap>esc1</cap>
 			<descripcion><![CDATA[
@@ -12,7 +12,7 @@
 				Edad del Sol. 
 			]]></descripcion>
 		</personaje>
-		<personaje>
+		<personaje id="pj2">
 			<nombrePersonaje>Gandalf</nombrePersonaje>
 			<cap>esc2</cap>
 			<descripcion><![CDATA[

@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
             get; set; 
         }
 
-        public static Actor Crea(string name, string cap
+        public Actor (string name, string cap
 		, string descripcion,string id)
 		{
 			this.Id = id;
@@ -65,15 +65,9 @@ namespace WindowsFormsApplication1
         /// <returns>
         /// Un nuevo <seealso cref="scActores.Actor"/>
         /// </returns>
-		public static Actor Crea(string name, string cap, string descripcion)
+		public Actor (string name, string cap, string descripcion)
         {
 		
-			return new Actor(name, cap, descripcion);
-        }
-
-		private Actor(string name, string cap
-		, string descripcion)
-        {
 			DateTime start = new DateTime(1995, 1, 1);
 		    Random gen = new Random();
 		    int range = (DateTime.Today - start).Days;       
@@ -83,6 +77,7 @@ namespace WindowsFormsApplication1
             this.Cap = cap;
 			this.Descripcion = descripcion;
         }
+
 
         
     }
