@@ -44,6 +44,8 @@ namespace WindowsFormsApplication1
 			this.ListEvents();
 			this.FillList();
 
+			this.Text = "Planificación de eventos";
+
 			this.ResumeLayout(false);
 		}
 
@@ -55,6 +57,9 @@ namespace WindowsFormsApplication1
 		/// </param>
 		public void DisplayEvent (Event e)
 		{
+			this.MaximumSize = new Size ( 435, 185 ); 
+			this.MinimumSize = new Size ( 600, 450 ); 
+
 			this.label1 = new Label();
 			this.label3 = new Label();
 			this.label4 = new Label();
@@ -167,6 +172,13 @@ namespace WindowsFormsApplication1
             // 
             this.tsItem3.Size = new Size(152, 22);
             this.tsItem3.Text = "Salir";
+
+			this.tsItem2.ShortcutKeys = Keys.Alt | Keys.C;
+			this.tsItem2.ShortcutKeyDisplayString = "Alt+C";
+
+			this.tsItem3.ShortcutKeys = Keys.Alt | Keys.W;
+			this.tsItem3.ShortcutKeyDisplayString = "Alt+W";
+
             // 
             // tpickerStart
             // 
@@ -226,8 +238,6 @@ namespace WindowsFormsApplication1
             this.menu.PerformLayout();
             this.PerformLayout();
 
-			this.MinimumSize = new Size ( 600,450);
-
 			this.ResumeLayout(false);
 
 			//Eventos
@@ -238,7 +248,7 @@ namespace WindowsFormsApplication1
 			};
 
 			this.tsItem3.Click += delegate(object sender, EventArgs eA) {
-				this.Dispose(true);
+				this.Close();
 			};
 
 			this.button2.Click += delegate(object sender, EventArgs eA) {
@@ -263,6 +273,9 @@ namespace WindowsFormsApplication1
 		/// </param>
 		public void ModifyEvent (Event e)
 		{
+			this.MaximumSize = new Size ( 435, 185 ); 
+			this.MinimumSize = new Size ( 600, 450 );  
+
 			this.label1 = new Label();
             this.panel1 = new Panel();
             this.panel2 = new Panel();
@@ -356,6 +369,13 @@ namespace WindowsFormsApplication1
             // 
             this.tsItem3.Size = new Size(152, 22);
             this.tsItem3.Text = "Salir";
+
+			this.tsItem2.ShortcutKeys = Keys.Alt | Keys.C;
+			this.tsItem2.ShortcutKeyDisplayString = "Alt+C";
+
+			this.tsItem3.ShortcutKeys = Keys.Alt | Keys.W;
+			this.tsItem3.ShortcutKeyDisplayString = "Alt+W";
+
             // 
             // tbTitulo
             // 
@@ -394,8 +414,6 @@ namespace WindowsFormsApplication1
             this.ResumeLayout(false);
             this.PerformLayout();
 
-			this.MinimumSize = new Size ( 600,450);
-
 			// Events
 			this.button1.Click += delegate(object sender, EventArgs eA) {
 				if( this.CheckValues(this.tbTitulo.Text, this.monthCalendar.SelectionRange.End) )
@@ -413,7 +431,7 @@ namespace WindowsFormsApplication1
 			};
 
 			this.tsItem3.Click += delegate(object sender, EventArgs eA) {
-				this.Dispose(true);
+				this.Close();
 			};
 		}
 
@@ -423,6 +441,9 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void AddEvents()
 		{
+		 	this.MaximumSize = new Size ( 435, 185 ); 
+			this.MinimumSize = new Size ( 600, 450 );
+
 		 	this.label1 = new Label();
             this.panel1 = new Panel();
             this.panel2 = new Panel();
@@ -514,6 +535,13 @@ namespace WindowsFormsApplication1
             // 
             this.tsItem3.Size = new Size(152, 22);
             this.tsItem3.Text = "Salir";
+
+			this.tsItem2.ShortcutKeys = Keys.Alt | Keys.C;
+			this.tsItem2.ShortcutKeyDisplayString = "Alt+C";
+
+			this.tsItem3.ShortcutKeys = Keys.Alt | Keys.W;
+			this.tsItem3.ShortcutKeyDisplayString = "Alt+W";
+
             // 
             // tbTitulo
             // 
@@ -548,9 +576,7 @@ namespace WindowsFormsApplication1
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
-			this.MinimumSize = new Size ( 600,450);
+			this.PerformLayout();
 
 			// Events
 			this.button1.Click += delegate(object sender, EventArgs e) {
@@ -566,7 +592,7 @@ namespace WindowsFormsApplication1
 			};
 
 			this.tsItem3.Click += delegate(object sender, EventArgs e) {
-				this.Dispose(true);
+				this.Close();
 			};
 		}
 
@@ -576,50 +602,52 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void ListEvents ()
 		{
+			this.MinimumSize = new Size ( 960, 450 );
+			this.MaximumSize = new Size ( 1024, 768 );
+
 			this.menu = new MenuStrip();
+			this.dgList = new DataGridView();
+
             this.tsItem1 = new ToolStripMenuItem();
             this.tsItem2 = new ToolStripMenuItem();
             this.tsItem3 = new ToolStripMenuItem();
-            this.dgList = new DataGridView();
+            
             this.Columna0 = new DataGridViewTextBoxColumn();
             this.Columna1 = new DataGridViewTextBoxColumn();
             this.Columna2 = new DataGridViewTextBoxColumn();
             this.Columna3 = new DataGridViewTextBoxColumn();
+
             this.menu.SuspendLayout();
+			this.menu.Dock = DockStyle.Top;
             this.SuspendLayout();
-            // 
-            // menu
-            // 
+
             this.menu.Items.AddRange(new ToolStripItem[] {
             	this.tsItem1
 			});
-            this.menu.Location = new Point(0, 0);
-            this.menu.Size = new Size(443, 24);
             this.menu.TabIndex = 0;
-            // 
-            // tsItem1
-            // 
+
             this.tsItem1.DropDownItems.AddRange(new ToolStripItem[] {
 	            this.tsItem2,
 	            this.tsItem3
 			});
-            this.tsItem1.Size = new Size(60, 20);
             this.tsItem1.Text = "Archivo";
-            // 
-            // tsItem2
-            // 
-            this.tsItem2.Size = new Size(152, 22);
             this.tsItem2.Text = "Nuevo Evento";
-            // 
-            // tsItem3
-            // 
-            this.tsItem3.Size = new Size(152, 22);
             this.tsItem3.Text = "Salir";
+
+			this.tsItem2.ShortcutKeys = Keys.Alt | Keys.N;
+			this.tsItem2.ShortcutKeyDisplayString = "Alt+N";
+
+			this.tsItem3.ShortcutKeys = Keys.Alt | Keys.W;
+			this.tsItem3.ShortcutKeyDisplayString = "Alt+W";
+
             // 
             // dgList
             // 
+			this.dgList.AllowUserToResizeRows = false;
+			this.dgList.AllowUserToResizeColumns = true;
+
+
 			this.dgList.RowHeadersVisible = false;
-			this.dgList.AutoGenerateColumns = false;
 			this.dgList.MultiSelect = false;
 			this.dgList.AllowUserToResizeRows = false;
 			this.dgList.AllowUserToAddRows = false;
@@ -627,49 +655,34 @@ namespace WindowsFormsApplication1
             this.dgList.AllowUserToOrderColumns = true;
 			this.dgList.ReadOnly = true;
 			this.dgList.BackgroundColor = Color.LightGray;
-            this.dgList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			var columns = new DataGridViewColumn[] {
+			this.dgList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			this.dgList.ScrollBars = ScrollBars.Vertical;
+
+			this.dgList.Columns.AddRange(new DataGridViewColumn[] {
 				this.Columna0,
 	            this.Columna1,
 	            this.Columna2,
             	this.Columna3
-			};
-			this.dgList.Columns.AddRange(columns);
-            this.dgList.Dock = DockStyle.Fill;
-            this.dgList.Location = new Point(0, 24);
-            this.dgList.TabIndex = 1;
-            // 
-            // Columna0
-            // 
+			});
+
+			this.dgList.Height = 300;
+            this.dgList.Dock = DockStyle.Top;
+
             this.Columna0.HeaderText = "#";
-			this.Columna0.Width = 40;
-            // 
-            // Columna1
-            // 
+
             this.Columna1.HeaderText = "Título";
-			this.Columna1.Width = 168;
-            // 
-            // Columna2
-            // 
+			this.Columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             this.Columna2.HeaderText = "Fecha Inicio";
-			this.Columna2.Width = 100;
-            // 
-            // Columna3
-            // 
+			this.Columna2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             this.Columna3.HeaderText = "Fecha Fin";
-			this.Columna3.Width = 100;
-            // 
-            // Config
-            // 
-			this.dgList.MaximumSize = new Size ( (this.Columna0.Width + this.Columna1.Width + this.Columna2.Width + this.Columna3.Width), 195);
-			this.dgList.MinimumSize = new Size ( (this.Columna0.Width + this.Columna1.Width + this.Columna2.Width + this.Columna3.Width), 195);
+			this.Columna3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 			this.Controls.Clear();
             this.Controls.Add(this.dgList);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
-
-			this.MinimumSize = new Size ( 460, 195 );
-			this.MaximumSize = new Size ( 435, 185 ); 
 
 			this.menu.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -683,7 +696,7 @@ namespace WindowsFormsApplication1
 			};
 
 			this.tsItem3.Click += delegate(object sender, EventArgs e) {
-				this.Dispose(true);
+				this.Close();
 			};
 
 			this.dgList.CellClick += delegate(object sender, DataGridViewCellEventArgs e) {
@@ -696,6 +709,11 @@ namespace WindowsFormsApplication1
 				}
 			};
 
+			this.ResizeWindow();
+
+			this.sbStatus = new StatusBar();
+			this.sbStatus.Dock = DockStyle.Bottom;
+			this.Controls.Add( this.sbStatus );
 		}
 
 		/// <summary>
@@ -779,6 +797,7 @@ namespace WindowsFormsApplication1
 				}
 			}
 			this.dgList.Sort(this.dgList.Columns[2], ListSortDirection.Ascending);
+			this.sbStatus.Text= "Número total de eventos = " + this.LEvents.GetLength();
 		}
 
 		/// <summary>
@@ -806,11 +825,25 @@ namespace WindowsFormsApplication1
 			}
 		}
 	
+		private void ResizeWindow(){
+			// Tomar las nuevas medidas
+			int width = this.ClientRectangle.Width;			
+			
+			// Redimensionar la tabla
+			this.dgList.Width = width;
+			this.dgList.Columns[ 0 ].Width = 	(int) Math.Floor( width *.05 );	
+			this.dgList.Columns[ 1 ].Width =	(int) Math.Floor( width *.20 );	
+			this.dgList.Columns[ 2 ].Width =	(int) Math.Floor( width *.35 );	
+			this.dgList.Columns[ 3 ].Width =	(int) Math.Floor( width *.20 ); 
+		}
+	
 		//// Elementos
 		private Label label1;
         private Label label2;
 		private Label label3;
 		private Label label4;
+
+		private StatusBar sbStatus;
 
 		private Panel panel1;
         private Panel panel2;

@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Planificacion/App.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Planificacion/UI/EventsWinForms.cs">
     <Files>
-      <File FileName="Planificacion/UI/EventsWinForms.cs" Line="779" Column="5" />
+      <File FileName="Planificacion/UI/EventsWinForms.cs" Line="638" Column="4" />
       <File FileName="Planificacion/Core/ListEvent.cs" Line="34" Column="66" />
       <File FileName="Planificacion/Core/Event.cs" Line="1" Column="1" />
       <File FileName="Planificacion/Persistence/IPersistence.cs" Line="1" Column="1" />
@@ -15,8 +15,9 @@
           <Node name="Planificacion" expanded="True">
             <Node name="Core" expanded="True" />
             <Node name="Persistence" expanded="True" />
-            <Node name="UI" expanded="True" />
-            <Node name="App.cs" selected="True" />
+            <Node name="UI" expanded="True">
+              <Node name="EventsWinForms.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
