@@ -10,7 +10,13 @@ namespace WindowsFormsApplication1
     public class Actor
     {
 
-        
+        /// <summary>
+		/// Gets y sets del identificador del personaje(Id).
+		/// </summary>
+		public String Id{
+			get;
+			set;
+		}
 
         /// <summary>
         /// devuelve o modidifica los capitulos 
@@ -36,33 +42,43 @@ namespace WindowsFormsApplication1
             get; set; 
         }
 
-        
+        public static Actor Crea(string name, string cap
+		, string descripcion,string id)
+		{
+			this.Id = id;
+			this.Nombre = name;
+			this.Descripcion = descripcion;
+			this.Cap = cap;
+		}
         /// <summary>
         /// Crea un nuevo actor
         /// </summary>
-        /// <param name="p">
-        /// El nombre de la plantilla asociada
-        /// </param>
         /// <param name="name">
         /// El nombre del actor
         /// </param>
-        /// <param name="caps">
-        /// Los capitulos en los que aparece
+        /// <param name="cap">
+        /// El primer capitulo en el que aparece
         /// </param>
-        /// <param name="datosPlantilla">
-        /// Datos de la plantilla, campos vacíos
+        /// <param name="descripcion">
+        /// descripcion del personaje
         /// </param>
         /// <returns>
         /// Un nuevo <seealso cref="scActores.Actor"/>
         /// </returns>
 		public static Actor Crea(string name, string cap, string descripcion)
         {
+		
 			return new Actor(name, cap, descripcion);
         }
 
 		private Actor(string name, string cap
 		, string descripcion)
         {
+			DateTime start = new DateTime(1995, 1, 1);
+		    Random gen = new Random();
+		    int range = (DateTime.Today - start).Days;       
+			this.Id = start.AddDays(gen.Next(range)).ToString("yyyyMMddHHmmssffff");
+
             this.Nombre = name;
             this.Cap = cap;
 			this.Descripcion = descripcion;

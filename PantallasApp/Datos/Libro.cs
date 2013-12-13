@@ -43,10 +43,17 @@ namespace WindowsFormsApplication1
 			get;
 			set;
 		}
-                public Actores Actores
-                {
+
+		/// <summary>
+		/// Propiedad que define los Gets y Sets de los actores de <see cref="Scrivener.Libro">.
+		/// </summary>
+		/// <value>
+		/// Los actores
+		/// </value>
+        public Actores Actores
+        {
                     get;set;
-                }
+        }
 		/// <summary>
 		/// Crea un nuevo <see cref="Scrivener.Libro"/> vacio.
 		/// </summary>
@@ -56,7 +63,7 @@ namespace WindowsFormsApplication1
 			Referencias = new List<Referencia>();
 			this.Anotacion = "";
 			this.Titulo="";
-                        this.Actores = new Actores();
+            this.Actores = new Actores();
 		}
 		
 		/// <summary>
@@ -70,7 +77,7 @@ namespace WindowsFormsApplication1
 			this.Capitulos = new LinkedList<Capitulo>();
 			this.Anotacion = "";
 			this.Titulo=titulo;
-                        this.Actores = new Actores();
+            this.Actores = new Actores();
 		}
 		
 		/// <summary>
@@ -85,12 +92,15 @@ namespace WindowsFormsApplication1
 		/// <param name='capitulos'>
 		/// Capitulos.
 		/// </param>
+		/// <param name='actores'>
+		/// Actores.
+		/// </param>
 		public Libro ( String titulo, String anotacion, LinkedList<Capitulo> capitulos,Actores actores)
 		{
 			Titulo = titulo;
 			Anotacion = anotacion;
 			this.Capitulos = capitulos;
-             this.Actores = actores;
+            this.Actores = actores;
 		}
 		
 		/// <summary>
@@ -120,7 +130,7 @@ namespace WindowsFormsApplication1
 		{
 				foreach(var i in this.Capitulos)
 				{
-					if (i.Titulo == titulo)
+					if (titulo.Equals(i.Titulo))
 					return i;
 				}
 			// Aqui falta cambiar este bloque para que lance una excepcion si no encuentra el libro
@@ -132,7 +142,7 @@ namespace WindowsFormsApplication1
 		{
 				foreach(var i in this.Capitulos)
 				{
-					if (i.Id ==id)
+					if (id.Equals(i.Id))
 						return i;
 				}
 			return null;

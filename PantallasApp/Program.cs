@@ -35,8 +35,8 @@ namespace WindowsFormsApplication1
 			Program.listEvents = new ListEvent(xmlPersistence);
 
 
-//			persistencia = new XMLPersistencia("plantilla.xml");
-//			Program.Book = persistencia.Leer();
+			persistencia = new XMLPersistencia("plantilla.xml");
+			Program.Book = persistencia.Leer();
 
 			Program.libA = new LibroAbiertoForm();
 			Program.libA.button1.Enabled=true;

@@ -2,22 +2,18 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="XMLPersistencia.cs">
     <Files>
-      <File FileName="Program.cs" Line="39" Column="1" />
-      <File FileName="Datos/Libro.cs" Line="107" Column="60" />
-      <File FileName="Pantallas/NuevoCapituloForm.cs" Line="18" Column="4" />
-      <File FileName="Pantallas/NuevoCapituloForm.Designer.cs" Line="78" Column="11" />
-      <File FileName="Pantallas/EscenasForm.cs" Line="55" Column="5" />
-      <File FileName="Pantallas/ProcesadorTextos.cs" Line="252" Column="5" />
-      <File FileName="XMLPersistencia.cs" Line="18" Column="15" />
+      <File FileName="Program.cs" Line="32" Column="66" />
+      <File FileName="Pantallas/EscenasForm.cs" Line="85" Column="87" />
+      <File FileName="Pantallas/LibroAbiertoForm.Designer.cs" Line="1" Column="1" />
+      <File FileName="treeviewCapPer.cs" Line="31" Column="3" />
+      <File FileName="Datos/Escena.cs" Line="44" Column="20" />
+      <File FileName="Datos/Actor.cs" Line="45" Column="33" />
+      <File FileName="Datos/Actores.cs" Line="1" Column="1" />
+      <File FileName="Datos/Libro.cs" Line="145" Column="19" />
+      <File FileName="Datos/Capitulo.cs" Line="93" Column="26" />
+      <File FileName="Datos/Referencia.cs" Line="1" Column="1" />
       <File FileName="GestionarLibro.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="39" Column="1" />
-      <File FileName="Datos/Libro.cs" Line="107" Column="60" />
-      <File FileName="Pantallas/NuevoCapituloForm.cs" Line="18" Column="4" />
-      <File FileName="Pantallas/NuevoCapituloForm.Designer.cs" Line="78" Column="11" />
-      <File FileName="Pantallas/EscenasForm.cs" Line="55" Column="5" />
-      <File FileName="Pantallas/ProcesadorTextos.cs" Line="252" Column="5" />
-      <File FileName="XMLPersistencia.cs" Line="18" Column="15" />
-      <File FileName="GestionarLibro.cs" Line="1" Column="1" />
+      <File FileName="XMLPersistencia.cs" Line="53" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,10 +21,7 @@
           <Node name="WindowsFormsApplication1" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="Datos" expanded="True" />
-            <Node name="Pantallas" expanded="True">
-              <Node name="NuevoCapituloForm.cs" expanded="True" />
-              <Node name="NuevoLibroForm.cs" expanded="True" />
-            </Node>
+            <Node name="Pantallas" expanded="True" />
             <Node name="XMLPersistencia.cs" selected="True" />
           </Node>
         </State>

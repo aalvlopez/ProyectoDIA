@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
 		{
 				foreach(var i in this.Escenas)
 				{
-					if (i.Titulo == titulo)
+					if (titulo.Equals(i.Titulo))
 					return i;
 				}
 			// Aqui falta cambiar este bloque para que lance una excepcion si no encuentra el libro
@@ -90,7 +90,7 @@ namespace WindowsFormsApplication1
 		{
 				foreach(var i in this.Escenas)
 				{
-					if (i.Id == id)
+					if (id.Equals(i.Id))
 						return i;
 				}
 		    return null;
