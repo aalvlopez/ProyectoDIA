@@ -169,14 +169,16 @@ namespace WindowsFormsApplication1
 			XmlNode nombre;
 			XmlNode cap;
 			XmlNode descripcion;
+			XmlCDataSection dataDesc;
 			foreach (var actor in libro.Actores) {
 				personaje = docXml.CreateNode (XmlNodeType.Element, "personaje", "");
 				nombre = docXml.CreateNode (XmlNodeType.Element, "nombrePersonaje", "");
 				cap = docXml.CreateNode (XmlNodeType.Element, "cap", "");
 				descripcion = docXml.CreateNode (XmlNodeType.Element, "descripcion", "");
+				dataDesc = docXml.CreateCDataSection(actor.Descripcion);
 				nombre.InnerText = actor.Nombre;
 				cap.InnerText = actor.Cap;
-				descripcion.InnerText = actor.Descripcion;
+				descripcion.AppendChild(dataDesc);
 				personaje.AppendChild(nombre);
 				personaje.AppendChild(cap);
 				personaje.AppendChild(descripcion);
