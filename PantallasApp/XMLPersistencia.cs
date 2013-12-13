@@ -293,7 +293,7 @@ namespace WindowsFormsApplication1
 			nodol.AppendChild(nodoRefs);
 			//eof - Sección Referencias
 			
-			docXml.Save(this.Documento);			
+			docXml.Save(this.Documento);
 		}
 		
 		/// <summary>

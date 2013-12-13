@@ -37,27 +37,31 @@ namespace WindowsFormsApplication1
         /// </summary>
         private void InitializeComponent()
         {
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearLibroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.referenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            //this.editarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.abrirToolStripMenuItem = new ToolStripMenuItem();
+            this.editarToolStripMenuItem = new ToolStripMenuItem();
+            this.crearLibroToolStripMenuItem = new ToolStripMenuItem();
+            this.toolStripMenuItem1 = new ToolStripMenuItem();
+            this.panel1 = new Panel();
+            this.menuStrip1 = new MenuStrip();
+            this.libroToolStripMenuItem = new ToolStripMenuItem();
+            this.crearToolStripMenuItem = new ToolStripMenuItem();
+            this.abrirToolStripMenuItem1 = new ToolStripMenuItem();
+            this.editarToolStripMenuItem1 = new ToolStripMenuItem();
+			
+			this.saveToolStripMenu = new ToolStripMenuItem();
+			this.exitToolStripMenu = new ToolStripMenuItem();
+			
+            this.referenciasToolStripMenuItem = new ToolStripMenuItem();
+            this.nuevaToolStripMenuItem = new ToolStripMenuItem();
+            //this.editarToolStripMenuItem2 = new ToolStripMenuItem();
+            this.eventosToolStripMenuItem = new ToolStripMenuItem();
+            this.verToolStripMenuItem = new ToolStripMenuItem();
+            this.panel2 = new Panel();
 			this.treeView1 = new TreeView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new Panel();
+            this.button3 = new Button();
+            this.button2 = new Button();
+            this.button1 = new Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,7 +91,7 @@ namespace WindowsFormsApplication1
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] {
             this.abrirToolStripMenuItem,
             this.editarToolStripMenuItem,
             this.crearLibroToolStripMenuItem});
@@ -107,7 +111,7 @@ namespace WindowsFormsApplication1
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1.Items.AddRange(new ToolStripItem[] {
             this.libroToolStripMenuItem,
             this.referenciasToolStripMenuItem,
             this.eventosToolStripMenuItem});
@@ -119,19 +123,21 @@ namespace WindowsFormsApplication1
             // 
             // libroToolStripMenuItem
             // 
-            this.libroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.libroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.crearToolStripMenuItem,
             this.abrirToolStripMenuItem1,
-            this.editarToolStripMenuItem1});
+            this.editarToolStripMenuItem1,
+			this.saveToolStripMenu,
+			this.exitToolStripMenu});
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
             this.libroToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.libroToolStripMenuItem.Text = "Libro";
+            this.libroToolStripMenuItem.Text = "Archivo";
             // 
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.crearToolStripMenuItem.Text = "Nuevo";
+            this.crearToolStripMenuItem.Text = "Nuevo Libro";
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
 				Program.nuevoLib = new NuevoLibroForm();
 			};
@@ -140,7 +146,7 @@ namespace WindowsFormsApplication1
             // 
             this.abrirToolStripMenuItem1.Name = "abrirToolStripMenuItem1";
             this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
-            this.abrirToolStripMenuItem1.Text = "Abrir..";
+            this.abrirToolStripMenuItem1.Text = "Abrir Libro";
 			this.abrirToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
 				openFileDialog = new OpenFileDialog();
 				openFileDialog.Filter = "XML Files (*.xml)|*.xml";
@@ -153,7 +159,14 @@ namespace WindowsFormsApplication1
 					String fileName = openFileDialog.FileName;
 
 					// A partir de aquí se debería cargar el xml en memoria...
+					Program.persistencia = new XMLPersistencia(fileName);
+					Program.Book = Program.persistencia.Leer();
+					TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+					
+				Program.libA.referenciasToolStripMenuItem.Enabled=true;
 				}
+				
+				
 			};
             // 
             // editarToolStripMenuItem1
@@ -164,10 +177,31 @@ namespace WindowsFormsApplication1
 			this.editarToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
 				Program.nuevoLib = new NuevoLibroForm();
 			};
+			
+			// 
+            // saveToolStripMenuItem1
+            // 
+            this.saveToolStripMenu.Name = "editarToolStripMenuItem1";
+            this.saveToolStripMenu.Size = new System.Drawing.Size(109, 22);
+            this.saveToolStripMenu.Text = "Salvar";
+			this.saveToolStripMenu.Click += delegate(object sender, EventArgs e) {
+				Program.persistencia.Guardar(Program.Book);
+			};
+			
+			// 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenu.Name = "editarToolStripMenuItem1";
+            this.exitToolStripMenu.Size = new System.Drawing.Size(109, 22);
+            this.exitToolStripMenu.Text = "Salir";
+			this.exitToolStripMenu.Click += delegate(object sender, EventArgs e) {
+				this.Close ();
+			};
+			
             // 
             // referenciasToolStripMenuItem
             // 
-            this.referenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.referenciasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.nuevaToolStripMenuItem,
             /*this.editarToolStripMenuItem2*/});
             this.referenciasToolStripMenuItem.Name = "referenciasToolStripMenuItem";
@@ -180,7 +214,7 @@ namespace WindowsFormsApplication1
             this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.nuevaToolStripMenuItem.Text = "Gestionar Referencias";
 			this.nuevaToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Program.references=new ReferencesForm(Program.Book);
+				Program.references=new ReferencesForm();
 			};
             // 
             // editarToolStripMenuItem2
@@ -194,7 +228,7 @@ namespace WindowsFormsApplication1
             // 
             // eventosToolStripMenuItem
             // 
-            this.eventosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.verToolStripMenuItem});
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
             this.eventosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -284,7 +318,7 @@ namespace WindowsFormsApplication1
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 433);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -301,28 +335,32 @@ namespace WindowsFormsApplication1
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearLibroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem libroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
-        public System.Windows.Forms.ToolStripMenuItem referenciasToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
-        //public System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.TreeView treeView1;
-		private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private ToolStripMenuItem abrirToolStripMenuItem;
+        private ToolStripMenuItem editarToolStripMenuItem;
+        private ToolStripMenuItem crearLibroToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private Panel panel1;
+        private Panel panel3;
+        public Button button3;
+        public Button button2;
+        public Button button1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem libroToolStripMenuItem;
+        private ToolStripMenuItem crearToolStripMenuItem;
+        private ToolStripMenuItem abrirToolStripMenuItem1;
+        private ToolStripMenuItem editarToolStripMenuItem1;
+		
+		private ToolStripMenuItem saveToolStripMenu;
+		private ToolStripMenuItem exitToolStripMenu;
+		
+        public ToolStripMenuItem referenciasToolStripMenuItem;
+        public ToolStripMenuItem nuevaToolStripMenuItem;
+        //public ToolStripMenuItem editarToolStripMenuItem2;
+        private ToolStripMenuItem eventosToolStripMenuItem;
+        private ToolStripMenuItem verToolStripMenuItem;
+        private Panel panel2;
+        public TreeView treeView1;
+		private OpenFileDialog openFileDialog;
     }
 }
 
