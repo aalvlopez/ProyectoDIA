@@ -39,7 +39,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -123,8 +122,6 @@
     <Compile Include="Pantallas\EscenasForm.cs" />
     <Compile Include="Datos\Actor.cs" />
     <Compile Include="Datos\Actores.cs" />
-    <Compile Include="Datos\Plantilla.cs" />
-    <Compile Include="Datos\Plantillas.cs" />
     <Compile Include="Core\Event.cs" />
     <Compile Include="Core\ListEvent.cs" />
     <Compile Include="UI\EventsWinForms.cs" />
