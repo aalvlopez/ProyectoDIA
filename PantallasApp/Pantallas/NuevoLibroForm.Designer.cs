@@ -74,8 +74,6 @@ namespace WindowsFormsApplication1
             this.button1.Click += delegate(object sender, System.EventArgs e) {
 				var x = new GestionarLibro();
 				Program.Book= x.CrearLibro(textBox1.Text);
-                Program.persistencia = new XMLPersistencia(textBox1.Text + ".xml");
-                Program.persistencia.Guardar(Program.Book);
 				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
 				Program.libA.Refresh();
 				MessageBox.Show("Libro Guardado... ");
