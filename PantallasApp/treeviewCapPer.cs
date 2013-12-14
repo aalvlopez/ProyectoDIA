@@ -43,6 +43,7 @@ namespace WindowsFormsApplication1{
 					node2.Nodes.Add(escena.Id ,escena.Titulo);
 				}
 			}
+			node.ExpandAll();
 
 		}
 

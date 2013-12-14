@@ -167,8 +167,12 @@ namespace WindowsFormsApplication1
 					Program.persistencia = new XMLPersistencia(fileName);
 					Program.Book = Program.persistencia.Leer();
 					TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
-					
-				Program.libA.referenciasToolStripMenuItem.Enabled=true;
+					Program.libA.button1.Enabled=true;
+					Program.libA.button2.Enabled=true;
+					Program.libA.button3.Enabled=true;
+					Program.libA.saveToolStripMenu.Enabled=true;
+					Program.libA.saveAsToolStripMenu.Enabled=true;
+					Program.libA.referenciasToolStripMenuItem.Enabled=true;
 				}
 				
 				
@@ -366,8 +370,8 @@ namespace WindowsFormsApplication1
         private ToolStripMenuItem crearToolStripMenuItem;
         private ToolStripMenuItem abrirToolStripMenuItem1;        
 		
-		private ToolStripMenuItem saveToolStripMenu;
-		private ToolStripMenuItem saveAsToolStripMenu;
+		public ToolStripMenuItem saveToolStripMenu;
+		public ToolStripMenuItem saveAsToolStripMenu;
 		private ToolStripMenuItem exitToolStripMenu;
 		
         public ToolStripMenuItem referenciasToolStripMenuItem;

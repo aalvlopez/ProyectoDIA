@@ -74,7 +74,6 @@ namespace WindowsFormsApplication1
             this.button1.Click += delegate(object sender, System.EventArgs e) {
 				var x = new GestionarLibro();
 				Program.Book= x.CrearLibro(textBox1.Text);
-				Program.persistencia.documento(textBox1.Text + ".xml");
 				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
 				Program.libA.Refresh();
 				MessageBox.Show("Libro Guardado... ");
@@ -83,6 +82,8 @@ namespace WindowsFormsApplication1
 				Program.libA.button1.Enabled=true;
 				Program.libA.button2.Enabled=true;
 				Program.libA.button3.Enabled=true;
+				Program.libA.saveToolStripMenu.Enabled=true;
+				Program.libA.saveAsToolStripMenu.Enabled=true;
 				Program.libA.referenciasToolStripMenuItem.Enabled=true;
 			};
             // 

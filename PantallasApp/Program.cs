@@ -34,14 +34,12 @@ namespace WindowsFormsApplication1
 			XmlPersistence xmlPersistence = new XmlPersistence("events.xml");
 			Program.listEvents = new ListEvent(xmlPersistence);
 
-
-			persistencia = new XMLPersistencia("plantilla.xml");
-			Program.Book = persistencia.Leer();
-
 			Program.libA = new LibroAbiertoForm();
-			Program.libA.button1.Enabled=true;
-			Program.libA.button2.Enabled=true;
-			Program.libA.button3.Enabled=true;
+			Program.libA.button1.Enabled=false;
+			Program.libA.button2.Enabled=false;
+			Program.libA.button3.Enabled=false;
+			Program.libA.saveToolStripMenu.Enabled=false;
+			Program.libA.saveAsToolStripMenu.Enabled=false;
 			Program.libA.referenciasToolStripMenuItem.Enabled=false;
 			Application.Run(Program.libA); // Libro sin Abrir
             
