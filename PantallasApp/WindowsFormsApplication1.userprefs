@@ -1,16 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="XMLPersistencia.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pantallas/ModificarCapituloForm.Designer.cs">
     <Files>
-      <File FileName="UI/EventsWinForms.cs" Line="640" Column="50" />
-      <File FileName="Pantallas/LibroAbiertoForm.cs" Line="1" Column="1" />
-      <File FileName="Pantallas/LibroAbiertoForm.Designer.cs" Line="168" Column="36" />
-      <File FileName="Program.cs" Line="40" Column="39" />
-      <File FileName="treeviewCapPer.cs" Line="15" Column="7" />
-      <File FileName="XMLPersistencia.cs" Line="55" Column="1" />
-      <File FileName="Pantallas/NuevoLibroForm.cs" Line="1" Column="1" />
-      <File FileName="Pantallas/NuevoLibroForm.Designer.cs" Line="68" Column="55" />
-      <File FileName="GestionarLibro.cs" Line="22" Column="19" />
+      <File FileName="Pantallas/ModificarCapituloForm.Designer.cs" Line="54" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
