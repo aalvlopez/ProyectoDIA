@@ -95,6 +95,8 @@ namespace WindowsFormsApplication1
 								foreach(XmlNode nodo5 in nodo2.ChildNodes)
 								{
 									Escena escena = new Escena();
+									XmlAttributeCollection eid = nodo5.Attributes;
+									escena.Id = eid.GetNamedItem("id").Value;
 									foreach(XmlNode nodo3 in nodo5.ChildNodes)
 									{
 										switch (nodo3.Name)
@@ -197,10 +199,6 @@ namespace WindowsFormsApplication1
 			}
 			nodol.AppendChild(personajes);
 			//fin insertado personajes
-
-
-
-
 			XmlNode ltit = docXml.CreateNode( XmlNodeType.Element, "titulo", "");
 			ltit.InnerText = libro.Titulo;
 			nodol.AppendChild( ltit );
@@ -234,7 +232,11 @@ namespace WindowsFormsApplication1
 				{
 					XmlNode nodoe = docXml.CreateNode( XmlNodeType.Element, "escena", "");
 					nodoes.AppendChild( nodoe );
-					
+
+					XmlAttribute eid = docXml.CreateAttribute( "id" );
+					eid.InnerText = j.Id;
+					nodoe.Attributes.Append( eid );
+
 					XmlNode etit = docXml.CreateNode( XmlNodeType.Element, "titulo", "" );
 					etit.InnerText = j.Titulo;
 					nodoe.AppendChild( etit );
@@ -254,13 +256,6 @@ namespace WindowsFormsApplication1
 					nodoc.AppendChild( nodoes );
 				}
 				nodocs.AppendChild( nodoc );
-				
-				
-				
-				
-				
-				
-				
 			}
 			nodol.AppendChild( nodocs );
 			docXml.AppendChild( nodol );
