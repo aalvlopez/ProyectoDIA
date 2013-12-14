@@ -65,8 +65,9 @@ namespace WindowsFormsApplication1
 			this.Anotacion = anotacion;
 			this.Contenido = contenido;
 		}
-		public void CambiarCap ()
+		public override string ToString ()
 		{
+			return string.Format (this.Titulo);
 		}
 		/// <summary>
 		/// Gets y sets del identificador(ID).

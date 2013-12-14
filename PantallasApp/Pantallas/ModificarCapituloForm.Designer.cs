@@ -39,6 +39,7 @@ namespace WindowsFormsApplication1
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
@@ -48,6 +49,7 @@ namespace WindowsFormsApplication1
             // 
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
@@ -67,7 +69,7 @@ namespace WindowsFormsApplication1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(281, 171);
+            this.button2.Location = new System.Drawing.Point(146, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 23);
             this.button2.TabIndex = 2;
@@ -79,7 +81,7 @@ namespace WindowsFormsApplication1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(125, 171);
+            this.button1.Location = new System.Drawing.Point(34, 171);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 1;
@@ -89,6 +91,15 @@ namespace WindowsFormsApplication1
 				this.cap.ModificarCapitulo(this.textBox1.Text, this.textBox2.Text);
 				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
 				this.Close ();
+			};
+			this.button3.Location = new System.Drawing.Point(300, 171);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Borrar escena";
+            this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click+=delegate(object sender, EventArgs e) {
+
 			};
             // 
             // textBox1
@@ -106,6 +117,9 @@ namespace WindowsFormsApplication1
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(173, 134);
             this.listBox1.TabIndex = 4;
+			foreach(var i  in this.cap.Escenas){
+				this.listBox1.Items.Add(i);
+			}
             // 
             // Form6
             // 
@@ -127,6 +141,7 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
     }
