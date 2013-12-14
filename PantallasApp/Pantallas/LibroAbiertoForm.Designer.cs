@@ -46,9 +46,10 @@ namespace WindowsFormsApplication1
             this.libroToolStripMenuItem = new ToolStripMenuItem();
             this.crearToolStripMenuItem = new ToolStripMenuItem();
             this.abrirToolStripMenuItem1 = new ToolStripMenuItem();
-            this.editarToolStripMenuItem1 = new ToolStripMenuItem();
+            
 			
 			this.saveToolStripMenu = new ToolStripMenuItem();
+			this.saveAsToolStripMenu = new ToolStripMenuItem();
 			this.exitToolStripMenu = new ToolStripMenuItem();
 			
             this.referenciasToolStripMenuItem = new ToolStripMenuItem();
@@ -126,8 +127,9 @@ namespace WindowsFormsApplication1
             this.libroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.crearToolStripMenuItem,
             this.abrirToolStripMenuItem1,
-            this.editarToolStripMenuItem1,
 			this.saveToolStripMenu,
+			this.saveAsToolStripMenu,
+			new ToolStripSeparator(),
 			this.exitToolStripMenu});
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
             this.libroToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -138,6 +140,7 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
             this.crearToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.crearToolStripMenuItem.Text = "Nuevo Libro";
+			this.crearToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
 				Program.nuevoLib = new NuevoLibroForm();
 			};
@@ -147,6 +150,8 @@ namespace WindowsFormsApplication1
             this.abrirToolStripMenuItem1.Name = "abrirToolStripMenuItem1";
             this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.abrirToolStripMenuItem1.Text = "Abrir Libro";
+			this.abrirToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.A;
+
 			this.abrirToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
 				openFileDialog = new OpenFileDialog();
 				openFileDialog.Filter = "XML Files (*.xml)|*.xml";
@@ -167,25 +172,43 @@ namespace WindowsFormsApplication1
 				}
 				
 				
-			};
-            // 
-            // editarToolStripMenuItem1
-            // 
-            this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
-            this.editarToolStripMenuItem1.Text = "Editar";
-			this.editarToolStripMenuItem1.Click += delegate(object sender, EventArgs e) {
-				Program.nuevoLib = new NuevoLibroForm();
-			};
+			};           
 			
 			// 
             // saveToolStripMenuItem1
             // 
-            this.saveToolStripMenu.Name = "editarToolStripMenuItem1";
+            this.saveToolStripMenu.Name = "saveToolStrip";
             this.saveToolStripMenu.Size = new System.Drawing.Size(109, 22);
-            this.saveToolStripMenu.Text = "Salvar";
-			this.saveToolStripMenu.Click += delegate(object sender, EventArgs e) {
-				Program.persistencia.Guardar(Program.Book);
+            this.saveToolStripMenu.Text = "Guardar";
+			this.saveToolStripMenu.ShortcutKeys = Keys.Control | Keys.S;
+
+			this.saveToolStripMenu.Click += delegate(object sender, EventArgs e) {									
+					Program.persistencia.Guardar(Program.Book);				
+			};
+			
+			// 
+            // save as
+            // 
+            this.saveAsToolStripMenu.Name = "saveAsToolStrip";
+            this.saveAsToolStripMenu.Size = new System.Drawing.Size(109, 22);
+            this.saveAsToolStripMenu.Text = "Guardar como";
+			this.saveAsToolStripMenu.ShortcutKeys = Keys.Control | Keys.G;
+
+			this.saveAsToolStripMenu.Click += delegate(object sender, EventArgs e) {
+				SaveFileDialog saveFileDialog= new SaveFileDialog();
+				saveFileDialog.Filter = "XML Files (*.xml)|*.xml";
+				saveFileDialog.FilterIndex = 0 ;
+				saveFileDialog.RestoreDirectory = true;
+				saveFileDialog.FileName = null;
+				saveFileDialog.Title = "Guardar libro";
+				
+				if (saveFileDialog.ShowDialog () == DialogResult.OK) {
+					String fileName = saveFileDialog.FileName;
+
+					
+					Program.persistencia = new XMLPersistencia(fileName);
+					Program.persistencia.Guardar(Program.Book);
+				}
 			};
 			
 			// 
@@ -194,6 +217,8 @@ namespace WindowsFormsApplication1
             this.exitToolStripMenu.Name = "editarToolStripMenuItem1";
             this.exitToolStripMenu.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenu.Text = "Salir";
+			this.exitToolStripMenu.ShortcutKeys = Keys.Control | Keys.Q;
+
 			this.exitToolStripMenu.Click += delegate(object sender, EventArgs e) {
 				this.Close ();
 			};
@@ -216,15 +241,7 @@ namespace WindowsFormsApplication1
 			this.nuevaToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
 				Program.references=new ReferencesForm();
 			};
-            // 
-            // editarToolStripMenuItem2
-            // 
-           /* this.editarToolStripMenuItem2.Name = "editarToolStripMenuItem2";
-            this.editarToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
-            this.editarToolStripMenuItem2.Text = "Editar";
-			this.editarToolStripMenuItem2.Click += delegate(object sender, EventArgs e) {
-				MessageBox.Show("Editar referencia...");
-			};*/
+           
             // 
             // eventosToolStripMenuItem
             // 
@@ -347,15 +364,14 @@ namespace WindowsFormsApplication1
         private MenuStrip menuStrip1;
         private ToolStripMenuItem libroToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem;
-        private ToolStripMenuItem abrirToolStripMenuItem1;
-        private ToolStripMenuItem editarToolStripMenuItem1;
+        private ToolStripMenuItem abrirToolStripMenuItem1;        
 		
 		private ToolStripMenuItem saveToolStripMenu;
+		private ToolStripMenuItem saveAsToolStripMenu;
 		private ToolStripMenuItem exitToolStripMenu;
 		
         public ToolStripMenuItem referenciasToolStripMenuItem;
         public ToolStripMenuItem nuevaToolStripMenuItem;
-        //public ToolStripMenuItem editarToolStripMenuItem2;
         private ToolStripMenuItem eventosToolStripMenuItem;
         private ToolStripMenuItem verToolStripMenuItem;
         private Panel panel2;
