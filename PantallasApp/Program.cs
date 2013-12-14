@@ -25,6 +25,8 @@ namespace WindowsFormsApplication1
 		public static Libro Book;
 		public static XMLPersistencia persistencia;
 		public static ListEvent listEvents ;
+
+        [STAThread]
 		public static void Main()
         {
 

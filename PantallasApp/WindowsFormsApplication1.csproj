@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,7 +55,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,21 +114,31 @@
       <DependentUpon>NuevoLibroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="treeviewCapPer.cs" />
+    <Compile Include="treeviewCapPer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Datos\Capitulo.cs" />
     <Compile Include="Datos\Escena.cs" />
     <Compile Include="Datos\Libro.cs" />
     <Compile Include="GestionarLibro.cs" />
     <Compile Include="XMLPersistencia.cs" />
     <Compile Include="Datos\Referencia.cs" />
-    <Compile Include="Pantallas\ReferencesForm.cs" />
-    <Compile Include="Pantallas\ProcesadorTextos.cs" />
-    <Compile Include="Pantallas\EscenasForm.cs" />
+    <Compile Include="Pantallas\ReferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\ProcesadorTextos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\EscenasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Datos\Actor.cs" />
     <Compile Include="Datos\Actores.cs" />
     <Compile Include="Core\Event.cs" />
     <Compile Include="Core\ListEvent.cs" />
-    <Compile Include="UI\EventsWinForms.cs" />
+    <Compile Include="UI\EventsWinForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\IUserInterface.cs" />
     <Compile Include="Persistence\IPersistence.cs" />
     <Compile Include="Persistence\XmlPersistence.cs" />
@@ -137,11 +151,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="Pantallas\" />
-    <Folder Include="Datos\" />
-    <Folder Include="Core\" />
-    <Folder Include="UI\" />
-    <Folder Include="Persistence\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
