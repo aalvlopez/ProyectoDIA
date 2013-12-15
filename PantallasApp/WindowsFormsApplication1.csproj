@@ -12,7 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -115,7 +114,6 @@
     <Compile Include="Datos\Escena.cs" />
     <Compile Include="Datos\Libro.cs" />
     <Compile Include="GestionarLibro.cs" />
-    <Compile Include="XMLPersistencia.cs" />
     <Compile Include="Datos\Referencia.cs" />
     <Compile Include="Pantallas\ReferencesForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +134,7 @@
     <Compile Include="UI\IUserInterface.cs" />
     <Compile Include="Persistence\IPersistence.cs" />
     <Compile Include="Persistence\XmlPersistence.cs" />
+    <Compile Include="Persistence\XMLPersistencia.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
