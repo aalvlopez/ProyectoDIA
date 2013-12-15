@@ -71,12 +71,6 @@
     <Compile Include="Pantallas\AnadirModificarPersonajesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Pantallas\Form7.resx">
-      <DependentUpon>AnadirModificarPersonajesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Pantallas\AnadirModificarPersonajesForm.Designer.cs">
-      <DependentUpon>AnadirModificarPersonajesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pantallas\LibroAbiertoForm.cs">
       <SubType>Form</SubType>
     </Compile>

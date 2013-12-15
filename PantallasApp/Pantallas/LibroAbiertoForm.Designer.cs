@@ -280,13 +280,25 @@ namespace WindowsFormsApplication1
             this.treeView1.TabIndex = 0;
 			
 			treeView1.NodeMouseDoubleClick+=delegate(object sender, TreeNodeMouseClickEventArgs e) {
-				if(e.Node.Level == 1){
-					Program.modCap = new ModificarCapituloForm(Program.Book.BuscarCapituloId(e.Node.Name));
-				}else{
-					if(e.Node.Level == 2){
-						Program.esc = new EscenasForm(Program.Book.BuscarEscenaId(e.Node.Name));
-					}
-				}
+                if (e.Node.Level == 1 && e.Node.Parent.Text.Equals("Capitulos"))
+                {
+                    Program.modCap = new ModificarCapituloForm(Program.Book.BuscarCapituloId(e.Node.Name));
+                }
+                else
+                {
+                    if (e.Node.Level == 1 && e.Node.Parent.Text.Equals("Personajes"))
+                    {
+                        Program.anPers = new AnadirModificarPersonajesForm(Program.Book.BuscarPersonajeId(e.Node.Name));
+                        Console.Out.WriteLine("sin implementar editar descripcion personaje");
+                    }
+                    else
+                    {
+                        if (e.Node.Level == 2)
+                        {
+                            Program.esc = new EscenasForm(Program.Book.BuscarEscenaId(e.Node.Name));
+                        }
+                    }
+                }
 			};
 
             // 

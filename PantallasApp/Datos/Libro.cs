@@ -166,7 +166,18 @@ namespace WindowsFormsApplication1
 						
 				}
 			return null;
-		}		
+		}
+        
+        //puesto este metodo recientemente
+        public Actor BuscarPersonajeId(String id)
+        {
+            foreach (var i in this.Actores)
+            {
+                if (id.Equals(i.Id))
+                    return i;
+            }
+            return null;
+        }
 	}
 }
 

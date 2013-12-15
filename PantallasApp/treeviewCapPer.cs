@@ -43,8 +43,15 @@ namespace WindowsFormsApplication1{
 					node2.Nodes.Add(escena.Id ,escena.Titulo);
 				}
 			}
-			node.ExpandAll();
-
+            node.ExpandAll();
+            //prueba listado actores, borra o comenta si no te convence
+            node = treeView1.Nodes.Add("Personajes");
+            foreach (Actor actor in book.Actores)
+            {
+                node.Nodes.Add(actor.Id, actor.Nombre);
+            }
+            //fin prueba listado actores
+            node.ExpandAll();
 		}
 
 	}

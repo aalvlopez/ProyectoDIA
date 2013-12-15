@@ -88,6 +88,14 @@ namespace WindowsFormsApplication1
         }
 
 
-        
+
+
+        public void ModificarActor(string nombre, string escena, string capitulo)
+        {
+
+            this.Nombre = nombre;
+            this.Cap = capitulo;
+            this.Esc = escena;
+        }
     }
 }

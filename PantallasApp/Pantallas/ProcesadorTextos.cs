@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
 	{
 		public ProcesadorTextos()
 		{
+            GuardaPersonaje = "";
 			ConstruirGui ();
 			this.Show ();
 		}
@@ -19,6 +20,14 @@ namespace WindowsFormsApplication1
 			get;
 			set;
 		}
+
+        //puesto para poder soporta edicion descricpcion personaje
+        public String GuardaPersonaje
+        {
+            get;
+            set;
+        }
+        //fin edicion personaje
 
 		/// <summary>
 		/// Crea un menú en la parte superior.
@@ -232,8 +241,12 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void Guardar()
 		{
+            if(this.GuardaPersonaje.Equals("personaje")){
+                Program.anPers.texto = richTextBox.Text;
+            }else{
 			Program.esc.texto=richTextBox.Text;
 			Program.esc.Show();
+            }
 			this.Close ();
 		}
 
@@ -336,5 +349,17 @@ namespace WindowsFormsApplication1
 		private MenuItem operacionCopiar;
 		private MenuItem operacionPegar;
 		private MenuItem operacionDeshacer;
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // ProcesadorTextos
+            // 
+            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.Name = "ProcesadorTextos";
+            this.ResumeLayout(false);
+
+        }
 	}
 }
