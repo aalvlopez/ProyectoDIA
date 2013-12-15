@@ -76,13 +76,11 @@ namespace WindowsFormsApplication1
 				Program.Book= x.CrearLibro(textBox1.Text);
 				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
 				Program.libA.Refresh();
-				MessageBox.Show("Libro Guardado... ");
 				this.textBox1.Dispose ();
 				this.Close ();
 				Program.libA.button1.Enabled=true;
 				Program.libA.button2.Enabled=true;
 				Program.libA.button3.Enabled=true;
-				Program.libA.saveToolStripMenu.Enabled=true;
 				Program.libA.saveAsToolStripMenu.Enabled=true;
 				Program.libA.referenciasToolStripMenuItem.Enabled=true;
 			};

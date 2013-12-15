@@ -212,6 +212,7 @@ namespace WindowsFormsApplication1
 					
 					Program.persistencia = new XMLPersistencia(fileName);
 					Program.persistencia.Guardar(Program.Book);
+					this.saveToolStripMenu.Enabled=true;
 				}
 			};
 			
