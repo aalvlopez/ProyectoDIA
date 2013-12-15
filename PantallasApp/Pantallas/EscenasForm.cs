@@ -84,6 +84,9 @@ namespace WindowsFormsApplication1
 						Capitulo cap1 = (Capitulo)comboBox.SelectedItem;
 						cap1.CrearEscena (this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
 						TreeViewCapPer.Actualizar (Program.Book, Program.libA.treeView1);
+						if(Program.anPers!= null){
+							TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+						}
 						this.Close ();
 					}
 				} else {
@@ -96,6 +99,9 @@ namespace WindowsFormsApplication1
 						cap1.CrearEscena(this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
 					}
 					TreeViewCapPer.Actualizar (Program.Book, Program.libA.treeView1);
+					if(Program.anPers!= null){
+						TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+					}
 					this.Close ();
 				}
 			};

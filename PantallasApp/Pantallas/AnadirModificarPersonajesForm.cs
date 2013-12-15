@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
 			this.treeView1.Location = new System.Drawing.Point(6, 10);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(171, 395);
-            this.treeView1.TabIndex = 0;
+			this.treeView1.TabIndex = 0;
 
             // 
             // panel2
@@ -307,7 +307,7 @@ namespace WindowsFormsApplication1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TreeView treeView1;
+        public System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;

@@ -97,6 +97,8 @@ namespace WindowsFormsApplication1
                                                                         Escena escena = new Escena();
                                                                         XmlAttributeCollection eid = nodo5.Attributes;
                                                                         escena.Id = eid.GetNamedItem("id").Value;
+                                                                        escena.IdCapitulo = eid.GetNamedItem("idcap").Value;
+																		
                                                                         foreach(XmlNode nodo3 in nodo5.ChildNodes)
                                                                         {
                                                                                 switch (nodo3.Name)
@@ -190,6 +192,7 @@ namespace WindowsFormsApplication1
                                 {
                                         textWriter.WriteStartElement("escena");
                                         textWriter.WriteAttributeString("id",j.Id);
+										textWriter.WriteAttributeString("idcap",j.IdCapitulo);
                                         textWriter.WriteElementString("titulo",j.Titulo);
                                         textWriter.WriteElementString("anotacion",j.Anotacion);
                                         

@@ -77,6 +77,9 @@ namespace WindowsFormsApplication1
 			this.button1.Click+=delegate(object sender, EventArgs e) {
 				Program.Book.CrearCapitulo(textBox1.Text,textBox2.Text);
 				TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+				if(Program.anPers!= null){
+					TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+				}
 				this.Close();	
 			};
             // 

@@ -35,6 +35,7 @@ namespace WindowsFormsApplication1
         /// </summary>
         private void InitializeComponent()
         {
+			this.aBorrar=new LinkedList<Escena>();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -89,7 +90,13 @@ namespace WindowsFormsApplication1
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click+=delegate(object sender, EventArgs e) {
 				this.cap.ModificarCapitulo(this.textBox1.Text, this.textBox2.Text);
+				foreach(var i in this.aBorrar){
+					Program.Book.BuscarCapituloId(i.IdCapitulo).Escenas.Remove(i);
+				}
 				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
+				if(Program.anPers!= null){
+					TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+				}
 				this.Close ();
 			};
 			this.button3.Location = new System.Drawing.Point(300, 171);
@@ -99,7 +106,21 @@ namespace WindowsFormsApplication1
             this.button3.Text = "Borrar escena";
             this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click+=delegate(object sender, EventArgs e) {
-
+				if(this.listBox1.SelectedItem!=null){
+					Escena escena = (Escena)this.listBox1.SelectedItem;
+					this.aBorrar.AddLast(escena);
+					this.listBox1.BeginUpdate();
+					this.listBox1.Items.Clear();
+					foreach(var i  in this.cap.Escenas){
+						if(!this.aBorrar.Contains(i)){
+							this.listBox1.Items.Add(i);
+						}
+					}
+					this.listBox1.EndUpdate();
+					this.listBox1.Controls.Clear();
+				}else{
+					MessageBox.Show ("Debes seleccionar una escena");
+				}
 			};
             // 
             // textBox1
@@ -144,5 +165,6 @@ namespace WindowsFormsApplication1
 		private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
+		private LinkedList<Escena> aBorrar;
     }
 }
