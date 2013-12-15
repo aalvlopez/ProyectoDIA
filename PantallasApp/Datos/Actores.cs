@@ -12,13 +12,7 @@ namespace WindowsFormsApplication1
 	/// </summary>
     public class Actores : ICollection<Actor>
     {
-       
-      
-
-     
-	
-       
-       /// <summary>
+              /// <summary>
        /// Añade un actor
        /// </summary>
        /// <param name='a'>

@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GestionarLibro.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pantallas/ModificarCapituloForm.Designer.cs">
     <Files>
       <File FileName="Pantallas/ModificarCapituloForm.Designer.cs" Line="54" Column="24" />
-      <File FileName="GestionarLibro.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="10" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

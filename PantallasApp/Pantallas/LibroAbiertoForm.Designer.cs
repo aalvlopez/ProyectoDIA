@@ -289,7 +289,6 @@ namespace WindowsFormsApplication1
                     if (e.Node.Level == 1 && e.Node.Parent.Text.Equals("Personajes"))
                     {
                         Program.anPers = new AnadirModificarPersonajesForm(Program.Book.BuscarPersonajeId(e.Node.Name));
-                        Console.Out.WriteLine("sin implementar editar descripcion personaje");
                     }
                     else
                     {

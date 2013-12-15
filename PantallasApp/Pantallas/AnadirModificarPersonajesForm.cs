@@ -59,7 +59,8 @@ namespace WindowsFormsApplication1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+			this.treeView1=new TreeView();
+            this.treeView1 = TreeViewCapPer.Actualizar(Program.Book, new TreeView());
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -81,9 +82,10 @@ namespace WindowsFormsApplication1
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(6, 10);
+
+			this.treeView1.Location = new System.Drawing.Point(6, 10);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(164, 284);
+            this.treeView1.Size = new System.Drawing.Size(171, 395);
             this.treeView1.TabIndex = 0;
 
             // 
@@ -124,7 +126,7 @@ namespace WindowsFormsApplication1
             this.comboBox2.TabIndex = 4;
             if (this.actor == null)
             {
-                this.comboBox2.Text = "Capítulo";
+                this.comboBox2.Text = "Capitulo";
             }
             else
             {
