@@ -220,8 +220,11 @@ namespace WindowsFormsApplication1
                     {
                         nombre = this.textBox1.Text;
                     }
-                    Program.Book.Actores.Add(new Actor(nombre, cap, desc, esc));
-                    TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+                    if (this.comboBox1.SelectedItem != null && this.comboBox2.SelectedItem != null)
+                    {
+                        Program.Book.Actores.Add(new Actor(nombre, cap, desc, esc));
+                        TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+                    }
                     this.Close();
 
                 }
