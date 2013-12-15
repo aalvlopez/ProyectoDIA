@@ -154,7 +154,10 @@ namespace WindowsFormsApplication1
             }
             this.comboBox2.TextChanged += delegate(object sender, EventArgs e)
             {
-                this.rellenaComboEscena();
+                if (((Capitulo)this.comboBox2.SelectedItem).Escenas.Count > 0)
+                {
+                    this.rellenaComboEscena();
+                }
             };
            
             
@@ -196,9 +199,7 @@ namespace WindowsFormsApplication1
                     {
                         Capitulo cap1 = (Capitulo)comboBox2.SelectedItem;
                         cap = cap1.Titulo;
-                        //cap1.CrearEscena(this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
-                       // TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
-                        //this.Close();
+                        
                     }
                     if (this.comboBox1.SelectedItem == null)
                     {
@@ -208,9 +209,7 @@ namespace WindowsFormsApplication1
                     {
                         Escena esc1 = (Escena)comboBox1.SelectedItem;
                         esc = esc1.Titulo;
-                        //cap1.CrearEscena(this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
-                        // TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
-                        //this.Close();
+                        
                     }
                     if (this.textBox1.Text.Equals(""))
                     {
