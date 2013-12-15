@@ -186,8 +186,8 @@ namespace WindowsFormsApplication1
             {
                 string nombre = "";
                 string cap = "";
-                string desc = "";
                 string esc = "";
+                
             
                 if (this.actor == null)
                 {
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
                     }
                     if (this.comboBox1.SelectedItem != null && this.comboBox2.SelectedItem != null)
                     {
-                        Program.Book.Actores.Add(new Actor(nombre, cap, desc, esc));
+                        Program.Book.Actores.Add(new Actor(nombre, cap, this.texto, esc));
                         TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
                     }
                     this.Close();
@@ -231,16 +231,15 @@ namespace WindowsFormsApplication1
                 {
                     
                     if (this.comboBox1.SelectedItem == null && this.comboBox2.SelectedItem == null){
-                        this.actor.ModificarActor(this.textBox1.Text, this.comboBox1.Text, this.comboBox2.Text);
+                        this.actor.ModificarActor(this.textBox1.Text, this.comboBox1.Text, this.comboBox2.Text,this.texto);
                     }
                     else
                     {
                         Capitulo cap1 = (Capitulo)comboBox2.SelectedItem;
                         Escena esc1 = (Escena)comboBox1.SelectedItem;
-                        String descripcion = this.actor.Descripcion;
                         String idPj = this.actor.Id;
                         Program.Book.Actores.Remove(this.actor);
-                        Program.Book.Actores.Add(new Actor(this.textBox1.Text,cap1.Titulo,descripcion,idPj,esc1.Titulo));
+                        Program.Book.Actores.Add(new Actor(this.textBox1.Text,cap1.Titulo,this.texto,idPj,esc1.Titulo));
                         
                     }
                     TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
@@ -257,6 +256,7 @@ namespace WindowsFormsApplication1
                 Program.procesador = new ProcesadorTextos();
                 Program.procesador.GuardaPersonaje = "personaje";
                 Program.procesador.setTexto(this.texto);
+                
                 
             };
             //fin boton editar descripcion

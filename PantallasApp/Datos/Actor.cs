@@ -90,12 +90,13 @@ namespace WindowsFormsApplication1
 
 
 
-        public void ModificarActor(string nombre, string escena, string capitulo)
+        public void ModificarActor(string nombre, string escena, string capitulo,string descripcion)
         {
 
             this.Nombre = nombre;
             this.Cap = capitulo;
             this.Esc = escena;
+            this.Descripcion = descripcion;
         }
     }
 }

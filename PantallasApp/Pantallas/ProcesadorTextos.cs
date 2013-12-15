@@ -243,6 +243,7 @@ namespace WindowsFormsApplication1
 		{
             if(this.GuardaPersonaje.Equals("personaje")){
                 Program.anPers.texto = richTextBox.Text;
+                Program.anPers.Show();
             }else{
 			Program.esc.texto=richTextBox.Text;
 			Program.esc.Show();
