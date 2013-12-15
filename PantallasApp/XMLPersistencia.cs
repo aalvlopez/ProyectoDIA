@@ -147,148 +147,83 @@ namespace WindowsFormsApplication1
 		/// Un <see cref="Scrivener.Libro"/>
 		/// </param>
 		public void Guardar (Libro libro)
-		{
-			XmlDocument docXml = new XmlDocument();
+		{	
+			XmlTextWriter textWriter = new XmlTextWriter(this.Documento, Encoding.UTF8); 
 			
-			XmlNode nodo = docXml.CreateNode( XmlNodeType.XmlDeclaration
-											, "xml", "");
- 			((XmlDeclaration)nodo).Encoding = "utf-8";
+			textWriter.WriteStartDocument();
+			textWriter.WriteStartElement("tns:libro");			
+			textWriter.WriteAttributeString("xmlns:tns", "http://www.esei.uvigo.es/libro");
+			textWriter.WriteAttributeString("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+			textWriter.WriteAttributeString("xsi:schemaLocation", "http://www.esei.uvigo.es/libro libro.xsd");			
 			
-			docXml.AppendChild ( nodo );
+			textWriter.WriteElementString("titulo",libro.Titulo);
+			textWriter.WriteElementString("anotacion",libro.Anotacion);
 			
-			XmlNode nodol = docXml.CreateNode( XmlNodeType.Element, "libro", "tns");
-			
-			XmlAttribute xmln = docXml.CreateAttribute( "xmlns:tns" );
-			xmln.InnerText = "http://www.esei.uvigo.es/libro" ;
-			nodol.Attributes.Append( xmln );
-			
-			 xmln = docXml.CreateAttribute( "xmlns:xsi" );
-			xmln.InnerText = "http://www.w3.org/2001/XMLSchema-instance" ;
-			nodol.Attributes.Append( xmln );
-			
-			 xmln = docXml.CreateAttribute( "xsi:schemaLocation" );
-			xmln.InnerText = "http://www.esei.uvigo.es/libro libro.xsd" ;
-			nodol.Attributes.Append( xmln );
-			//codigo insertado para procesar guardado de personajes
-			XmlNode personajes = docXml.CreateNode (XmlNodeType.Element, "personajes", "");
-			XmlNode personaje;
-			XmlNode nombre;
-			XmlNode cap;
-			XmlNode esc;
-			XmlNode descripcion;
-			XmlCDataSection dataDesc;
-			XmlAttribute idPersonaje;
+			//bof personajes
+			textWriter.WriteStartElement("personajes");
 			foreach (var actor in libro.Actores) {
-				personaje = docXml.CreateNode (XmlNodeType.Element, "personaje", "");
-				idPersonaje = docXml.CreateAttribute("id");
-				idPersonaje.InnerText = actor.Id;
-				personaje.Attributes.Append(idPersonaje);
-				nombre = docXml.CreateNode (XmlNodeType.Element, "nombrePersonaje", "");
-				cap = docXml.CreateNode (XmlNodeType.Element, "cap", "");
-				esc = docXml.CreateNode (XmlNodeType.Element, "escena", "");
-				descripcion = docXml.CreateNode (XmlNodeType.Element, "descripcion", "");
-				dataDesc = docXml.CreateCDataSection(actor.Descripcion);
-				nombre.InnerText = actor.Nombre;
-				cap.InnerText = actor.Cap;
-				descripcion.AppendChild(dataDesc);
-				personaje.AppendChild(nombre);
-				personaje.AppendChild(cap);
-				personaje.AppendChild(esc);
-				personaje.AppendChild(descripcion);
-				personajes.AppendChild(personaje);
-			}
-			nodol.AppendChild(personajes);
-			//fin insertado personajes
-			XmlNode ltit = docXml.CreateNode( XmlNodeType.Element, "titulo", "");
-			ltit.InnerText = libro.Titulo;
-			nodol.AppendChild( ltit );
+				textWriter.WriteStartElement("personaje");
+				textWriter.WriteAttributeString("id",actor.Id);
+				textWriter.WriteElementString("nombrePersonaje",actor.Nombre);
+				textWriter.WriteElementString("cap",actor.Cap);
+				textWriter.WriteElementString("escena",actor.Esc);				
+				textWriter.WriteStartElement("descripcion");
+				textWriter.WriteCData(actor.Descripcion);
+				textWriter.WriteEndElement();				
+				textWriter.WriteEndElement();
+			}			
+			textWriter.WriteEndElement();
+			//eof personajes
 			
-			XmlNode lant = docXml.CreateNode( XmlNodeType.Element, "anotacion", "" );
-			lant.InnerText = libro.Anotacion;
-			nodol.AppendChild( lant );
-			
-			XmlNode nodocs = docXml.CreateNode( XmlNodeType.Element, "capitulos", "");
-			
+			//bof capitulos
+			textWriter.WriteStartElement("capitulos");
 			foreach(var i in libro.Capitulos)
 			{
-				XmlNode nodoc = docXml.CreateNode( XmlNodeType.Element, "capitulo", "");
-				docXml.AppendChild( nodocs );
+				textWriter.WriteStartElement("capitulo");
+				textWriter.WriteAttributeString("id",i.Id);
+				textWriter.WriteElementString("titulo",i.Titulo);
+				textWriter.WriteElementString("anotacion",i.Anotacion);
 				
-				XmlAttribute id = docXml.CreateAttribute( "id" );
-				id.InnerText = i.Id;
-				nodoc.Attributes.Append( id );
-				
-				XmlNode ctit = docXml.CreateNode( XmlNodeType.Element, "titulo", "" );
-				ctit.InnerText = i.Titulo;
-				nodoc.AppendChild( ctit );
-				
-				XmlNode cant = docXml.CreateNode( XmlNodeType.Element, "anotacion", "" );
-				cant.InnerText = i.Anotacion;
-				nodoc.AppendChild( cant );
-				
-				XmlNode nodoes = docXml.CreateNode( XmlNodeType.Element, "escenas", "");
-				
+				//escenas
+				textWriter.WriteStartElement("escenas");
 				foreach(var j in i.Escenas)
 				{
-					XmlNode nodoe = docXml.CreateNode( XmlNodeType.Element, "escena", "");
-					nodoes.AppendChild( nodoe );
-
-					XmlAttribute eid = docXml.CreateAttribute( "id" );
-					eid.InnerText = j.Id;
-					nodoe.Attributes.Append( eid );
-
-					XmlNode etit = docXml.CreateNode( XmlNodeType.Element, "titulo", "" );
-					etit.InnerText = j.Titulo;
-					nodoe.AppendChild( etit );
+					textWriter.WriteStartElement("escena");
+					textWriter.WriteAttributeString("id",j.Id);
+					textWriter.WriteElementString("titulo",j.Titulo);
+					textWriter.WriteElementString("anotacion",j.Anotacion);
 					
-					XmlNode eant = docXml.CreateNode( XmlNodeType.Element, "anotacion", "" );
-					eant.InnerText = j.Anotacion;
-					nodoe.AppendChild( eant );
+					textWriter.WriteStartElement("contenido");
+					textWriter.WriteCData(j.Contenido);
+					textWriter.WriteEndElement();			
 					
-					XmlNode econt = docXml.CreateNode( XmlNodeType.Element, "contenido", "" );
-
-					XmlCDataSection CData;
-   					CData = docXml.CreateCDataSection(j.Contenido);
-					
-					econt.AppendChild( CData );			
-					nodoe.AppendChild( econt );
-					
-					nodoc.AppendChild( nodoes );
+					textWriter.WriteEndElement();
 				}
-				nodocs.AppendChild( nodoc );
+				textWriter.WriteEndElement();
+				
+				textWriter.WriteEndElement();
 			}
-			nodol.AppendChild( nodocs );
-			docXml.AppendChild( nodol );
+			textWriter.WriteEndElement();
+			//eof capitulos		
 			
 			//bof - Sección Referencias
-			XmlNode nodoRefs = docXml.CreateNode( XmlNodeType.Element, "referencias", "");
+			textWriter.WriteStartElement("referencias");			
 			foreach(Referencia r in libro.Referencias){
-					XmlNode singleRef = docXml.CreateNode( XmlNodeType.Element, "referencia", "");
-					
-					XmlNode nodeAutor = docXml.CreateNode( XmlNodeType.Element, "autor", "");
-					XmlNode nodeTitulo = docXml.CreateNode( XmlNodeType.Element, "titulo", "");
-					XmlNode nodeDatos = docXml.CreateNode( XmlNodeType.Element, "datos", "");
-					XmlNode nodeEdicion = docXml.CreateNode( XmlNodeType.Element, "edicion", "");
-					XmlNode nodeExtension = docXml.CreateNode( XmlNodeType.Element, "extension", "");
-					
-					nodeAutor.InnerText = r.Autoria;
-					nodeTitulo.InnerText = r.Titulo;
-					nodeDatos.InnerText = r.Datos;
-					nodeEdicion.InnerText = r.Edicion;
-					nodeExtension.InnerText = r.Extension;
-					
-					singleRef.AppendChild(nodeAutor);
-					singleRef.AppendChild(nodeTitulo);
-					singleRef.AppendChild(nodeDatos);
-					singleRef.AppendChild(nodeEdicion);
-					singleRef.AppendChild(nodeExtension);
-					
-					nodoRefs.AppendChild(singleRef);
-			}
-			nodol.AppendChild(nodoRefs);
+				textWriter.WriteStartElement("referencia");
+				textWriter.WriteElementString("autor",r.Autoria);
+				textWriter.WriteElementString("titulo", r.Titulo);
+				textWriter.WriteElementString("datos",r.Datos);
+				textWriter.WriteElementString("edicion",r.Edicion);
+				textWriter.WriteElementString("extension",r.Extension);
+				textWriter.WriteEndElement();
+			}			
+			textWriter.WriteEndElement();
 			//eof - Sección Referencias
 			
-			docXml.Save(this.Documento);
+			textWriter.WriteEndElement();
+			textWriter.WriteEndDocument();
+			textWriter.Flush();
+			textWriter.Close();
 		}
 		
 		/// <summary>
