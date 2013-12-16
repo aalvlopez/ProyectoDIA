@@ -49,6 +49,24 @@ namespace WindowsFormsApplication1
             get; set; 
         }
 
+        /// <summary>
+        /// crea un nuevo actor
+        /// </summary>
+        /// <param name="name">
+        /// El nombre del actor
+        /// </param>
+        /// <param name="cap">
+        /// El primer capitulo en el que aparece
+        /// </param>
+        /// <param name="descripcion">
+        /// La descripcion del personaje
+        /// </param>
+        /// <param name="id">
+        /// La id del personaje
+        /// </param>
+        /// <param name="esc">
+        /// La primera escena en la que aparece el personaje
+        /// </param>
         public Actor (string name, string cap
 		, string descripcion,string id,string esc)
 		{
@@ -58,6 +76,7 @@ namespace WindowsFormsApplication1
 			this.Cap = cap;
 			this.Esc = esc;
 		}
+
         /// <summary>
         /// Crea un nuevo actor
         /// </summary>
@@ -89,7 +108,21 @@ namespace WindowsFormsApplication1
 
 
 
-
+        /// <summary>
+        /// Modifica los datos de un personaje
+        /// </summary>
+        /// <param name="nombre">
+        /// El nombre
+        /// </param>
+        /// <param name="escena">
+        /// La escena
+        /// </param>
+        /// <param name="capitulo">
+        /// El capitulo
+        /// </param>
+        /// <param name="descripcion">
+        /// La descripcion
+        /// </param>
         public void ModificarActor(string nombre, string escena, string capitulo,string descripcion)
         {
 
@@ -99,6 +132,9 @@ namespace WindowsFormsApplication1
             this.Descripcion = descripcion;
         }
 
+        /// <summary>
+        /// Representa un personaje mediante su nombre en un string
+        /// </summary>
         public override string ToString()
         {
             return string.Format(this.Nombre);

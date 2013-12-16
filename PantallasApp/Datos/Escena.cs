@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 	public class Escena
 	{
 		/// <summary>
-		/// Crea una nueva <see cref="Scrivener.Escena"/> vacia.
+        /// Crea una nueva <see cref="WindowsFormsApplication1.Escena"/> vacia.
 		/// </summary>
 		public Escena (){
 			DateTime start = new DateTime(1995, 1, 1);
@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 		}
 		
 		/// <summary>
-		/// Crea una nueva <see cref="Scrivener.Escena"/> .
+        /// Crea una nueva <see cref="WindowsFormsApplication1.Escena"/> .
 		/// </summary>
 		/// <param name='titulo'>
 		/// Titulo.

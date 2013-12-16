@@ -7,11 +7,20 @@ using System.Windows;
 using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
+    /// <summary>
+    /// Añadir o modificar personajes formulario
+    /// </summary>
     public class AnadirModificarPersonajesForm : Form
     {
         private Actor actor;
         public String texto;
 
+         /// <summary>
+        /// Constructor de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+        /// </summary>
+        /// <param name='actor'>
+        /// Actor.
+        /// </param>
         public AnadirModificarPersonajesForm(Actor actor)
         {
             this.actor = actor;
@@ -21,6 +30,9 @@ namespace WindowsFormsApplication1
 
         }
 
+        /// <summary>
+        /// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+        /// </summary>
         public AnadirModificarPersonajesForm()
         {
             this.actor = null;

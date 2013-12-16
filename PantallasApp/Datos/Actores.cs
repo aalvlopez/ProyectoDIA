@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
        /// Añade un actor
        /// </summary>
        /// <param name='a'>
-       /// Un <see cref="scActores.Actor"/>
+        /// Un <see cref="WindowsFormsApplication1.Actor"/>
        /// </param>
         public void Add(Actor a)
         {
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
 		/// Borra un actor
 		/// </summary>
         /// <param name='a'>
-        /// Un <see cref="scActores.Actor"/>
+        /// Un <see cref="WindowsFormsApplication1.Actor"/>
         /// </param>
 		///  
 		/// 
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
         }
 
 		/// <summary>
-		/// Añade unac coleccion de actores
+		/// Añade una coleccion de actores
 		/// </summary>
         public void AddRange(ICollection<Actor> r)
         {
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
 		/// Devuelve si existe el actor buscado
 		/// </summary>
 		/// <param name='r'>
-		/// El <see cref="scActores.Actor"/> a buscar
+        /// El <see cref="WindowsFormsApplication1.Actor"/> a buscar
 		/// </param>
         public bool Contains(Actor r)
         {
@@ -150,7 +150,7 @@ namespace WindowsFormsApplication1
 		/// Devuelve una cadena que representa los actores.
 		/// </summary>
 		/// <returns>
-		/// A <see cref="System.String"/> que representa los <see cref="scActores.Actores"/>.
+        /// A <see cref="System.String"/> que representa los <see cref="WindowsFormsApplication1.Actores"/>.
 		/// </returns>
         public override string ToString()
         {
