@@ -389,7 +389,7 @@ namespace WindowsFormsApplication1
             string Aviso = "Actor borrado";
             string caption = "Alert";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            foreach (var actor in toret)
+            foreach (Actor actor in toret)
             {
                 this.cbActor.Items.Add(actor);
             }
