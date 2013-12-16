@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Esta clase almacena los <see cref="Event"/> que el usuario ya hubiera creado y crea en tiempo de ejecución

@@ -3,13 +3,13 @@ using System.Xml;
 using System.Text;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Esta clase representa una implementacion de la interfaz <see cref="Planificacion.IPersistence"/>.
 	/// Con esta clase, los <see cref="Event"/> se guardarán un fichero XML.
 	/// </summary>
-	public class XmlPersistence: IPersistence
+	public class XMLEventos: IPersistence
 	{
 		/// <summary>
 		/// <see cref="String"/> con el nombre del fichero en el que se guardarán los <see cref="Event"/>.
@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
 		/// <param name='filename'>
 		/// <see cref="String"/> con el nombre del fichero en el que se quieren guardar los <see cref="Event"/>.
 		/// </param>
-		public XmlPersistence (String filename)
+		public XMLEventos (String filename)
 		{
 			this.FileName = filename;
 		}
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 		/// <summary>
 		/// Constructor en el que se asigna un nombre por defecto al fichero XML.
 		/// </summary>
-		public XmlPersistence ()
+		public XMLEventos ()
 		{
 			this.FileName = "events.xml";
 		}

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
-    static class Program
+    static class Core
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -23,30 +23,30 @@ namespace WindowsFormsApplication1
 		public static EventsWinForms eventosForm; 
 
 		public static Libro Book;
-		public static XMLPersistencia persistencia;
+		public static XMLGeneral persistencia;
 		public static ListEvent listEvents ;
 
 		/// <summary>
-		/// Método main y punto de entrada del programa, donde empieza y acaba el control del mismo.
+		/// Método de inicialización y punto de entrada del programa, donde empieza y acaba el control del mismo.
 		/// </summary>
         [STAThread]
-		public static void Main()
+		public static void Init()
         {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-			XmlPersistence xmlPersistence = new XmlPersistence("events.xml");
-			Program.listEvents = new ListEvent(xmlPersistence);
+			XMLEventos xmlPersistence = new XMLEventos("events.xml");
+			Core.listEvents = new ListEvent(xmlPersistence);
 
-			Program.libA = new LibroAbiertoForm();
-			Program.libA.button1.Enabled=false;
-			Program.libA.button2.Enabled=false;
-			Program.libA.button3.Enabled=false;
-			Program.libA.saveToolStripMenu.Enabled=false;
-			Program.libA.saveAsToolStripMenu.Enabled=false;
-			Program.libA.referenciasToolStripMenuItem.Enabled=false;
-			Application.Run(Program.libA); // Libro sin Abrir
+			Core.libA = new LibroAbiertoForm();
+			Core.libA.button1.Enabled=false;
+			Core.libA.button2.Enabled=false;
+			Core.libA.button3.Enabled=false;
+			Core.libA.saveToolStripMenu.Enabled=false;
+			Core.libA.saveAsToolStripMenu.Enabled=false;
+			Core.libA.referenciasToolStripMenuItem.Enabled=false;
+			Application.Run(Core.libA); // Libro sin Abrir
             
         }
     }

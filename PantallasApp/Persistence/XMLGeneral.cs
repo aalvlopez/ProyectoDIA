@@ -2,12 +2,12 @@ using System;
 using System.Xml;
 using System.Text;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
         /// <summary>
         /// Carga y guarda los archivos XML
         /// </summary>
-        public class XMLPersistencia
+        public class XMLGeneral
         {
                 /// <summary>
                 /// Crea una nueva instancia de la clase <see cref="Scrivener.XMLPersistencia"/>.
@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
                 /// <param name='documento'>
                 /// Nombre del documento por defecto que se va a cargar/guardar.
                 /// </param>
-                public XMLPersistencia (string documento)
+                public XMLGeneral (string documento)
                 {
                         this.Documento = documento;
                 }

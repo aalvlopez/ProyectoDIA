@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Windows;
 using System.ComponentModel;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Esta clase ofrece una implementación de la interfaz <see cref="IUserInterface"/>

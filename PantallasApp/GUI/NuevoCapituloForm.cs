@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
-	/// Libro abierto form.
+	/// Nuevo capitulo form.
 	/// </summary>
-    public partial class LibroAbiertoForm : Form
+    public partial class NuevoCapituloForm : Form
     {
 		/// <summary>
-		/// Gets y sets de PantallaAnt
+		/// Gets y sets the PantallaAnt.
 		/// </summary>
 		/// <value>
-		/// La pantalla anterior.
+		/// The pantalla ant.
 		/// </value>
 		public Form PantallaAnt {
 			get;
@@ -27,12 +27,13 @@ namespace WindowsFormsApplication1
 		}
 
 		/// <summary>
-		/// Constructor sin parámetros de la clase  <see cref="WindowsFormsApplication1.LibroAbiertoForm"/>.
+		/// Constructor por defecto de la clase  <see cref="DIAScribe.NuevoCapituloForm"/> .
 		/// </summary>
-        public LibroAbiertoForm()
+        public NuevoCapituloForm()
         {
 			this.PantallaAnt = null;
             InitializeComponent();
-		}
+			this.Show ();
+        }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Un libro.
@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 	public class Libro
 	{
 		/// <summary>
-        /// Propiedad que define los Gets y Sets del titulo de <see cref="WindowsFormsApplication1.Libro">.
+        /// Propiedad que define los Gets y Sets del titulo de <see cref="DIAScribe.Libro">.
 		/// </summary>
 		/// <value>
 		/// El titulo.
@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
 		}
 		
 		/// <summary>
-        /// Propiedad que define los Gets y Sets de una anotacion de <see cref="WindowsFormsApplication1.Libro">.
+        /// Propiedad que define los Gets y Sets de una anotacion de <see cref="DIAScribe.Libro">.
 		/// </summary>
 		/// <value>
 		/// Una anotacion.
@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
 		}
 
 		/// <summary>
-        /// Propiedad que define los Gets y Sets de los actores de <see cref="WindowsFormsApplication1.Libro">.
+        /// Propiedad que define los Gets y Sets de los actores de <see cref="DIAScribe.Libro">.
 		/// </summary>
 		/// <value>
 		/// Los actores
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
 		}	
 		
 		/// <summary>
-        /// Crea un nuevo <see cref="WindowsFormsApplication1.Libro"/> vacio.
+        /// Crea un nuevo <see cref="DIAScribe.Libro"/> vacio.
 		/// </summary>
 		public Libro ()
 		{
@@ -70,7 +70,7 @@ namespace WindowsFormsApplication1
 		}
 		
 		/// <summary>
-        /// Crea un nuevo <see cref="WindowsFormsApplication1.Libro"/>.
+        /// Crea un nuevo <see cref="DIAScribe.Libro"/>.
 		/// </summary>
 		/// <param name='titulo'>
 		/// Titulo.
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
 		}
 		
 		/// <summary>
-        /// Crea un nuevo <see cref="WindowsFormsApplication1.Libro"/>.
+        /// Crea un nuevo <see cref="DIAScribe.Libro"/>.
 		/// </summary>
 		/// <param name='titulo'>
 		/// Titulo.

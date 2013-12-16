@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Interface para la implementación de la Persistencia.

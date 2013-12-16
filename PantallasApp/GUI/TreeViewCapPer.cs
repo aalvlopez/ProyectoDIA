@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1{
+namespace DIAScribe{
 	/// <summary>
 	/// Esta es la clase encargada de dibujar el winForm con el treeview.
 	/// </summary>

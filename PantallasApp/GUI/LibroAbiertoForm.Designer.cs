@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Windows;
 using System.ComponentModel;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
     partial class LibroAbiertoForm
     {
@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
             this.crearToolStripMenuItem.Text = "Nuevo Libro";
 			this.crearToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
 			this.crearToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Program.nuevoLib = new NuevoLibroForm();
+				Core.nuevoLib = new NuevoLibroForm();
 			};
             // 
             // abrirToolStripMenuItem1
@@ -164,15 +164,15 @@ namespace WindowsFormsApplication1
 					String fileName = openFileDialog.FileName;
 
 					// A partir de aquí se debería cargar el xml en memoria...
-					Program.persistencia = new XMLPersistencia(fileName);
-					Program.Book = Program.persistencia.Leer();
-					TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
-					Program.libA.button1.Enabled=true;
-					Program.libA.button2.Enabled=true;
-					Program.libA.button3.Enabled=true;
-					Program.libA.saveToolStripMenu.Enabled=true;
-					Program.libA.saveAsToolStripMenu.Enabled=true;
-					Program.libA.referenciasToolStripMenuItem.Enabled=true;
+					Core.persistencia = new XMLGeneral(fileName);
+					Core.Book = Core.persistencia.Leer();
+					TreeViewCapPer.Actualizar(Core.Book, Core.libA.treeView1);
+					Core.libA.button1.Enabled=true;
+					Core.libA.button2.Enabled=true;
+					Core.libA.button3.Enabled=true;
+					Core.libA.saveToolStripMenu.Enabled=true;
+					Core.libA.saveAsToolStripMenu.Enabled=true;
+					Core.libA.referenciasToolStripMenuItem.Enabled=true;
 				}
 				
 				
@@ -187,7 +187,7 @@ namespace WindowsFormsApplication1
 			this.saveToolStripMenu.ShortcutKeys = Keys.Control | Keys.S;
 
 			this.saveToolStripMenu.Click += delegate(object sender, EventArgs e) {									
-					Program.persistencia.Guardar(Program.Book);				
+					Core.persistencia.Guardar(Core.Book);				
 			};
 			
 			// 
@@ -210,8 +210,8 @@ namespace WindowsFormsApplication1
 					String fileName = saveFileDialog.FileName;
 
 					
-					Program.persistencia = new XMLPersistencia(fileName);
-					Program.persistencia.Guardar(Program.Book);
+					Core.persistencia = new XMLGeneral(fileName);
+					Core.persistencia.Guardar(Core.Book);
 					this.saveToolStripMenu.Enabled=true;
 				}
 			};
@@ -244,7 +244,7 @@ namespace WindowsFormsApplication1
             this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.nuevaToolStripMenuItem.Text = "Gestionar Referencias";
 			this.nuevaToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Program.references=new ReferencesForm();
+				Core.references=new ReferencesForm();
 			};
            
             // 
@@ -262,7 +262,7 @@ namespace WindowsFormsApplication1
             this.verToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.verToolStripMenuItem.Text = "Ver";
 			this.verToolStripMenuItem.Click += delegate(object sender, EventArgs e) {
-				Program.eventosForm = new EventsWinForms(Program.listEvents);
+				Core.eventosForm = new EventsWinForms(Core.listEvents);
 			};
             // 
             // panel2
@@ -283,19 +283,19 @@ namespace WindowsFormsApplication1
 			treeView1.NodeMouseDoubleClick+=delegate(object sender, TreeNodeMouseClickEventArgs e) {
                 if (e.Node.Level == 1 && e.Node.Parent.Text.Equals("Capitulos"))
                 {
-                    Program.modCap = new ModificarCapituloForm(Program.Book.BuscarCapituloId(e.Node.Name));
+                    Core.modCap = new ModificarCapituloForm(Core.Book.BuscarCapituloId(e.Node.Name));
                 }
                 else
                 {
                     if (e.Node.Level == 1 && e.Node.Parent.Text.Equals("Personajes"))
                     {
-                        Program.anPers = new AnadirModificarPersonajesForm(Program.Book.BuscarPersonajeId(e.Node.Name));
+                        Core.anPers = new AnadirModificarPersonajesForm(Core.Book.BuscarPersonajeId(e.Node.Name));
                     }
                     else
                     {
                         if (e.Node.Level == 2)
                         {
-                            Program.esc = new EscenasForm(Program.Book.BuscarEscenaId(e.Node.Name));
+                            Core.esc = new EscenasForm(Core.Book.BuscarEscenaId(e.Node.Name));
                         }
                     }
                 }
@@ -321,7 +321,7 @@ namespace WindowsFormsApplication1
             this.button3.Text = "Nuevo Personaje";
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += delegate(object sender, EventArgs e) {
-				Program.anPers=new AnadirModificarPersonajesForm();
+				Core.anPers=new AnadirModificarPersonajesForm();
 			};
             // 
             // button2
@@ -333,7 +333,7 @@ namespace WindowsFormsApplication1
             this.button2.Text = "Nueva Escena";
             this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += delegate(object sender, EventArgs e) {
-				Program.esc=new EscenasForm();
+				Core.esc=new EscenasForm();
 			};
             // 
             // button1
@@ -345,7 +345,7 @@ namespace WindowsFormsApplication1
             this.button1.Text = "Nuevo Capítulo";
             this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += delegate(object sender, EventArgs e) {
-				Program.nuevoCap=new NuevoCapituloForm();
+				Core.nuevoCap=new NuevoCapituloForm();
 			};
             // 
             // Form1

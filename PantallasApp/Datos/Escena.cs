@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Escena.
@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 	public class Escena
 	{
 		/// <summary>
-        /// Crea una nueva <see cref="WindowsFormsApplication1.Escena"/> vacia.
+        /// Crea una nueva <see cref="DIAScribe.Escena"/> vacia.
 		/// </summary>
 		public Escena (){
 			DateTime start = new DateTime(1995, 1, 1);
@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 		}
 		
 		/// <summary>
-        /// Crea una nueva <see cref="WindowsFormsApplication1.Escena"/> .
+        /// Crea una nueva <see cref="DIAScribe.Escena"/> .
 		/// </summary>
 		/// <param name='titulo'>
 		/// Titulo.

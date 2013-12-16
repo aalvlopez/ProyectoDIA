@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Text;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {	
 	/// <summary>
 	/// Panel de control para la gestión de referencias.
@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
 		/// Constructor sin parámetros de la clase <see cref="Referencias.ReferencesForm"/>.
 		/// </summary>
 		public ReferencesForm(){
-			listado = Program.Book.Referencias;
+			listado = Core.Book.Referencias;
 
 			SuspendLayout();
 			MinimumSize = new Size(640, 430);

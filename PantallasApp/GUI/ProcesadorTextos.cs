@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Se encarga de crear la interfaz gráfica de la aplicación.
@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1
 	public class ProcesadorTextos : Form
 	{
 		/// <summary>
-		/// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.ProcesadorTextos"/> .
+		/// Constructor sin parámetros de la clase <see cref="DIAScribe.ProcesadorTextos"/> .
 		/// </summary>
 		public ProcesadorTextos()
 		{
@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public void Salir()
 		{
-			Program.esc.Show();
+			Core.esc.Show();
 			this.Close ();
 		}
 
@@ -255,11 +255,11 @@ namespace WindowsFormsApplication1
 		public void Guardar()
 		{
             if(this.GuardaPersonaje.Equals("personaje")){
-                Program.anPers.texto = richTextBox.Text;
-                Program.anPers.Show();
+                Core.anPers.texto = richTextBox.Text;
+                Core.anPers.Show();
             }else{
-			Program.esc.texto=richTextBox.Text;
-			Program.esc.Show();
+			Core.esc.texto=richTextBox.Text;
+			Core.esc.Show();
             }
 			this.Close ();
 		}

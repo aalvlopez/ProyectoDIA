@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Escenas form.
@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 		public string texto;
 
 		/// <summary>
-		/// Constructor de la clase <see cref="WindowsFormsApplication1.EscenasForm"/> .
+		/// Constructor de la clase <see cref="DIAScribe.EscenasForm"/> .
 		/// </summary>
 		/// <param name='escena'>
 		/// Escena.
@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
 		}
 
 		/// <summary>
-		/// Constructor de la clase <see cref="WindowsFormsApplication1.EscenasForm"/> .
+		/// Constructor de la clase <see cref="DIAScribe.EscenasForm"/> .
 		/// </summary>
 		public EscenasForm ()
 		{
@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
 			if (this.escena == null) {
 				comboBox.Text = "Capitulo";
 			} else {
-				foreach (var i in Program.Book.Capitulos) {
+				foreach (var i in Core.Book.Capitulos) {
 					if (i.Escenas.Contains (this.escena)) {
 						comboBox.Text = i.Titulo;
 					}
@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
 			}
 
 			comboBox.Size = new Size (150, 30);
-			foreach (var i in Program.Book.Capitulos) {
+			foreach (var i in Core.Book.Capitulos) {
 				comboBox.Items.Add (i);
 			}
 			richTextBox1 = new RichTextBox ();
@@ -102,9 +102,9 @@ namespace WindowsFormsApplication1
 					}else{
 						Capitulo cap1 = (Capitulo)comboBox.SelectedItem;
 						cap1.CrearEscena (this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
-						TreeViewCapPer.Actualizar (Program.Book, Program.libA.treeView1);
-						if(Program.anPers!= null){
-							TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+						TreeViewCapPer.Actualizar (Core.Book, Core.libA.treeView1);
+						if(Core.anPers!= null){
+							TreeViewCapPer.Actualizar(Core.Book, Core.anPers.treeView1);
 						}
 						this.Close ();
 					}
@@ -114,12 +114,12 @@ namespace WindowsFormsApplication1
 					else
 					{
 						Capitulo cap1 = (Capitulo)comboBox.SelectedItem;
-						Program.Book.BuscarCapituloId(this.escena.IdCapitulo).Escenas.Remove(this.escena);
+						Core.Book.BuscarCapituloId(this.escena.IdCapitulo).Escenas.Remove(this.escena);
 						cap1.CrearEscena(this.textBox.Text, this.richTextBox1.Text, this.texto, cap1.Id);
 					}
-					TreeViewCapPer.Actualizar (Program.Book, Program.libA.treeView1);
-					if(Program.anPers!= null){
-						TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+					TreeViewCapPer.Actualizar (Core.Book, Core.libA.treeView1);
+					if(Core.anPers!= null){
+						TreeViewCapPer.Actualizar(Core.Book, Core.anPers.treeView1);
 					}
 					this.Close ();
 				}
@@ -129,8 +129,8 @@ namespace WindowsFormsApplication1
 			btnEdit.Text = "Editar escena";
 			btnEdit.Size = new Size (150, 30);
 			btnEdit.Click += delegate(object sender, EventArgs e) {
-				Program.procesador = new ProcesadorTextos ();
-				Program.procesador.setTexto(this.texto);
+				Core.procesador = new ProcesadorTextos ();
+				Core.procesador.setTexto(this.texto);
 			};
 
 			tableLayoutPanel = new TableLayoutPanel ();

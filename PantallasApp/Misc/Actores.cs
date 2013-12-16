@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Representa los actores 
@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
        /// Añade un actor
        /// </summary>
        /// <param name='a'>
-        /// Un <see cref="WindowsFormsApplication1.Actor"/>
+        /// Un <see cref="DIAScribe.Actor"/>
        /// </param>
         public void Add(Actor a)
         {
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
 		/// Borra un actor
 		/// </summary>
         /// <param name='a'>
-        /// Un <see cref="WindowsFormsApplication1.Actor"/>
+        /// Un <see cref="DIAScribe.Actor"/>
         /// </param>
 		///  
 		/// 
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
 		/// Devuelve si existe el actor buscado
 		/// </summary>
 		/// <param name='r'>
-        /// El <see cref="WindowsFormsApplication1.Actor"/> a buscar
+        /// El <see cref="DIAScribe.Actor"/> a buscar
 		/// </param>
         public bool Contains(Actor r)
         {
@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1
         }
 
 		/// <summary>
-		/// Indizador de <see cref="WindowsFormsApplication1.Actores"/>
+		/// Indizador de <see cref="DIAScribe.Actores"/>
 		/// </summary>
 		/// <param name='i'>
 		/// I.
@@ -150,7 +150,7 @@ namespace WindowsFormsApplication1
 		/// Devuelve una cadena que representa los actores.
 		/// </summary>
 		/// <returns>
-        /// A <see cref="System.String"/> que representa los <see cref="WindowsFormsApplication1.Actores"/>.
+        /// A <see cref="System.String"/> que representa los <see cref="DIAScribe.Actores"/>.
 		/// </returns>
         public override string ToString()
         {

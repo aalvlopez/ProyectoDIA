@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows;
 using System.ComponentModel;
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
     partial class ModificarCapituloForm
     {
@@ -91,11 +91,11 @@ namespace WindowsFormsApplication1
 			this.button1.Click+=delegate(object sender, EventArgs e) {
 				this.cap.ModificarCapitulo(this.textBox1.Text, this.textBox2.Text);
 				foreach(var i in this.aBorrar){
-					Program.Book.BuscarCapituloId(i.IdCapitulo).Escenas.Remove(i);
+					Core.Book.BuscarCapituloId(i.IdCapitulo).Escenas.Remove(i);
 				}
-				TreeViewCapPer.Actualizar(Program.Book,Program.libA.treeView1);
-				if(Program.anPers!= null){
-					TreeViewCapPer.Actualizar(Program.Book, Program.anPers.treeView1);
+				TreeViewCapPer.Actualizar(Core.Book,Core.libA.treeView1);
+				if(Core.anPers!= null){
+					TreeViewCapPer.Actualizar(Core.Book, Core.anPers.treeView1);
 				}
 				this.Close ();
 			};

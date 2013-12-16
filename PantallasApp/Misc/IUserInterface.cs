@@ -1,6 +1,6 @@
 using System;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Interface para la implementación de una GUI.

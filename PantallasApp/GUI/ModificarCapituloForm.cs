@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Modificar capitulo form.
@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
 		public Capitulo cap;
 
 		/// <summary>
-		/// Constructor de la clase <see cref="WindowsFormsApplication1.ModificarCapituloForm"/> .
+		/// Constructor de la clase <see cref="DIAScribe.ModificarCapituloForm"/> .
 		/// </summary>
 		/// <param name='cap'>
 		/// Capitulo.

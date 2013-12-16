@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Un capitulo.

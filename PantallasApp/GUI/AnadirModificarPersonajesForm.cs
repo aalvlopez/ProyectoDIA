@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows;
 using System.ComponentModel;
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
     /// <summary>
     /// Añadir o modificar personajes formulario
@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         public String texto;
 
          /// <summary>
-        /// Constructor de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+        /// Constructor de la clase <see cref="DIAScribe.AnadirModificarPersonajesForm"/>.
         /// </summary>
         /// <param name='actor'>
         /// Actor.
@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         }
 
         /// <summary>
-        /// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+        /// Constructor sin parámetros de la clase <see cref="DIAScribe.AnadirModificarPersonajesForm"/>.
         /// </summary>
         public AnadirModificarPersonajesForm()
         {
@@ -84,9 +84,9 @@ namespace WindowsFormsApplication1
             opEditar.Shortcut = Shortcut.CtrlE;
             opEditar.Click += delegate(object sender, EventArgs e)
             {
-                Program.procesador = new ProcesadorTextos();
-                Program.procesador.GuardaPersonaje = "personaje";
-                Program.procesador.setTexto(this.texto);
+                Core.procesador = new ProcesadorTextos();
+                Core.procesador.GuardaPersonaje = "personaje";
+                Core.procesador.setTexto(this.texto);
 
 
             };
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication1
 
             this.panel1 = new System.Windows.Forms.Panel();
 			this.treeView1=new TreeView();
-            this.treeView1 = TreeViewCapPer.Actualizar(Program.Book, new TreeView());
+            this.treeView1 = TreeViewCapPer.Actualizar(Core.Book, new TreeView());
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
                 this.comboBox2.Text = this.actor.Cap;
               
             }
-            foreach (var capitulo in Program.Book.Capitulos)
+            foreach (var capitulo in Core.Book.Capitulos)
             {
                 this.comboBox2.Items.Add(capitulo);
             }
@@ -264,8 +264,8 @@ namespace WindowsFormsApplication1
                     }
                     if (this.comboBox1.SelectedItem != null && this.comboBox2.SelectedItem != null)
                     {
-                        Program.Book.Actores.Add(new Actor(nombre, cap, this.texto, esc));
-                        TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+                        Core.Book.Actores.Add(new Actor(nombre, cap, this.texto, esc));
+                        TreeViewCapPer.Actualizar(Core.Book, Core.libA.treeView1);
                     }
                     this.Close();
 
@@ -281,11 +281,11 @@ namespace WindowsFormsApplication1
                         Capitulo cap1 = (Capitulo)comboBox2.SelectedItem;
                         Escena esc1 = (Escena)comboBox1.SelectedItem;
                         String idPj = this.actor.Id;
-                        Program.Book.Actores.Remove(this.actor);
-                        Program.Book.Actores.Add(new Actor(this.textBox1.Text,cap1.Titulo,this.texto,idPj,esc1.Titulo));
+                        Core.Book.Actores.Remove(this.actor);
+                        Core.Book.Actores.Add(new Actor(this.textBox1.Text,cap1.Titulo,this.texto,idPj,esc1.Titulo));
                         
                     }
-                    TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+                    TreeViewCapPer.Actualizar(Core.Book, Core.libA.treeView1);
                     this.Close();
                 }
             };
@@ -319,7 +319,7 @@ namespace WindowsFormsApplication1
             this.comboBox1.Items.Clear();
             while (this.comboBox1.Items.Count == 0)
             {
-                foreach (var i in Program.Book.Capitulos)
+                foreach (var i in Core.Book.Capitulos)
                 {
                     if (i.Titulo.Equals(comboBox2.Text))
                     {
@@ -394,7 +394,7 @@ namespace WindowsFormsApplication1
 
         private void BorraActor()
         {
-            Actores toret = Program.Book.Actores;
+            Actores toret = Core.Book.Actores;
 
             
 
@@ -423,9 +423,9 @@ namespace WindowsFormsApplication1
                 if (result == DialogResult.OK && this.cbActor.SelectedItem != null)
                 {
                     this.cbActor.Items.Clear();
-                    Program.Book.Actores = toret;
-                    TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
-                    TreeViewCapPer.Actualizar(Program.Book, this.treeView1);
+                    Core.Book.Actores = toret;
+                    TreeViewCapPer.Actualizar(Core.Book, Core.libA.treeView1);
+                    TreeViewCapPer.Actualizar(Core.Book, this.treeView1);
                     
                     return;
                 }

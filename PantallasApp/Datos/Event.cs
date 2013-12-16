@@ -1,6 +1,6 @@
 using System;
 
-namespace WindowsFormsApplication1
+namespace DIAScribe
 {
 	/// <summary>
 	/// Esta clase representa los <see cref="Planificacion.Event"/> que el usuario crea. 
