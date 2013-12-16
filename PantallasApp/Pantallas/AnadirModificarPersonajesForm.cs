@@ -7,20 +7,11 @@ using System.Windows;
 using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
-	/// <summary>
-	/// Anadir modificar personajes form.
-	/// </summary>
     public class AnadirModificarPersonajesForm : Form
     {
-		public System.Windows.Forms.TreeView treeView1;
+        private Actor actor;
         public String texto;
 
-		/// <summary>
-		/// Constructor de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
-		/// </summary>
-		/// <param name='actor'>
-		/// Actor.
-		/// </param>
         public AnadirModificarPersonajesForm(Actor actor)
         {
             this.actor = actor;
@@ -30,9 +21,6 @@ namespace WindowsFormsApplication1
 
         }
 
-		/// <summary>
-		/// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
-		/// </summary>
         public AnadirModificarPersonajesForm()
         {
             this.actor = null;
@@ -41,7 +29,8 @@ namespace WindowsFormsApplication1
             this.Show();
         }
 
-		private Actor actor;
+
+
 
         /// <summary>
         /// Required designer variable.
@@ -69,6 +58,37 @@ namespace WindowsFormsApplication1
         /// </summary>
         private void InitializeComponent()
         {
+            BuildDialogBorraActor();
+
+            MainMenu Actions = new MainMenu();
+
+            
+            MenuItem opEliminar = new MenuItem("&Eliminar");
+            opEliminar.Shortcut = Shortcut.CtrlR;
+            opEliminar.Click += (sender, e) => BorraActor();
+
+            MenuItem mEditar = new MenuItem("&Editar");
+            MenuItem opEditar = new MenuItem("&Editar descripcion");
+            opEditar.Shortcut = Shortcut.CtrlE;
+            opEditar.Click += delegate(object sender, EventArgs e)
+            {
+                Program.procesador = new ProcesadorTextos();
+                Program.procesador.GuardaPersonaje = "personaje";
+                Program.procesador.setTexto(this.texto);
+
+
+            };
+
+           
+
+           
+            mEditar.MenuItems.Add(opEliminar);
+            mEditar.MenuItems.Add(opEditar);
+
+            Actions.MenuItems.Add(mEditar);
+            Menu = Actions;	
+
+
             this.panel1 = new System.Windows.Forms.Panel();
 			this.treeView1=new TreeView();
             this.treeView1 = TreeViewCapPer.Actualizar(Program.Book, new TreeView());
@@ -77,7 +97,6 @@ namespace WindowsFormsApplication1
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -107,7 +126,6 @@ namespace WindowsFormsApplication1
             this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Location = new System.Drawing.Point(192, 25);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(389, 266);
@@ -260,19 +278,8 @@ namespace WindowsFormsApplication1
                 }
             };
 
-            //boton editar descripcion
-            btnEdit.Text = "Editar personaje";
-            btnEdit.Size = new Size(150, 30);
-            btnEdit.Location = new System.Drawing.Point(221, 17);
-            btnEdit.Click += delegate(object sender, EventArgs e)
-            {
-                Program.procesador = new ProcesadorTextos();
-                Program.procesador.GuardaPersonaje = "personaje";
-                Program.procesador.setTexto(this.texto);
-                
-                
-            };
-            //fin boton editar descripcion
+           
+            
 
             // 
             // Form7
@@ -289,7 +296,11 @@ namespace WindowsFormsApplication1
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
-        }    
+        }
+
+        
+
+      
 
         private void rellenaComboEscena()
         {
@@ -313,15 +324,121 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void BuildDialogBorraActor()
+        {
+            this.dlgBorra = new Form();
+            this.dlgBorra.SuspendLayout();
+            
+            var pnlBorra = new TableLayoutPanel();
+            pnlBorra.Dock = DockStyle.Fill;
+            pnlBorra.SuspendLayout();
+            this.dlgBorra.Controls.Add(pnlBorra);
+
+            var pnlActor = new Panel();
+            this.cbActor = new ComboBox();
+            this.cbActor.FormattingEnabled = true;
+            this.cbActor.Text = "Actor";
+
+            this.cbActor.Dock = DockStyle.Fill;
+
+            var lbActor = new Label();
+            
+            lbActor.Text = "Actor:";
+            lbActor.Dock = DockStyle.Left;
+           
+            pnlActor.Controls.Add(this.cbActor);
+            pnlActor.Controls.Add(lbActor);
+            pnlActor.Dock = DockStyle.Top;
+            pnlActor.MaximumSize = new Size(int.MaxValue, cbActor.Height * 2);
+            pnlBorra.Controls.Add(pnlActor);
+
+            var pnlBotones = new TableLayoutPanel();
+            pnlBotones.ColumnCount = 2;
+            pnlBotones.RowCount = 1;
+            var btCierra = new Button();
+            btCierra.DialogResult = DialogResult.Cancel;
+            btCierra.Text = "&Cancelar";
+            var btGuarda = new Button();
+            btGuarda.DialogResult = DialogResult.OK;
+            btGuarda.Text = "&Guardar";
+            pnlBotones.Controls.Add(btGuarda);
+            pnlBotones.Controls.Add(btCierra);
+            pnlBotones.Dock = DockStyle.Top;
+            pnlBorra.Controls.Add(pnlBotones);
+
+            this.dlgBorra.AcceptButton = btGuarda;
+            this.dlgBorra.CancelButton = btCierra;
+            pnlBorra.ResumeLayout(true);
+            this.dlgBorra.ResumeLayout(false);
+            this.dlgBorra.Text = "Borra  Actor";
+            this.dlgBorra.Size = new Size(400,
+                            cbActor.Height +
+                            pnlBotones.Height);
+            this.dlgBorra.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.dlgBorra.MinimizeBox = false;
+            this.dlgBorra.MaximizeBox = false;
+            this.dlgBorra.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void BorraActor()
+        {
+            Actores toret = Program.Book.Actores;
+
+            
+
+            string Aviso = "Actor borrado";
+            string caption = "Alert";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            foreach (var actor in toret)
+            {
+                this.cbActor.Items.Add(actor);
+            }
+
+            if (this.dlgBorra.ShowDialog() == DialogResult.OK)
+            {
+
+
+
+                Actor actorToBorrar = (Actor)cbActor.SelectedItem;
+                
+
+                toret.Remove(actorToBorrar);
+                if (this.cbActor.SelectedItem == null)
+                {
+                    Aviso = "No escogio un actor";
+                }
+                DialogResult result = MessageBox.Show(Aviso, caption, buttons);
+                if (result == DialogResult.OK && this.cbActor.SelectedItem != null)
+                {
+                    this.cbActor.Items.Clear();
+                    Program.Book.Actores = toret;
+                    TreeViewCapPer.Actualizar(Program.Book, Program.libA.treeView1);
+                    TreeViewCapPer.Actualizar(Program.Book, this.treeView1);
+                    
+                    return;
+                }
+                else
+                {
+                    this.cbActor.Items.Clear();
+                }
+
+            }
+
+            return;
+        }
+
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Form dlgBorra;
+        private System.Windows.Forms.ComboBox cbActor;
+       
     }
 }

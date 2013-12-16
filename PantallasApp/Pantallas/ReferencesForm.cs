@@ -376,6 +376,8 @@ namespace WindowsFormsApplication1
 		/// Cierre de App
 		/// </summary>
 		private void Salir(){
+			this.Dispose();
+			this.Close();
 		}						
 	}
 }
