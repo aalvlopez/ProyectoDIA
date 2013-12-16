@@ -12,23 +12,8 @@ namespace WindowsFormsApplication1
 	/// </summary>
 	public class ReferencesForm : Form			
 	{
-		private static List<Referencia> listado;
-
-		private static Panel mainPanel;
-		private static Form insertForm;
-
-		private static TextBox txtAutoria;
-		private static TextBox txtTitulo;
-		private static TextBox txtDatos;
-		private static TextBox txtEdicion;
-		private static TextBox txtExtension;		
-
-		private static DataGridView gridView;
-		
-		private static StatusBar sbStatus;
-
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Referencias.ReferencesForm"/> class.
+		/// Constructor sin parámetros de la clase <see cref="Referencias.ReferencesForm"/>.
 		/// </summary>
 		public ReferencesForm(){
 			listado = Program.Book.Referencias;
@@ -56,6 +41,42 @@ namespace WindowsFormsApplication1
 			Text = "Gestor de Referencias";	
 			this.Show();
 		}
+
+		/// <summary>
+		/// Inserta la referencia.
+		/// </summary>
+		public static void InsertReferencia(){
+			insertForm.Text = "Crear Nueva Referencia";
+			
+			txtAutoria.Text = "";
+			txtEdicion.Text = "";
+			txtDatos.Text = "";
+			txtExtension.Text = "";
+			txtTitulo.Text = "";
+			
+			if ( insertForm.ShowDialog() == DialogResult.OK ) {
+				Referencia r = new Referencia(txtAutoria.Text,txtTitulo.Text,txtDatos.Text,txtEdicion.Text,txtExtension.Text)	;
+				listado.Add(r);
+			}
+			UpdateGridData();
+		}
+
+		private static List<Referencia> listado;
+
+		private static Panel mainPanel;
+		private static Form insertForm;
+
+		private static TextBox txtAutoria;
+		private static TextBox txtTitulo;
+		private static TextBox txtDatos;
+		private static TextBox txtEdicion;
+		private static TextBox txtExtension;		
+
+		private static DataGridView gridView;
+		
+		private static StatusBar sbStatus;
+
+
 
 		/// <summary>
 		/// Construye el menu		
@@ -263,24 +284,7 @@ namespace WindowsFormsApplication1
 			Controls.Add( sbStatus );
 		}
 
-		/// <summary>
-		/// Inserts the referencia.
-		/// </summary>
-		public static void InsertReferencia(){
-			insertForm.Text = "Crear Nueva Referencia";
-			
-			txtAutoria.Text = "";
-			txtEdicion.Text = "";
-			txtDatos.Text = "";
-			txtExtension.Text = "";
-			txtTitulo.Text = "";
-			
-			if ( insertForm.ShowDialog() == DialogResult.OK ) {
-				Referencia r = new Referencia(txtAutoria.Text,txtTitulo.Text,txtDatos.Text,txtEdicion.Text,txtExtension.Text)	;
-				listado.Add(r);
-			}
-			UpdateGridData();
-		}
+
 		
 		/// <summary>
 		/// Elimina la referencia actualmente seleccionada en el GridView

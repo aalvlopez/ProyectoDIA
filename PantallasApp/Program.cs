@@ -26,6 +26,9 @@ namespace WindowsFormsApplication1
 		public static XMLPersistencia persistencia;
 		public static ListEvent listEvents ;
 
+		/// <summary>
+		/// Método main y punto de entrada del programa, donde empieza y acaba el control del mismo.
+		/// </summary>
         [STAThread]
 		public static void Main()
         {

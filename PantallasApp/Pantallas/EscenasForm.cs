@@ -4,10 +4,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+	/// <summary>
+	/// Escenas form.
+	/// </summary>
 	public class EscenasForm : Form
 	{
-		private Escena escena;
-
+		/// <summary>
+		/// Gets y sets the PantallaAnt
+		/// </summary>
+		/// <value>
+		/// La pantalla anterior.
+		/// </value>
 		public Form PantallaAnt {
 			get;
 			set;
@@ -15,6 +22,12 @@ namespace WindowsFormsApplication1
 
 		public string texto;
 
+		/// <summary>
+		/// Constructor de la clase <see cref="WindowsFormsApplication1.EscenasForm"/> .
+		/// </summary>
+		/// <param name='escena'>
+		/// Escena.
+		/// </param>
 		public EscenasForm (Escena escena)
 		{
 			this.escena = escena;
@@ -23,6 +36,9 @@ namespace WindowsFormsApplication1
 			this.Show ();
 		}
 
+		/// <summary>
+		/// Constructor de la clase <see cref="WindowsFormsApplication1.EscenasForm"/> .
+		/// </summary>
 		public EscenasForm ()
 		{
 			this.texto = "";
@@ -31,6 +47,9 @@ namespace WindowsFormsApplication1
 			this.Show ();
 		}
 
+		/// <summary>
+		/// Crea la GUI.
+		/// </summary>
 		public void ConstruirGui ()
 		{
 			textBox = new TextBox ();
@@ -128,6 +147,7 @@ namespace WindowsFormsApplication1
 			this.Size = new Size (265, 420);
 		}
 
+		private Escena escena;
 		private TextBox textBox;
 		private RichTextBox richTextBox1;
 		private ComboBox comboBox;

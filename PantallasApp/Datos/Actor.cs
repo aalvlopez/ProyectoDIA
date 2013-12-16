@@ -7,13 +7,13 @@ namespace WindowsFormsApplication1
 	/// <summary>
 	/// Representa un actor.
 	/// </summary>
-    public class Actor
-    {
+	public class Actor
+	{
 
-        /// <summary>
+		/// <summary>
 		/// Gets y sets del identificador del personaje(Id).
 		/// </summary>
-		public String Id{
+		public String Id {
 			get;
 			set;
 		}
@@ -21,36 +21,38 @@ namespace WindowsFormsApplication1
 		/// <summary>
 		/// Gets y sets de la primera escena del personaje
 		/// </summary>
-		public String Esc{
-			get;set;
+		public String Esc {
+			get;
+			set;
 		}
 
-        /// <summary>
-        /// devuelve o modidifica los capitulos 
-        /// </summary>
-        public string Cap
-        {
-            get;set;
-        }
+		/// <summary>
+		/// devuelve o modidifica los capitulos 
+		/// </summary>
+		public string Cap {
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// devuelve o modifica el nombre 
-        /// </summary>
-        public string Nombre
-        {
-            get;set;
+		/// <summary>
+		/// devuelve o modifica el nombre 
+		/// </summary>
+		public string Nombre {
+			get;
+			set;
 
-        }
+		}
 
-        /// <summary>
-        /// devuelve o modifica los datos de la plantilla
-        /// </summary>
+		/// <summary>
+		/// devuelve o modifica los datos de la plantilla
+		/// </summary>
 		public string Descripcion { 
-            get; set; 
-        }
+			get;
+			set; 
+		}
 
-        public Actor (string name, string cap
-		, string descripcion,string id,string esc)
+		public Actor (string name, string cap
+		, string descripcion, string id, string esc)
 		{
 			this.Id = id;
 			this.Nombre = name;
@@ -58,45 +60,57 @@ namespace WindowsFormsApplication1
 			this.Cap = cap;
 			this.Esc = esc;
 		}
-        /// <summary>
-        /// Crea un nuevo actor
-        /// </summary>
-        /// <param name="name">
-        /// El nombre del actor
-        /// </param>
-        /// <param name="cap">
-        /// El primer capitulo en el que aparece
-        /// </param>
-        /// <param name="descripcion">
-        /// descripcion del personaje
-        /// </param>
-        /// <returns>
-        /// Un nuevo <seealso cref="scActores.Actor"/>
-        /// </returns>
-		public Actor (string name, string cap, string descripcion,string esc)
-        {
+		/// <summary>
+		/// Crea un nuevo actor
+		/// </summary>
+		/// <param name="name">
+		/// El nombre del actor
+		/// </param>
+		/// <param name="cap">
+		/// El primer capitulo en el que aparece
+		/// </param>
+		/// <param name="descripcion">
+		/// descripcion del personaje
+		/// </param>
+		/// <returns>
+		/// Un nuevo <seealso cref="scActores.Actor"/>
+		/// </returns>
+		public Actor (string name, string cap, string descripcion, string esc)
+		{
 		
-			DateTime start = new DateTime(1995, 1, 1);
-		    Random gen = new Random();
-		    int range = (DateTime.Today - start).Days;       
-			this.Id = start.AddDays(gen.Next(range)).ToString("yyyyMMddHHmmssffff");
+			DateTime start = new DateTime (1995, 1, 1);
+			Random gen = new Random ();
+			int range = (DateTime.Today - start).Days;       
+			this.Id = start.AddDays (gen.Next (range)).ToString ("yyyyMMddHHmmssffff");
 
-            this.Nombre = name;
-            this.Cap = cap;
+			this.Nombre = name;
+			this.Cap = cap;
 			this.Descripcion = descripcion;
 			this.Esc = esc;
-        }
+		}
 
+		/// <summary>
+		/// Modificars el actor.
+		/// </summary>
+		/// <param name='nombre'>
+		/// Nombre.
+		/// </param>
+		/// <param name='escena'>
+		/// Escena.
+		/// </param>
+		/// <param name='capitulo'>
+		/// Capitulo.
+		/// </param>
+		/// <param name='descripcion'>
+		/// Descripcion.
+		/// </param>
+		public void ModificarActor (string nombre, string escena, string capitulo, string descripcion)
+		{
 
-
-
-        public void ModificarActor(string nombre, string escena, string capitulo,string descripcion)
-        {
-
-            this.Nombre = nombre;
-            this.Cap = capitulo;
-            this.Esc = escena;
-            this.Descripcion = descripcion;
-        }
-    }
+			this.Nombre = nombre;
+			this.Cap = capitulo;
+			this.Esc = escena;
+			this.Descripcion = descripcion;
+		}
+	}
 }

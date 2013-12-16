@@ -14,8 +14,7 @@ namespace WindowsFormsApplication1
 		/// <value>
 		/// El titulo.
 		/// </value>
-		public String Titulo 
-		{
+		public String Titulo {
 			get;
 			set;
 		}
@@ -26,8 +25,7 @@ namespace WindowsFormsApplication1
 		/// <value>
 		/// Una anotacion.
 		/// </value>
-		public String Anotacion 
-		{
+		public String Anotacion {
 			get;
 			set;
 		}
@@ -38,8 +36,7 @@ namespace WindowsFormsApplication1
 		/// <value>
 		/// LinkedList de Capitulos.
 		/// </value>
-		public LinkedList<Capitulo> Capitulos
-		{
+		public LinkedList<Capitulo> Capitulos {
 			get;
 			set;
 		}
@@ -50,12 +47,12 @@ namespace WindowsFormsApplication1
 		/// <value>
 		/// Los actores
 		/// </value>
-        public Actores Actores
-        {
-                    get;set;
-        }
+		public Actores Actores {
+			get;
+			set;
+		}
 		
-		public List<Referencia> Referencias{
+		public List<Referencia> Referencias {
 			get;
 			set;
 		}	
@@ -65,11 +62,11 @@ namespace WindowsFormsApplication1
 		/// </summary>
 		public Libro ()
 		{
-			this.Capitulos = new LinkedList<Capitulo>();
-			this.Referencias = new List<Referencia>();
+			this.Capitulos = new LinkedList<Capitulo> ();
+			this.Referencias = new List<Referencia> ();
 			this.Anotacion = "";
-			this.Titulo="";
-            this.Actores = new Actores();
+			this.Titulo = "";
+			this.Actores = new Actores ();
 		}
 		
 		/// <summary>
@@ -78,13 +75,13 @@ namespace WindowsFormsApplication1
 		/// <param name='titulo'>
 		/// Titulo.
 		/// </param>
-		public Libro ( String titulo)
+		public Libro (String titulo)
 		{
-			this.Capitulos = new LinkedList<Capitulo>();
+			this.Capitulos = new LinkedList<Capitulo> ();
 			this.Anotacion = "";
-			this.Titulo=titulo;
-			this.Referencias = new List<Referencia>(); 
-            this.Actores = new Actores();
+			this.Titulo = titulo;
+			this.Referencias = new List<Referencia> (); 
+			this.Actores = new Actores ();
 		}
 		
 		/// <summary>
@@ -102,12 +99,12 @@ namespace WindowsFormsApplication1
 		/// <param name='actores'>
 		/// Actores.
 		/// </param>
-		public Libro ( String titulo, String anotacion, LinkedList<Capitulo> capitulos,Actores actores, List<Referencia> referencias)     
+		public Libro (String titulo, String anotacion, LinkedList<Capitulo> capitulos, Actores actores, List<Referencia> referencias)
 		{
 			Titulo = titulo;
 			Anotacion = anotacion;			
 			this.Capitulos = capitulos;
-            this.Actores = actores;
+			this.Actores = actores;
 			this.Referencias = referencias;
 		}
 		
@@ -120,64 +117,67 @@ namespace WindowsFormsApplication1
 		/// <param name='anotacion'>
 		/// Anotacion.
 		/// </param>
-		public void CrearCapitulo(String titulo, String anotacion)
+		public void CrearCapitulo (String titulo, String anotacion)
 		{
-			this.Capitulos.AddLast(new Capitulo(titulo, anotacion));
-		}
-		
-		/// <summary>
-		/// Buscar el capitulo especificado.
-		/// </summary>
-		/// <returns>
-		/// El capitulo encontrado.
-		/// </returns>
-		/// <param name='titulo'>
-		/// Titulo del capitulo que se busca.
-		/// </param>
-		public Capitulo BuscarCapitulo(String titulo)
-		{
-				foreach(var i in this.Capitulos)
-				{
-					if (titulo.Equals(i.Titulo))
-					return i;
-				}
-			// Aqui falta cambiar este bloque para que lance una excepcion si no encuentra el libro
-		    var toret = new Capitulo();
-			return(toret);
+			this.Capitulos.AddLast (new Capitulo (titulo, anotacion));
 		}
 
-		public Capitulo BuscarCapituloId(String id)
+		/// <summary>
+		/// Buscas el capítulo que coincida con el identificador.
+		/// </summary>
+		/// <returns>
+		/// Devuelve el capítulo que coincida con el ID, o en caso de no encontrarlo devuelve Null
+		/// </returns>
+		/// <param name='id'>
+		/// Identificador.
+		/// </param>
+		public Capitulo BuscarCapituloId (String id)
 		{
-				foreach(var i in this.Capitulos)
-				{
-					if (id.Equals(i.Id))
-						return i;
-				}
+			foreach (var i in this.Capitulos) {
+				if (id.Equals (i.Id))
+					return i;
+			}
 			return null;
 		}
-		public Escena BuscarEscenaId(String id)
+
+		/// <summary>
+		/// Buscas la escena dentro de todos los capítulos contenidos en el libro que coincida con el identificador.
+		/// </summary>
+		/// <returns>
+		/// Devuelve la escena que coincida con el ID, o en caso de no encontrarlo devuelve Null
+		/// </returns>
+		/// <param name='id'>
+		/// Identificador.
+		/// </param>
+		public Escena BuscarEscenaId (String id)
 		{
-				foreach(var i in this.Capitulos)
-				{
-					Escena aux = i.BuscarEscenaId(id);
-					if(aux!=null){
-						return aux;
-					}
-						
+			foreach (var i in this.Capitulos) {
+				Escena aux = i.BuscarEscenaId (id);
+				if (aux != null) {
+					return aux;
 				}
+						
+			}
 			return null;
 		}
         
-        //puesto este metodo recientemente
-        public Actor BuscarPersonajeId(String id)
-        {
-            foreach (var i in this.Actores)
-            {
-                if (id.Equals(i.Id))
-                    return i;
-            }
-            return null;
-        }
+		/// <summary>
+		/// Buscas el personaje que coincida con el identificador.
+		/// </summary>
+		/// <returns>
+		/// evuelve el personaje que coincida con el ID, o en caso de no encontrarlo devuelve Null
+		/// </returns>
+		/// <param name='id'>
+		/// Identificador.
+		/// </param>
+		public Actor BuscarPersonajeId (String id)
+		{
+			foreach (var i in this.Actores) {
+				if (id.Equals (i.Id))
+					return i;
+			}
+			return null;
+		}
 	}
 }
 

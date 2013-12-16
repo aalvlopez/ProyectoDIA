@@ -9,6 +9,9 @@ namespace WindowsFormsApplication1
 	/// </summary>
 	public class ProcesadorTextos : Form
 	{
+		/// <summary>
+		/// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.ProcesadorTextos"/> .
+		/// </summary>
 		public ProcesadorTextos()
 		{
             GuardaPersonaje = "";
@@ -16,18 +19,28 @@ namespace WindowsFormsApplication1
 			this.Show ();
 		}
 
+		/// <summary>
+		/// Gets y sets de PantallaAnt.
+		/// </summary>
+		/// <value>
+		/// La pantalla anterior
+		/// </value>
 		public Form PantallaAnt {
 			get;
 			set;
 		}
 
-        //puesto para poder soporta edicion descricpcion personaje
+		/// <summary>
+		/// Gets y sets the guarda personaje.
+		/// </summary>
+		/// <value>
+		/// El personaje guardado
+		/// </value>
         public String GuardaPersonaje
         {
             get;
             set;
         }
-        //fin edicion personaje
 
 		/// <summary>
 		/// Crea un menú en la parte superior.

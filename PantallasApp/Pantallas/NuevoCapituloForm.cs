@@ -10,12 +10,25 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+	/// <summary>
+	/// Nuevo capitulo form.
+	/// </summary>
     public partial class NuevoCapituloForm : Form
     {
+		/// <summary>
+		/// Gets y sets the PantallaAnt.
+		/// </summary>
+		/// <value>
+		/// The pantalla ant.
+		/// </value>
 		public Form PantallaAnt {
 			get;
 			set;
 		}
+
+		/// <summary>
+		/// Constructor por defecto de la clase  <see cref="WindowsFormsApplication1.NuevoCapituloForm"/> .
+		/// </summary>
         public NuevoCapituloForm()
         {
 			this.PantallaAnt = null;

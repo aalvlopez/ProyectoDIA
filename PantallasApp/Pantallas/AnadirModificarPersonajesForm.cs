@@ -7,11 +7,20 @@ using System.Windows;
 using System.ComponentModel;
 namespace WindowsFormsApplication1
 {
+	/// <summary>
+	/// Anadir modificar personajes form.
+	/// </summary>
     public class AnadirModificarPersonajesForm : Form
     {
-        private Actor actor;
+		public System.Windows.Forms.TreeView treeView1;
         public String texto;
 
+		/// <summary>
+		/// Constructor de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+		/// </summary>
+		/// <param name='actor'>
+		/// Actor.
+		/// </param>
         public AnadirModificarPersonajesForm(Actor actor)
         {
             this.actor = actor;
@@ -21,6 +30,9 @@ namespace WindowsFormsApplication1
 
         }
 
+		/// <summary>
+		/// Constructor sin parámetros de la clase <see cref="WindowsFormsApplication1.AnadirModificarPersonajesForm"/>.
+		/// </summary>
         public AnadirModificarPersonajesForm()
         {
             this.actor = null;
@@ -29,8 +41,7 @@ namespace WindowsFormsApplication1
             this.Show();
         }
 
-
-
+		private Actor actor;
 
         /// <summary>
         /// Required designer variable.
@@ -278,9 +289,7 @@ namespace WindowsFormsApplication1
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
-        }
-
-      
+        }    
 
         private void rellenaComboEscena()
         {
@@ -307,7 +316,6 @@ namespace WindowsFormsApplication1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;

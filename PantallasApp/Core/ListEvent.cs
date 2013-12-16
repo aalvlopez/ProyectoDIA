@@ -104,10 +104,6 @@ namespace WindowsFormsApplication1
 			return toRet;
 		}
 
-		// Metodo RemoveEvent
-		// Recibe como parámetro el IDe de un Event y lo elimina en caso de que exista
-		// Si se elimina correctamente devuelve TRUE, en otro caso, FALSE
-
 		/// <summary>
 		/// Este método elimina un <see cref="Event"/> cuyo <c>ID</c> se le pasa como parámetro.
 		/// </summary>

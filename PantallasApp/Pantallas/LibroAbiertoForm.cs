@@ -10,12 +10,25 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+	/// <summary>
+	/// Libro abierto form.
+	/// </summary>
     public partial class LibroAbiertoForm : Form
     {
+		/// <summary>
+		/// Gets y sets de PantallaAnt
+		/// </summary>
+		/// <value>
+		/// La pantalla anterior.
+		/// </value>
 		public Form PantallaAnt {
 			get;
 			set;
 		}
+
+		/// <summary>
+		/// Constructor sin parámetros de la clase  <see cref="WindowsFormsApplication1.LibroAbiertoForm"/>.
+		/// </summary>
         public LibroAbiertoForm()
         {
 			this.PantallaAnt = null;

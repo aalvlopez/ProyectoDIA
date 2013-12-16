@@ -106,7 +106,12 @@ namespace WindowsFormsApplication1
             this.actores.CopyTo(v, i);
         }
 
-        // Enumerador genérico
+		/// <summary>
+		/// Enumerador genérico
+		/// </summary>
+		/// <returns>
+		/// El enumerador.
+		/// </returns>
         IEnumerator<Actor> IEnumerable<Actor>.GetEnumerator()
         {
             foreach (var r in this.actores)
@@ -115,7 +120,12 @@ namespace WindowsFormsApplication1
             }
         }
 
-        // Enumerador básico
+		/// <summary>
+		/// Enumerador básico
+		/// </summary>
+		/// <returns>
+		/// El enumerador
+		/// </returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             foreach (var r in this.actores)
@@ -124,7 +134,12 @@ namespace WindowsFormsApplication1
             }
         }
 
-        // Indizador
+		/// <summary>
+		/// Indizador de <see cref="WindowsFormsApplication1.Actores"/>
+		/// </summary>
+		/// <param name='i'>
+		/// I.
+		/// </param>
         public Actor this[int i]
         {
             get { return this.actores[i]; }
